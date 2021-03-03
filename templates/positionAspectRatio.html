@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../styles/css/grids.css" />
     <link rel="stylesheet" href="../styles/css/reset.css" />
     <link rel="stylesheet" href="../styles/css/typography.css" />
-    <link rel="stylesheet" href="../styles/css/coolStuff.css" />
+    <link rel="stylesheet" href="../styles/css/positionAspectRatio.css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -15,255 +15,20 @@
     <!-- main -->
     <main class="main">
       <article class="article">
-        <!-- beautiful shadows красивые тени -->
-        <section class="custom-shadows">
-          <h1 id="custom-shadows" class="custom-shadows__heading h2-font-h1">
-            Нестандартные тени
-          </h1>
-          <p class="custom-shadows__description md-font">
-            Иногда бывает нужно реализовать тени, отличающиеся от стандартных
-            <b> box-shadow</b>, без применения картинок.
-          </p>
-          <p class="custom-shadows__description_indent-bottom md-font">
-            Например, тени, наклонённые в разные стороны.
-          </p>
-
-          <div class="custom-shadows__container-shadows">
-            <div class="custom-shadows__block-shadows">
-              <h1 class="h2-font-h1">Блок с тенями</h1>
-            </div>
-          </div>
-          <p class="custom-shadows__description md-font">
-            Сделать это с помощью <b>box-shadow</b> невозможно. Поэтому нужно
-            использовать более сложный приём:
-          </p>
-          <p class="custom-shadows__description md-font">
-            - c помощью псевдоэлементов <b>before</b> и <b>after</b> создаём два
-            блока с обычными тенями;
-          </p>
-          <p class="custom-shadows__description md-font">
-            - наклоняем эти блоки с помощью <b>rotate</b>; <br />
-          </p>
-          <p class="custom-shadows__description_indent-right md-font">
-            псевдоэлемент before блока shadow-box поворачиваем на 3° против
-            часовой стрелки. <br />
-            псевдоэлемент after — по часовой на 3°
-          </p>
-          <p class="custom-shadows__description md-font">
-            - задаём им отрицательный
-            <b>z-index</b>., уберём псевдоэлементы на задний план.
-          </p>
-          <p class="custom-shadows__description md-font">
-            Это переместит блоки с тенями под родительский контейнер так, что
-            наружу будут выглядывать только кусочки теней.
-          </p>
-          <div class="custom-shadows__container-shadows">
-            <div class="custom-shadows__block-shadows-converted">
-              <h1 class="h2-font-h1">Блок с тенями</h1>
-            </div>
-          </div>
-        </section>
-        <!-- beautiful shadows красивые тени -->
-
-        <!-- hover-active Эффекты при наведении на кнопки -->
-        <section class="hover-active">
-          <h1 id="hover-active" class="hover-active__heading h2-font-h1">
-            Эффекты при наведении на кнопки
-          </h1>
-          <p class="hover-active__description md-font">
-            Довольно много интересных эффектов можно добиться с помощью
-            трансформаций при реализации разных элементов интерфейса, например,
-            кнопок. Им можно добавить немного динамики, используя
-            <b>transform</b> совместно с <b>transition</b> для создания
-            простейшей плавной анимации.
-          </p>
-          <p class="hover-active__description md-font">
-            В следующих нескольких примерах мы создадим эффекты при наведении на
-            кнопку. Во всех случаях будет применяться свойство
-            <b>transition</b> для плавной смены значений трансформации или
-            прозрачности.
-          </p>
-
-          <p class="hover-active__description md-font">
-            В этом задании при наведении на кнопку будем динамически оборачивать
-            вокруг своей оси иконку и одновременно немного её увеличивать.
-          </p>
-          <div class="hover-active__button-container">
-            <div class="hover-active__button-block">
-              <button
-                class="hover-active__button hover-active__button_renovation"
-              >
-                <img
-                  class="hover-active__icon hover-active__icon_renovation"
-                  src="../assets/icons/coolStuff/update.jpg"
-                  alt=""
-                />
-                обновить
-              </button>
-              <button class="hover-active__button hover-active__button_basket">
-                <img
-                  class="hover-active__icon hover-active__icon_hidden"
-                  src="../assets/icons/coolStuff/shoppingBags02.jpg"
-                  alt="Иконка корзины"
-                />
-                <img
-                  class="hover-active__icon hover-active__icon_basket"
-                  src="../assets/icons/coolStuff/shoppingBags03.jpg"
-                  alt="Иконка корзины"
-                />
-                Купить
-              </button>
-              <button class="hover-active__button hover-active__button_message">
-                <img
-                  class="hover-active__icon hover-active__icon_hidden-message"
-                  src="../assets/icons/coolStuff/messageOpen.jpg"
-                  alt="Иконка корзины"
-                />
-                <img
-                  class="hover-active__icon hover-active__icon_message"
-                  src="../assets/icons/coolStuff/messsageClosed.jpg"
-                  alt="Иконка корзины"
-                />
-                Прочитать
-              </button>
-            </div>
-          </div>
-        </section>
-        <!-- hover-active Эффекты при наведении на кнопки -->
-
-        <!-- active-gallery   Эффекты при наведении: галерея -->
-        <section class="active-gallery">
-          <h1 id="active-gallery" class="active-gallery__heading h2-font-h1">
-            Эффекты при наведении: галерея
-          </h1>
-          <p class="active-gallery__description md-font">
-            В любой ситуации, когда стоит задача плавно менять позицию или
-            размеры блока, а также каким-либо способом менять его внешний вид,
-            встаёт выбор: пользоваться связкой transition + transform или же
-            задействовать javascript и динамически менять ширину/высоту,
-            координаты объектов в скрипте.
-          </p>
-          <p class="active-gallery__description md-font">
-            Зачастую выбор падает на JS-реализацию с помощью библиотеки jQuery,
-            но в большинстве случаев «чистая» CSS-реализация простых визуальных
-            эффектов намного производительнее аналогичных jQuery-функций. Кроме
-            того, в ряде случаев определённые трансформации в CSS могут для
-            повышения производительности задействовать не только центральный
-            процессор компьютера или мобильного девайса, но и ресурсы
-            графического адаптера, что позволяет разгрузить процессор и
-            избавиться от «тормознутости» эффектов.
-          </p>
-          <p class="active-gallery__description md-font">
-            В этом задании с помощью трансформации и плавных переходов реализуем
-            простую мини-галерею картинок, которые увеличиваются и становятся
-            полупрозрачными при наведении.
-          </p>
-          <div class="active-gallery__block">
-            <ul class="active-gallery__deck">
-              <li>
-                <img
-                  class="active-gallery__card active-gallery__card_ten"
-                  src="../assets/icons/coolStuff/card10.png"
-                  alt=""
-                />
-                <img
-                  class="active-gallery__card active-gallery__card_queen"
-                  src="../assets/icons/coolStuff/cardQueen.png"
-                  alt=""
-                />
-                <img
-                  class="active-gallery__card active-gallery__card_king"
-                  src="../assets/icons/coolStuff/cardKing.png"
-                  alt=""
-                />
-                <img
-                  class="active-gallery__card active-gallery__card_ace"
-                  src="../assets/icons/coolStuff/cardAce.png"
-                  alt=""
-                />
-                <img
-                  class="active-gallery__card active-gallery__card_ten"
-                  src="../assets/icons/coolStuff/card10.png"
-                  alt=""
-                />
-                <img
-                  class="active-gallery__card active-gallery__card_jack"
-                  src="../assets/icons/coolStuff/cardJack.png"
-                  alt=""
-                />
-                <img
-                  class="active-gallery__card active-gallery__card_queen"
-                  src="../assets/icons/coolStuff/cardQueen.png"
-                  alt=""
-                />
-              </li>
-            </ul>
-          </div>
-        </section>
-        <!-- active-gallery   Эффекты при наведении: галерея -->
-
-        <!-- stack-cards Стопка» карт -->
-        <section class="stack-cards">
-          <h1 id="stack-cards" class="stack-cards__heading h2-font-h1">
-            Стопка карт
-          </h1>
-          <p class="stack-cards__description md-font">
-            В этом задании давайте создадим «стопку» карт. Без эффектов эти
-            картинки абсолютно спозиционированы и располагаются слоями друг под
-            другом. Наша задача — немного повернуть нижележащие карты, чтобы они
-            выглядывали из-под верхних. Как обычно воспользуемся
-            <b> transform: rotate.</b>
-          </p>
-          <div class="stack-cards__block">
-            <div class="stack-cards__container">
-              <ul class="stack-cards__deck">
-                <li>
-                  <img
-                    class="stack-cards__card stack-cards__card_ten"
-                    src="../assets/icons/coolStuff/card10.png"
-                    alt=""
-                  />
-                  <img
-                    class="stack-cards__card stack-cards__card_queen"
-                    src="../assets/icons/coolStuff/cardQueen.png"
-                    alt=""
-                  />
-                  <img
-                    class="stack-cards__card stack-cards__card_king"
-                    src="../assets/icons/coolStuff/cardKing.png"
-                    alt=""
-                  />
-                  <img
-                    class="stack-cards__card stack-cards__card_ace"
-                    src="../assets/icons/coolStuff/cardAce.png"
-                    alt=""
-                  />
-                  <img
-                    class="stack-cards__card stack-cards__card_ten-2"
-                    src="../assets/icons/coolStuff/card10.png"
-                    alt=""
-                  />
-                  <img
-                    class="stack-cards__card stack-cards__card_jack"
-                    src="../assets/icons/coolStuff/cardJack.png"
-                    alt=""
-                  />
-                  <img
-                    class="stack-cards__card stack-cards__card_queen-2"
-                    src="../assets/icons/coolStuff/cardQueen.png"
-                    alt=""
-                  />
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <!-- stack-cards Стопка» карт -->
+        <h1 class="article__heading">
+          Работа с изображениями: адоптация, центрирование,
+          <a
+            class="article__heading_link"
+            href="http://htmlbook.ru/css/position"
+            >позиционирование,</a
+          >
+          свойство CSS aspect-ratio: X / Y.
+        </h1>
 
         <!-- centering  -->
         <section class="centering">
           <h1 id="centering" class="centering__heading h2-font-h1">
-            centering центрирование
+            Центрирование centering
           </h1>
           <p class="centering__description md-font">
             Рассмотрим центрирование изображений (блоков) точно по центру
@@ -326,7 +91,7 @@
         <!-- centering  -->
 
         <!-- aspect-ratio -->
-        <section class="aspect-ratio">
+        <section id="aspect-ratio" class="aspect-ratio">
           <h1 id="aspect-ratio" class="aspect-ratio__heading h2-font-h1">
             Свойство CSS aspect-ratio: X / Y
             <span class="aspect-ratio__heading_span h2-font"
@@ -385,9 +150,9 @@
             aspect-ratio: none;
           </p>
 
-          <p class="aspect-ratio__subheading h2-font">
+          <h1 id="factoring-width" class="aspect-ratio__subheading h1-font">
             Факторинг в min-*и max-*
-          </p>
+          </h1>
           <p class="aspect-ratio__description md-font">
             Всегда существуют пересечение между width, min-width и max-width
             (или версия height). Одно из них всегда «выигрывает». Как правило,
@@ -455,7 +220,13 @@
             но он всегда будет задавать ее размеры, если для этого измерения нет
             другой доступной информации.
           </p>
-
+          <h1
+            id="aspect-ratio-example"
+            class="aspect-ratio__heading h2-font-h1"
+          >
+            Примеры работы свойства aspect-ratio: 282/216 с блоками и
+            изображениями.
+          </h1>
           <p class="aspect-ratio__description md-font">
             В примере ниже, пустым (без содержания) врапперам задано свойство
             <b>aspect-ratio: 282/216;</b> <br />
@@ -559,36 +330,264 @@
         </section>
         <!-- aspect-ratio -->
 
-        <!-- ::after и ::before -->
-        <section class="after-before">
-          <h1 id="after-before" class="after-before__heading h2-font-h1">
-            ::after и ::before
-          </h1>
-          <p class="after-before__description md-font">
-            Использование псевдоэлементов ::after и ::before является одним из
-            самых популярных приёмов при вёрстке фрагментов веб-страниц и их
-            стилизации. С их помощью можно выводить произвольный текст,
-            добавлять тени, треугольники, линии и др.
-          </p>
-          <p class="after-before__description md-font">
-            Фактически, ::after и ::before заменяют собой два обычных элемента в
-            коде HTML, к которым можно добавлять любое стилевое оформление. Но
-            поскольку мы всё делаем через CSS, то в полной мере сохраняется
-            принцип разделения содержания и оформления. Тем самым, код HTML
-            остаётся простым и чистым, а дизайн элементов возлагается на CSS.
-          </p>
-          <p class="after-before__description md-font">
-            Переписывать и изучать статью будем потом. Если срочно надо, то
-            ныряем
+        <!-- position -->
+        <section id="position" class="position">
+          <h1 class="position__heading">
             <a
-              class="after-before__description_link md-font"
-              href="https://webref.ru/layout/after-before"
-              >сюда</a
-            >
+              class="position__heading_link"
+              href="http://htmlbook.ru/css/position"
+              >Позиционирование
+            </a>
+            элемента
+          </h1>
+          <p class="position__description">
+            Устанавливает способ позиционирования элемента относительно окна
+            браузера или других объектов на веб-странице.
           </p>
-          <p class="after-before__description md-font"></p>
+          <p class="position__syntax">
+            position: absolute | fixed | relative | static | inherit
+          </p>
+          <p class="position__description">
+            Из учебника понятно: <b>fixed</b> куда поставишь на экране, там он и
+            будет висеть постоянно;
+          </p>
+          <p class="position__description">
+            <b>relative</b> устанавливает положение элемента
+            <span class="position__description_span"
+              >относительно его исходного места</span
+            >. Добавление свойств left, top, right и bottom изменяет позицию
+            элемента и сдвигает его в ту или иную сторону от первоначального
+            расположения.
+          </p>
+          <h1 id="position__absolute" class="position__heading">
+            <span class="position__heading_span"
+              >Позиционирование absolute</span
+            >
+
+            необходимо разобрать подробнее.
+          </h1>
+          <p class="position__description">
+            В учебнике пишут: что, если элемент абсолютно спозиционирован, то
+            другие элементы отображаются на веб-странице так, словно абсолютно
+            позиционированного элемента нет. <br />
+
+            На положение абсолютно спозиционированного элемента, влияет значение
+            свойства position родительского элемента. Так, если у родителя
+            значение position установлено как static или родителя нет, то отсчет
+            координат ведется от края окна браузера. Если у родителя значение
+            position задано как fixed, relative или absolute, то отсчет
+            координат ведется от края родительского элемента.
+          </p>
+
+          <h2 class="position__subheading">Главное из вышесказанного:</h2>
+          <p class="position__description">
+            Нулевая точка отсчёта, начальные координаты положения абсолютно
+            спозиционированного элемента задаются родителем, у которого есть
+            свойство <b>position</b> со значениями <b>fixed</b>,
+            <b>relative</b> или <b>absolute</b>. Абсолютно спозиционированный
+            элемент изначально занимает место в верхнем левом углу
+            спозиционированного родителя.
+            <br />
+            Если у родителей нет свойства <b>position</b> с указанными
+            значениями, то началом координат положения является верхний левый
+            угол страницы браузера (body). Искать элемент придётся там, если ему
+            заданы размеры абсолютно в пикселях и других абсолютных еденицах
+            измерения. Можно и не найти, если размеры заданы относительно
+            свойством aspect-ratio: X / Y; и для него нет свободного места.
+          </p>
+          <p class="position__description">
+            Второй важный момент: абсолютно позиционированный элемент не
+            занимает места в пространстве. Если для этого элемента не отведенно
+            место, свободное от других элементов, то он и не появится. Или
+            появится частично, насколько позволяет свободное место на странице.
+            Может спрятаться под другой элемент, который ниже в HTML.
+          </p>
         </section>
-        <!-- ::after и ::before -->
+        <!-- position -->
+
+        <!-- absolute -->
+        <section class="absolute">
+          <div class="container">
+            <h1 id="height-absolute" class="absolute__heading h1-font">
+              Рассчёт высоты абсолютно спозиционированного элемента. <br />
+              (Высота для position: absolute;)
+            </h1>
+
+            <div class="absolute__range">
+              <div class="absolute__column">
+                <div>
+                  <p class="absolute__description">
+                    Ширина, обычно, задаётся родительским элементом.
+                  </p>
+                  <p class="absolute__description">
+                    Высоту можно задать соседним элементом (контентом) сбоку,
+                    как сейчас.
+                  </p>
+                  <p class="absolute__description">
+                    Излишняя высота соседа контента ломает связку изображений
+                    при адаптации. Измененяется высота контента- изменяется
+                    высота блоков, связка ломается.
+                  </p>
+                  <p class="absolute__description">
+                    Недостаточная высота не даёт место для правильного
+                    расположения, как в примере внизу.
+                  </p>
+                  <p class="absolute__description">
+                    Как только высота свободного места станет раняться нулю, или
+                    будет недостаточной, нашим элементам не будет хватать места
+                    по высоте в пространстве и они станут выше или ниже оси Х,
+                    наедут на другой блог, секцию.
+                  </p>
+                  <p class="absolute__description">
+                    То есть, очень важно: правильно рассчитать место для
+                    абсолютно спозиционированного элемента.
+                  </p>
+                </div>
+              </div>
+
+              <div class="absolute__column">
+                <div class="absolute__image">
+                  <div
+                    style="
+                      background-image: url(../assets/images/tsarLanding/tsarLandingWomenCall.jpg);
+                    "
+                    class="absolute__picture"
+                  >
+                    <p class="absolute__properties">
+                      picture { <br />
+                      width: 61.3%; <br />
+                      height: 262px; <br />
+                      position: absolute; <br />
+                      bottom: 0; <br />
+                      left: 0; }
+                    </p>
+                  </div>
+
+                  <div
+                    style="
+                      background-image: url(../assets/images/tsarLanding/tsarLandingPhone.jpg);
+                    "
+                    class="absolute__picture"
+                  >
+                    <p class="absolute__properties">
+                      picture { <br />
+                      width: 61.3%; <br />
+                      height: 262px; <br />
+                      position: absolute; <br />
+                      top: 0; <br />
+                      right: 0; }
+                    </p>
+                  </div>
+
+                  <p class="absolute__clarification">
+                    Блок- <br />
+                    родитель <br />
+                    имеет <br />
+                    свойство { <br />
+                    position: relative; <br />
+                    }
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- absolute -->
+
+        <!-- relative-absolute -->
+        <section class="relative-absolute">
+          <h1 id="relative-absolute" class="relative-absolute__heading">
+            Позиционирование relative, absolute и aspect-ratio: X / Y;
+          </h1>
+          <div class="relative-absolute__range">
+            <div class="relative-absolute__column">
+              <p class="relative-absolute__description">
+                Рассмотрим связку: <br />
+                - зададим размеры изображениям соотношением сторон, при помощи
+                свойства CSS aspect-ratio: X / Y; <br />
+                - одному изображению зададим абсолютное позиционирование,
+                другому - относительное: relative.
+              </p>
+              <p class="relative-absolute__description">
+                Элементу с позиционированием relative укажем внешний верхний
+                отступ, такой, какой нам нужен для создания высоты блока,
+                необходимой нам. То есть, высота элемента и верхний отступ
+                создадут нам определенную высоту блока.
+              </p>
+              <p class="relative-absolute__description">
+                Схема работает шикарно.
+              </p>
+            </div>
+
+            <div class="relative-absolute__column">
+              <div class="relative-absolute__image">
+                <div
+                  style="
+                    background-image: url(../assets/images/tsarLanding/tsarLandingWomenCall.jpg);
+                  "
+                  class="relative-absolute__picture"
+                >
+                  <p class="relative-absolute__properties">
+                    &__photo { <br />
+                    width: calc(50% + 36px); <br />
+                    aspect-ratio: 204 / 216; <br />
+                    <br />
+                    &_01 { <br />
+                    position: relative; <br />
+                    bottom: -21px; <br />
+                    left: 0; <br />
+                    margin-top: 105px; <br />
+                    } <br />
+                    }
+                  </p>
+                </div>
+
+                <div
+                  style="
+                    background-image: url(../assets/images/tsarLanding/tsarLandingPhone.jpg);
+                  "
+                  class="relative-absolute__picture"
+                >
+                  <p class="relative-absolute__properties">
+                    &__photo { <br />
+                    width: calc(50% + 36px); <br />
+                    aspect-ratio: 204 / 216; <br />
+                    <br />
+                    &_02 { <br />
+                    position: absolute; <br />
+
+                    bottom: 100px; <br />
+                    right: 0; <br />
+                    } <br />
+                    }
+                  </p>
+                </div>
+
+                <p class="relative-absolute__clarification">
+                  Блок- родитель <br />
+                  имеет свойство { <br />
+                  position: relative; <br />
+                  width: 100%; <br />
+                  }
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative-absolute__block">
+            <img
+              class="relative-absolute__photo relative-absolute__photo_01"
+              src="../assets/images/htmlAcademy/aboutUs02.jpg"
+              alt=""
+            />
+            <img
+              class="relative-absolute__photo relative-absolute__photo_02"
+              src="../assets/images/htmlAcademy/aboutUs03.jpg"
+              alt=""
+            />
+          </div>
+        </section>
+        <!-- relative-absolute -->
       </article>
 
       <!-- menu-mobile -->
@@ -599,6 +598,7 @@
         />
         <div class="menu-mobile__dots">
           <div class="menu-mobile__dots_item"></div>
+
           <div class="menu-mobile__dots_item"></div>
           <div class="menu-mobile__dots_item"></div>
         </div>
@@ -1093,9 +1093,6 @@
       <!-- table_list -->
     </nav>
     <!-- menu -->
-
-    <!-- header -->
     <header class="header"></header>
-    <!-- header -->
   </body>
 </html>
