@@ -1,10 +1,17 @@
+body * {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  //
+  color: #2f2f34;
+}
+
 .primary-input {
   width: 100%;
 
   &__label {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 11px;
     line-height: 12px;
     color: #78828c;
@@ -21,9 +28,6 @@
   width: 100%;
 
   &__label {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 11px;
     line-height: 21px;
     color: #b5bdc8;
@@ -61,9 +65,6 @@
   }
 
   &__top-label {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 11px;
     line-height: 24px;
     color: #b5bdc8;
@@ -76,9 +77,6 @@
   }
 
   &__label {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 11px;
     line-height: 21px;
     color: #28323c;
@@ -119,9 +117,6 @@
 
   &__field {
     width: 100%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
     line-height: 34px;
     color: #b5bdc8;
@@ -153,9 +148,6 @@
 
   &__field {
     width: 100%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
     line-height: 47px;
     color: #b5bdc8;
@@ -171,9 +163,6 @@
 
   &__field {
     width: 100%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
     line-height: 47px;
     color: #b5bdc8;
@@ -183,31 +172,12 @@
 
   &__subtitle {
     width: 100%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 11px;
     line-height: 24px;
     color: #b5bdc8;
   }
 }
 // поле с подсказкой и подзаголовком
-
-// input-border
-.input-border {
-  width: 100%;
-  height: 56px;
-  background: #ffffff;
-  // border: 1px solid #2c658e;
-  box-sizing: border-box;
-  border-radius: 10px;
-
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 47px;
-  color: #b0bfc6;
-}
-// input-border
 
 // primary-checkbox
 .primary-checkbox {
@@ -264,12 +234,8 @@
 .primary-button {
   cursor: pointer;
 
-  // эти две ширины обеспечивают
   width: 100%;
-  max-width: 365px;
-  // адаптацию ширины кнопки без медиа
   padding: 12px 8px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
   line-height: 24px;
   color: white;
@@ -283,17 +249,14 @@
 // secondary-button
 .secondary-button {
   width: 100%;
-  // max-width: 219px;
   padding: 16px 12px;
   border-radius: 8px;
   box-sizing: border-box;
   border: 1px solid #50287d;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
   line-height: 24px;
   color: white;
   text-align: center;
-  // background-color: #50287d;
 }
 // secondary-button
 
@@ -306,9 +269,6 @@
   box-sizing: border-box;
   border: 1px solid #50287d;
   background-color: #50287d;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
   line-height: 22px;
   color: white;
   text-align: center;
@@ -321,41 +281,16 @@
 }
 // tertiary-button
 
-// primary-radio
+// primary-radio *
 .primary-radio {
   width: 100%;
-
-  &__container {
-    width: 100%;
-    max-width: 272px;
-    display: flex;
-    flex-direction: column;
-
-    @media screen and (min-width: 375px) {
-      max-width: 100%;
-    }
-
-    @media screen and (min-width: 414px) {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
 
   &__item {
     cursor: pointer;
     flex: auto;
 
-    &:active {
+    &:active .primary-radio__title {
       color: #2f2f34;
-    }
-
-    &:first-child {
-      margin-left: 0px;
-    }
-
-    &:last-child {
-      margin-right: 0px;
     }
   }
 
@@ -364,12 +299,13 @@
   }
 
   &__title {
+    font-size: 13px;
     color: #617e8c;
   }
 }
-// primary-radio
+// primary-radio *
 
-// twin-switch
+// twin-switch  спаренный переключатель *
 .twin-switch {
   width: 100%;
   display: flex;
@@ -421,120 +357,272 @@
     font-size: 14px;
     font-weight: normal;
     text-align: center;
-    padding: 21px 12px;
+    padding: 16px 12px;
   }
 }
-// twin-switch
+// twin-switch  спаренный переключатель *
 
-// стилизация ползунка
-.slider {
-  width: 100%;
-  max-width: calc(100% - 48px);
+// triple-switch Тройной переключатель
+.triple-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f5f7;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 36px;
 
-  @media screen and (min-width: 375px) {
-    // max-width: 327px;
+  &__item {
+    cursor: pointer;
+    padding: 19px 27px;
+    margin: 5px;
+    color: #5a646e;
+    background: #f3f5f7;
+    box-sizing: border-box;
+    border-radius: 31px;
+
+    &:hover {
+      box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    &:active {
+      background: #ffffff;
+      border: 2px solid #00d2ff;
+    }
   }
 
-  @media screen and (min-width: 576px) {
-    // width: 375px;
-  }
-
-  &__block {
-    width: 100%;
-    margin-bottom: 72px;
-  }
-
-  &__subheading {
-    color: #2f2f34;
-    margin-bottom: 24px;
-  }
-
-  &__range {
-    width: 100%;
-    margin-bottom: 36px;
+  &__field {
+    display: none;
   }
 
   &__title {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    color: #5a646e;
+  }
+}
+// triple-switch Тройной переключатель
 
-    &_item {
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 24px;
-      color: #28323c;
+// drop-down выпадающий список *
+.drop-down {
+  position: relative;
+  display: inline-block;
+
+  &:hover .drop-down__content {
+    display: block;
+  }
+
+  &:hover .drop-down__button {
+    box-shadow: 0px 4px 8px rgba(62, 62, 69, 0.15);
+  }
+
+  &__button {
+    background: #ffffff;
+    border: none;
+  }
+
+  &__content {
+    display: none;
+    position: absolute;
+    min-width: 150px;
+    padding: 0 8px;
+    background: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+  }
+
+  &__link {
+    padding: 6px 0px;
+    text-decoration: none;
+    display: block;
+
+    &:hover {
+      background-color: #ddd;
+      //
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     }
   }
 }
+// drop-down выпадающий список *
 
-// input[type="range"] {
-//   width: 272px;
-//   -webkit-appearance: none;
-//   -moz-appearance: none;
-//   appearance: none;
-//   outline: none;
-//   overflow: hidden;
-//   height: 7px;
+// select *
+.select {
+  width: 100%;
 
-//   @media screen and (min-width: 375px) {
-//     width: 327px;
-//   }
+  &__list {
+    width: 100%;
+  }
 
-//   @media screen and (min-width: 576px) {
-//     width: 375px;
-//   }
-// }
+  &__item {
+    width: 100%;
 
-// input[type="range"]::-webkit-slider-runnable-track {
-//   height: 7px;
-//   background-color: #43e5f7;
-// }
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 24px;
+    color: #28323c;
 
-// input[type="range"]::-webkit-slider-thumb {
-//   background: #ecf0f1;
-//   cursor: pointer;
-//   width: 15px;
-//   height: 15px;
-//   -webkit-appearance: none;
-//   margin-top: -4px;
-//   box-shadow: -272px 0 0 272px blue;
+    @media screen and (min-width: 576px) {
+      font-size: 13px;
+    }
+  }
+}
+// select *
 
-//   @media screen and (min-width: 375px) {
-//     box-shadow: -327px 0 0 327px blue;
-//   }
+// стилизация ползунка slider-icon *
+.slider-icon {
+  appearance: none;
+  width: 100%;
+  height: 0px;
+  background: #d3d3d3;
+  outline: none;
 
-//   @media screen and (min-width: 576px) {
-//     box-shadow: -375px 0 0 375px blue;
-//   }
-// }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 20px;
+    background: url(../../assets/icons/iconSlider.svg);
+    cursor: pointer;
+    position: relative;
+    // z-index: 1;
+  }
 
-// input[type="range"]::-moz-range-track {
-//   height: 7px;
-//   background-color: #43e5f7;
-// }
+  &::-webkit-range-thumb {
+    width: 14px;
+    height: 20px;
+    background: url(../../assets/icons/southernMain/iconSlider.svg);
+    cursor: pointer;
+    position: relative;
+    // z-index: 2;
+  }
 
-// input[type="range"]::-moz-range-thumb {
-//   background: #ecf0f1;
-//   cursor: pointer;
-//   height: 7px;
-//   border-radius: 0px;
-//   box-shadow: -272px 0 0 272px blue;
-//   padding: 0px;
-//   margin: 0px;
+  &::-moz-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 20px;
+    background: url(../../assets/icons/iconSlider.svg);
+    cursor: pointer;
+    position: relative;
+    // z-index: 1;
+  }
 
-//   @media screen and (min-width: 375px) {
-//     box-shadow: -327px 0 0 327px blue;
-//   }
+  &::-moz-range-thumb {
+    width: 14px;
+    height: 20px;
+    background: url(../../assets/icons/southernMain/iconSlider.svg);
+    cursor: pointer;
+    position: relative;
+    // z-index: 2;
+  }
+}
+// стилизация ползунка slider-icon *
 
-//   @media screen and (min-width: 576px) {
-//     box-shadow: -375px 0 0 375px blue;
-//   }
-// }
-// стилизация ползунка
+// стилизация ползунка slider-breaker *
+.slider-breaker {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  overflow: hidden;
+  height: 7px;
+
+  &::-webkit-slider-runnable-track {
+    height: 7px;
+    background-color: #43e5f7;
+  }
+
+  &::-webkit-slider-thumb {
+    background: #ecf0f1;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    -webkit-appearance: none;
+    margin-top: -4px;
+    box-shadow: -500px 0 0 500px blue;
+  }
+
+  &::-moz-slider-runnable-track {
+    height: 7px;
+    background-color: #43e5f7;
+  }
+
+  &::-moz-slider-thumb {
+    background: #ecf0f1;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    -webkit-appearance: none;
+    margin-top: -4px;
+    box-shadow: -500px 0 0 500px blue;
+  }
+}
+// стилизация ползунка slider-breaker *
+
+// r-checkbox *
+.r-checkbox {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  cursor: pointer;
+
+  &__checker {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #95bef0;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+
+    &:hover::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      margin: auto;
+      background-color: transparent;
+    }
+
+    &:active::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      margin: auto;
+      background-color: #00d2ff;
+      transform: scale(1.2);
+      transition: all 0.2s linear;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__agreeLink {
+    line-height: 24px;
+    position: absolute;
+    top: 0;
+    left: 42px;
+  }
+
+  &__link {
+    color: #50287d;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    cursor: pointer;
+    outline: 0;
+    text-decoration: none;
+  }
+}
+// r-checkbox *
 
 // checkbox
 .checkbox {
@@ -559,7 +647,7 @@
     margin: 0 8px;
 
     &::before {
-      content: url(../../assets/icons/southernMain/checkbox.svg);
+      content: url(../../assets/icons/checkbox.svg);
       width: 24px;
       height: 24px;
       position: absolute;
@@ -604,21 +692,9 @@
 // label
 
 .primary-link {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 13px;
-  line-height: 24px;
   color: #50287d;
   display: block;
   width: 100%;
   text-decoration: none;
-}
-
-.visible {
-  visibility: visible;
-  // делает элемент страницы видимым (по умолчанию);
-}
-
-.hidden {
-  visibility: hidden;
-  // делает невидимым
 }

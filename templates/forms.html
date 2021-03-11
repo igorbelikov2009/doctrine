@@ -2,14 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../styles/css/reset.css" />
     <link rel="stylesheet" href="../styles/css/general.css" />
     <link rel="stylesheet" href="../styles/css/grids.css" />
-    <link rel="stylesheet" href="../styles/css/reset.css" />
     <link rel="stylesheet" href="../styles/css/typography.css" />
     <link rel="stylesheet" href="../styles/css/forms.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+
   <body>
     <!-- main -->
     <main class="main">
@@ -446,38 +447,31 @@
         <section class="agreement">
           <div class="agreement__block">
             <div class="row">
-              <!-- primary-checkbox Продолжая, я соглашаюсь с правилами -->
-              <label
-                tabindex="0"
-                role="checkbox"
-                id=""
-                class="agreement__checkbox primary-checkbox col-12"
-              >
-                <div class="primary-checkbox__icon">
-                  <span class="primary-checkbox__checker"></span>
+              <!-- rh-checkbox -->
+              <div class="policy-form__checkbox">
+                <label tabindex="0" role="checkbox" id="" class="r-checkbox">
+                  <span class="r-checkbox__checker"></span>
+
                   <input
                     id="Checkbox"
                     type="checkbox"
-                    class="primary-checkbox__input"
+                    class="r-checkbox__input"
                   />
-                </div>
-                <div class="agreement__label primary-checkbox__label sm-font">
-                  Продолжая, я соглашаюсь с
-                  <a
-                    class="agreement__link primary-checkbox__link sm-font"
-                    href=""
-                    >правилами
-                  </a>
-                  и
-                  <a
-                    class="agreement__link primary-checkbox__link sm-font"
-                    href=""
-                    >программой</a
-                  >
-                  оказания услуг.
-                </div>
-              </label>
-              <!-- primary-checkbox  Продолжая, я соглашаюсь с правилами -->
+                  <div class="r-checkbox__agreeLink">
+                    Продолжая, соглашаюсь с
+                    <a target="_blank" href="#" class="r-checkbox__link">
+                      правилами
+                    </a>
+                    и
+                    <a target="_blank" href="#" class="r-checkbox__link"
+                      >программой</a
+                    >
+                    страхования
+                  </div>
+                </label>
+              </div>
+              <!-- rh-checkbox -->
+
               <div class="col-12">
                 <button class="agreement__button primary-button">
                   Оформить полис за 2 000 ₽
@@ -602,6 +596,33 @@
             </div>
           </div>
           <!-- slider -->
+
+          <!--  slider-icon -->
+          <h1 class="form__heading h1-font">"slider-icon" слайдер с иконкой</h1>
+          <p class="form-description">
+            не забыть скачать иконку и подключить её
+          </p>
+          <p class="form__syntax">
+            background: url(../../assets/icons/iconSlider.svg);
+          </p>
+          <div class="revenue">
+            <div class="form__slider-container">
+              <p class="form__slider-title">Сумма вклада</p>
+              <p class="form__slider-value">100 000</p>
+              <!-- slider-icon -->
+              <input
+                type="range"
+                min="1"
+                max="100"
+                value="50"
+                class="slider-icon"
+                id="myRange"
+              />
+              <!--  slider-icon -->
+            </div>
+            <!-- switch-currency twin-switch -->
+          </div>
+          <!--  slider-icon -->
         </section>
         <!-- Ползунок -->
         <!--  radio Переключатели (radiobutton) -->
@@ -1192,58 +1213,55 @@
 
       <!-- transitions_list -->
       <ul class="menu__list">
-        <a
-          class="menu__link h2-font"
-          href="../templates/smoothTransitions.html"
-        >
+        <a class="menu__link h2-font" href="../templates/transitions.html">
           Плавные переходы
         </a>
         <li class="menu__item">
           <a
             class="menu__item_link"
-            href="../templates/smoothTransitions.html#transition"
+            href="../templates/transitions.html#transition"
             >Универсальное свойство</a
           >
         </li>
         <li class="menu__item">
           <a
             class="menu__item_link"
-            href="../templates/smoothTransitions.html#transition-duration"
+            href="../templates/transitions.html#transition-duration"
             >Длительность перехода</a
           >
         </li>
         <li class="menu__item">
           <a
             class="menu__item_link"
-            href="../templates/smoothTransitions.html#transition-property"
+            href="../templates/transitions.html#transition-property"
             >Какие свойства плавно изменять</a
           >
         </li>
         <li class="menu__item">
           <a
             class="menu__item_link"
-            href="../templates/smoothTransitions.html#transition-delay"
+            href="../templates/transitions.html#transition-delay"
             >Задержка перехода
           </a>
         </li>
         <li class="menu__item">
           <a
             class="menu__item_link"
-            href="../templates/smoothTransitions.html#transition-timing-function"
+            href="../templates/transitions.html#transition-timing-function"
             >Скорость и ускорение переходов
           </a>
         </li>
         <li class="menu__item">
           <a
             class="menu__item_link"
-            href="../templates/smoothTransitions.html#example"
+            href="../templates/transitions.html#example"
             >примеры timing-function переходов</a
           >
         </li>
         <li class="menu__item">
           <a
             class="menu__item_link"
-            href="../templates/smoothTransitions.html#graphics-transition"
+            href="../templates/transitions.html#graphics-transition"
             >Графики переходов</a
           >
         </li>

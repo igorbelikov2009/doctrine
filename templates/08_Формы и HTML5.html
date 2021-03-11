@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="08_Формы и HTML5.css" />
+    <title>08_Формы и HTML5.</title>
+  </head>
+  <body>
+    <header id="top">
+      <h1>08_Формы и HTML5.css</h1>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <ul>
+            <li>
+              <a href="Reset_entered_values#">Сброс введенных значений </a>
+            </li>
+            <li><a href="#Simple_button">Простая кнопка </a></li>
+            <li><a href="#Button-image"> Кнопка-изображение </a></li>
+            <li>
+              <a href="#Alternative-way-to-set-buttons"
+                >Альтернативный способ задания кнопок
+              </a>
+            </li>
+            <li><a href="#Required_field">Обязательные поля </a></li>
+            <li><a href="#Date_selection_field">Поле выбора даты </a></li>
+            <li><a href="#Time_selection¬_field">Поле выбора времени </a></li>
+            <li>
+              <a href="#List_of_possible_values">Список возможных значений </a>
+            </li>
+            <li>
+              <a href="#Numeric_value_input_field"
+                >Поле ввода числового значения
+              </a>
+            </li>
+            <li><a href="#Search_field">Поле поиска </a></li>
+            <li><a href="#Autofocus">Автофокус </a></li>
+            <li>
+              <a href="#Other_fields_for_entering_dates"
+                >Другие поля для задания даты и времени
+              </a>
+            </li>
+            <li><a href="#Selecting_from_a_range">Выбор из диапазона </a></li>
+            <li>
+              <a href="#Area_for_displaying_the_result"
+                >Область для вывода результата
+              </a>
+            </li>
+            <li>
+              <a href="#Grouping_form_fields">Группировка полей формы </a>
+            </li>
+            <li>
+              <a href="#Patterns_of_field_values">Паттерны значений полей </a>
+            </li>
+            <li><a href="#The_input_box_for_phone">Поле ввода телефона </a></li>
+            <li>
+              <a href="#Hint_when_filling_in_fields"
+                >Подсказка при заполнении полей
+              </a>
+            </li>
+            <li>
+              <a href="#Fields_for_entering_site"
+                >Поля ввода адресов сайтов и email
+              </a>
+            </li>
+            <li><a href="#Color_selection_field">Поле выбора цвета </a></li>
+            <li>
+              <a href="#Grouping_list_items">Группировка элементов списка </a>
+            </li>
+            <li>
+              <a href="#Prevent_editing_fields">Запрет редактирования полей </a>
+            </li>
+            <li>
+              <a href="#Managing_AutoFill_fields"
+                >Управление автозаполнением полей
+              </a>
+            </li>
+            <li>
+              <a href="#Switching_between¬_fields"
+                >Переключение между полями
+              </a>
+            </li>
+            <li><a href="#local_warehouse">localStorage </a></li>
+            <li>
+              <a href="#interactions with forms"
+                >Улучшаем опыт взаимодействия с формами
+              </a>
+            </li>
+            <li>
+              <a href="#Test_through_thorns_to_the_stars"
+                >Испытание: через тернии к звёздам
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </article>
+      <article id="Reset_entered_values" class="Reset_entered_values">
+        <h3>Сброс введенных значений</h3>
+        <p>
+          В <em>HTML-формах</em> есть специальная кнопка, которая сбрасывает
+          введённые значения и возвращает изначально установленные. Это поле
+          ввода с типом <i>reset</i>.
+        </p>
+        <p>Пример использования:</p>
+        <i>&lt;input <ins>type="reset"</ins> value="Сбросить"&gt;</i>
+        <p>
+          Обратите внимание, что кнопка не обнуляет значения, а возвращает те,
+          которые были установлены в полях формы по умолчанию.
+        </p>
+        <div>
+          <pre><code><em>
+&lt;form action="https://echo.htmlacademy.ru/courses" method="post"&gt;
+    &lt;label for="name"&gt;Имя&lt;/label&gt;
+    &lt;br&gt;
+    &lt;input type="text" id="name" name="name" value="<span>клиент</span>"&gt;
+    &lt;br&gt;
+    &lt;label for="password"&gt;<span>Пароль</span>&lt;/label&gt;
+    &lt;br&gt;
+    &lt;input type="password" id="password" name="password"&gt;
+    &lt;br&gt;
+    &lt;label&gt;&lt;input type="checkbox" name="allow"&gt;<span>хочу зарегистрироваться</span>&lt;/label&gt;
+    &lt;div class="buttons"&gt;
+        &lt;input type="submit" value="<span>Войти</span>"&gt;
+        &lt;input <ins>type="reset"</ins> <ins>value="</ins><span>Сбросить</span><ins>"&gt;</ins>
+    &lt;/div&gt;
+&lt;/form&gt;
+                </em></code></pre>
+        </div>
+        <form action="https://echo.htmlacademy.ru/courses" method="post">
+          <label for="name">Имя</label>
+          <br />
+          <input type="text" id="name" name="name" value="клиент" />
+          <br />
+          <label for="password">Пароль</label>
+          <br />
+          <input type="password" id="password" name="password" />
+          <br />
+          <label
+            ><input type="checkbox" name="allow" />хочу
+            зарегистрироваться</label
+          >
+          <div class="buttons">
+            <input type="submit" value="Войти" />
+            <input type="reset" value="Сбросить" />
+          </div>
+        </form>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Simple_button" class="Simple_button">
+        <h3>Простая кнопка</h3>
+        <p>
+          Помимо кнопок отправки формы или сброса введенных значений, существуют
+          и «просто кнопки». При нажатии на такую кнопку никаких действий не
+          происходит, а все необходимые действия обычно задаются при помощи
+          <q>JavaScript</q>.
+        </p>
+        <p>Пример записи:</p>
+        <div>
+          <pre><code><em>
+&lt;form&gt;               
+    &lt;input <ins>type="button"</ins> value="Кнопка"&gt;
+&lt;/form&gt;
+                </em></code></pre>
+        </div>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Button-image" class="Button-image">
+        <h3>Кнопка-изображение</h3>
+        <p>В качестве кнопки отправки формы можно использовать изображение</p>
+        <p>Для этого у тега <i>input</i> нужно указать тип <i>image</i>.</p>
+        <p>
+          Аналогично обычным изображениям на сайте у кнопки-изображения есть еще
+          два атрибута:
+        </p>
+        <ul>
+          <li><i>src</i> адрес изображения</li>
+          <li>
+            <i>alt</i> альтернативный текст, отображаемый в том случае, если
+            изображение не загружено
+          </li>
+        </ul>
+        <i
+          >&lt;input <ins>type=”image”</ins> src=”url” alt=”альтернативный
+          текст”&gt;</i
+        >
+        <p>
+          Кнопка-изображение работает аналогично кнопке <i>submit</i>, но на
+          сервер дополнительно передаются координаты точки, по которой был
+          произведен щелчок.
+        </p>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article
+        id="Alternative-way-to-set-buttons"
+        class="Alternative-way-to-set-buttons"
+      >
+        <h3>Альтернативный способ задания кнопок</h3>
+        <p>
+          Помимо тега <i>&lt;input&gt;</i> для добавления кнопок можно
+          использовать тег <i>&lt;button&gt;</i>. Он расширяет возможности
+          создания кнопок.
+        </p>
+        <p>
+          Внутри тега <i>&lt;button&gt;</i> можно размещать любые
+          <em>HTML-элементы</em>, в том числе изображения. Например:
+        </p>
+        <i
+          >&lt;button&gt;Календарь &lt;img src="calend.png"
+          alt=""&gt;&lt;/button&gt;</i
+        >
+
+        <p>В данном случае кнопка будет выглядеть примерно вот так:</p>
+        <p>
+          <button>Календарь <img src="calend.png" alt="" /></button>
+        </p>
+        <p>
+          Если в атрибуте <i>type</i> тега <i>&lt;button&gt;</i>указать значение
+          <i>submit</i> или <i>reset</i>, то кнопка будет отправлять данные на
+          сервер или сбрасывать введенные значения.
+        </p>
+        <p>По умолчанию значение атрибута <i>type — submit</i>.</p>
+        <p>
+          То есть внутри формы кнопка <i>&lt;button&gt;</i> по нажатию отправит
+          форму на сервер.
+        </p>
+        <p>
+          Значениями атрибута <i>type</i> также могут быть <i>button</i> и
+          <i>reset</i>.
+        </p>
+        <p>
+          Кнопка <i>button</i> со значением <i>type="reset"</i> аналогично
+          <i>input type="reset"</i> сбрасывает значения полей формы к
+          изначальным.
+        </p>
+        <p>
+          А вот значение <i>type="button"</i> избавит кнопку от всей изначальной
+          функциональности. То есть кнопка просто будет выглядеть как кнопка, но
+          ничего по умолчанию не делать. Это удобно, если вы хотите сами
+          добавить кнопке дополнительное действие с помощью <em>JavaScript</em>.
+        </p>
+        <div>
+          <pre><code><em>
+&lt;form&gt;
+    &lt;button type="submit"&gt;<span>войти</span>&lt;img src="images/submit.png"&gt;&lt;/button&gt;
+&lt;/form&gt;
+            </em></code></pre>
+        </div>
+        <form>
+          <button type="submit">войти<img src="images/submit.png" /></button>
+        </form>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Required_field" class="Required_field">
+        <h3>Обязательные поля</h3>
+        <p>
+          Мы успешно разобрались с возможностями кнопок в формах, теперь нам
+          предстоит изучить новые возможности форм, большая часть которых была
+          добавлена в HTML5.
+        </p>
+        <p>
+          Сначала давайте разберёмся с обязательными полями. Чтобы указать, что
+          поле обязательно для заполнения, нужно добавить ему пустой атрибут
+          <i>required:</i>
+        </p>
+        <p>
+          <i>&lt;input type="text" <ins>required</ins>/&gt;&lt;/p&gt;</i>
+        </p>
+        <p>
+          При попытке отправить форму с незаполненными обязательными полями
+          браузер выведет всплывающее предупреждение, которое в <q>Chrome</q>
+          выглядит вот так:
+        </p>
+        <p><input type="text" required /></p>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Date_selection_field" class="Date_selection_field">
+        <h3>Поле выбора даты</h3>
+
+        <p>
+          В форму заказа важно включить поле даты доставки. А для выбора даты из
+          календаря существует новый тип поля ввода — date. При клике на данное
+          поле в форме всплывает календарик.
+        </p>
+        <p>Пример записи:</p>
+        <i>&lt;input type="date" name="date"/&gt;</i>
+        <p>это выглядит так</p>
+        <p><input type="date" name="date" /></p>
+        <p></p>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Time_selection¬_field" class="Time_selection¬_field">
+        <h3>Поле выбора времени</h3>
+        <p>
+          В предыдущем задании мы рассмотрели использование тега
+          <i>&lt;input&gt;</i> с типом <i>date</i>. Но иногда нужно указывать
+          дату в других форматах, и для этого существуют дополнительные
+          <q>временные</q> типы полей, например, <i>time</i> для выбора времени.
+          Используем поле выбора времени в нашей форме:
+        </p>
+        <i>&lt;input type="time" name="time"&gt;</i>
+        <p>это выглядит так:</p>
+        <form>
+          <input type="time" name="time" />
+        </form>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="List_of_possible_values" class="List_of_possible_values">
+        <h3>Список возможных значений</h3>
+        <p>
+          Для текстовых полей можно заранее определить список возможных
+          значений, которые отображаются, когда вы начинаете вводить текст в
+          поле. Для этого существует специальный тег <i>&lt;datalist&gt;</i>.
+        </p>
+        <p>
+          Связывание текстового поля и списка осуществляется при помощи атрибута
+          <i>list</i> у тега <i>&lt;input&gt;</i> — значение <i>list</i> должно
+          быть таким же, как значение атрибута <i>id</i> у списка.
+        </p>
+        <div>
+          <pre><code><em>
+&lt;input type="text" <ins>list="browsers"</ins> name="browser"&gt;
+
+&lt;datalist <ins>id="browsers"</ins>&gt;
+  &lt;option value="Firefox"&gt;&lt;/option&gt;
+  &lt;option value="Chrome"&gt;&lt;/option&gt;
+  &lt;option value="Safari"&gt;&lt;/option&gt;
+&lt;/datalist&gt;
+          </em></code></pre>
+        </div>
+        <p>
+          Если тег <i>&lt;input&gt;</i> имеет специфический тип, например
+          <i>email</i> или другие, которые будут рассмотрены далее в курсе, то в
+          списке отображаются только корректные для данного типа значения.
+        </p>
+     
+        <p>Вот пример</p>
+        <div>
+          <pre><code><em>
+&lt;form&gt;
+  &lt;div class="half-width"&gt;
+    &lt;label <ins class="food">for="food"</ins>&gt;<span>Блюдо</span>&lt;/label&gt;
+    &lt;input type="text" <ins class="food">id="food"</ins> name="food" <ins>list="meal"</ins>&gt;              
+    &lt;datalist <ins>id="meal"</ins>&gt;
+      &lt;option value="soup"&gt;<span>суп</span>&lt;/option&gt;
+      &lt;option value="kasha"&gt;<span>каша</span>&lt;/option&gt;
+      &lt;option value="tea"&gt;<span>чай</span>&lt;/option&gt;
+    &lt;/datalist&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+          </em></code></pre>
+
+        </div>
+        <p>
+          <form>
+            <div class="half-width">
+              <label for="food">Блюдо</label>
+              <input type="text" id="food" name="food" list="meal">              
+              <datalist id="meal">
+                <option value="soup">суп</option>
+                <option value="kasha">каша</option>
+                <option value="tea">чай</option>
+              </datalist>
+            </div>
+          </form>
+        </p>
+        <p>(нажми в окошко и выбери себе блюдо)</p>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Numeric_value_input_field" class="Numeric_value_input_field">
+        <h3>Поле ввода числового значения</h3>
+        <p>Для ввода числовых значений существует специальный тип поля ввода <i>number</i>. Рядом с полем браузер автоматически подставляет две стрелочки для увеличения и уменьшения числового значения.</p>
+        <p>Пример записи:</p>
+        <i>&lt;input type="number"&gt;</i>
+        <p>В Chrome это выглядит так:</p>
+        <p><input type="number"></p>
+        <p>(щёлкой по стрелочкам проводника в окошке мышкой)</p>
+        <p>При помощи вспомогательных атрибутов <i>min</i> и <i>max</i> можно установить верхнюю и нижнюю границу допустимых значений. А атрибут <i>step</i> устанавливает величину шага изменения значения.</p>
+        <div>
+          <pre><code><em>
+&lt;Form&gt;
+  &lt;label <ins class="half-width">for="amount"</ins>&gt;<span>Количество</span>&lt;/label&gt;
+  &lt;input <ins>type="number"</ins> name="amount" <ins class="half-width">id="amount"</ins> <ins>min="5"</ins> <ins>max="50"</ins> <ins>step="5"</ins>&gt;
+&lt;/Form&gt;
+          </em></code></pre>
+        </div>        
+        <div class="half-width">
+          <Form>
+            <label for="amount">Количество</label>
+            <input type="number" name="amount" id="amount" min="5" max="50" step="5">
+          </Form>
+        </div>
+       
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Search_field" class="Search_field">
+        <h3>Поле поиска</h3>
+        <p>Тип поля поиска: <i>search</i></p>
+        <p>Пример записи: <i>&lt;input type="search"&gt;</i>
+          </p>
+        <p>Это поле почти не отличается от обычного текстового поля. В некоторых браузерах внутри него появляется крестик для сброса введённого значения.</p>
+        <div>
+          <pre><code><em>
+&lt;form action="https://echo.htmlacademy.ru/courses" method="post"&gt;
+  &lt;label <ins class="half-width">for="search"</ins>&gt;<span>Название города</span>&lt;/label&gt;
+  &lt;input <ins>type="search"</ins> name="search" <ins class="half-width">id="search"</ins>&gt;            
+&lt;/form&gt;
+          </em></code></pre>
+        </div>
+        <div class="half-width">
+          <form action="https://echo.htmlacademy.ru/courses" method="post">
+            <label for="search">Название города</label>
+            <input type="search" name="search" id="search">            
+          </form>
+        </div>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Autofocus" class="Autofocus">
+        <h3>Автофокус</h3>
+        <p>При загрузке страницы можно сообщить браузеру в какое поле установить курсор по умолчанию. Для этого используется пустой атрибут <i>autofocus</i>.</p>
+        <p>Пример записи: <i>&lt;input type="text" autofocus&gt;</i></p>
+        <p><input type="text" autofocus></p>
+        <p><em>Автофокус</em> улучшает процесс работы с формами, ведь пользователь избавляется от лишних щелчков мышки, там, где они не нужны, а может сразу начинать вводить текст в поле.</p>
+        <p>Обратите внимание, что такой атрибут должен быть только один на странице.</p>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article
+        id="Other_fields_for_entering_dates"
+        class="Other_fields_for_entering_dates"
+      >
+        <h3>Другие поля для задания даты и времени</h3>
+        <p>В предыдущих заданиях мы уже использовали поля с типами <i>date</i> и <i>time</i>, но существуют и другие типы полей для ввода дат:</p>
+        <ul>
+        <li><i>datetime-local</i>	выбор даты с указанием времени (без учета временной зоны)</li>
+        <li><i>week</i>	выбор порядкового номера недели в году и года</li>
+        <li><i>month</i>	выбор месяца и года</li>
+        </ul>
+        <p>Если браузер не поддерживает поле для ввода месяца, то вместо него отображается обычное текстовое поле.</p>
+        <div><pre><code><em>
+&lt;form&gt;
+  &lt;div class="two-third-width"&gt;
+    &lt;label <ins class="two-third-width">for="day"</ins>&gt;<span>Число</span>&lt;/label&gt;            
+    &lt;input type="number" min="1" max="31" name="day" <ins class="two-third-width">id="day"</ins>&gt;
+  &lt;/div&gt;
+  &lt;div class="two-third-width"&gt;
+    &lt;label <ins class="two-third-width">for="month"</ins>&gt;<span>Месяц</span>&lt;/label&gt;                          
+    &lt;input <ins>type="month"</ins> name="month" <ins class="two-third-width">id="month"</ins>&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+        </em></code></pre></div>
+        <br>
+        <form>                 
+          <div class="two-third-width">
+            <label for="day">Число</label>          
+            <input type="number" min="1" max="31" name="day" id="day">
+          </div>
+          <br>
+          <div class="two-third-width">
+            <label for="month">Месяц</label>           
+            <input type="month" name="month" id="month">
+          </div>         
+        </form>
+       
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Selecting_from_a_range" class="Selecting_from_a_range">
+        <h3>Выбор из диапазона</h3>
+        <p>В нашей форме обязательно должна быть возможность выбрать количество дней, на которое будет осуществляться бронирование. Для этой цели подходит тип поля <i>range</i>.</p>
+        <p>Такое поле выглядит как шкала с ползунком и позволяет выбрать число из некоторого интервала значений.</p>
+        <div>Пример записи:
+          <pre><code><em>
+&lt;form&gt;
+  &lt;label for="Selecting_from_a_range"&gt;<span>Выберите из диапазона</span>&lt;/label&gt;
+  &lt;br&gt;
+  &lt;input <ins>type="range"</ins> id="Selecting_from_a_range" min="1" max="10"&gt;
+&lt;/form&gt;
+          </em></code></pre>           
+          </div>
+        <form>
+          <label for="Selecting_from_a_range">Выберите из диапазона</label>
+          <br>
+          <input type="range" id="Selecting_from_a_range" min="1" max="10">
+        </form>
+        <p>Атрибуты <i>min</i> и <i>max</i> устанавливают нижнюю и верхнюю границу допустимых значений. А атрибут <i>step</i> устанавливает величину шага изменения значения.</p>
+
+      
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article
+        id="Area_for_displaying_the_result"
+        class="Area_for_displaying_the_result"
+      >
+        <h3>Область для вывода результата</h3>
+        <p>Чтобы видеть количество дней в брони, используем новый в <em>HTML5 тег</em> <i>&lt;output&gt;</i>.</p>
+        <p>Тег <i>&lt;output&gt;</i> представляет собой область, куда выводятся какие-либо результаты вычислений, обычно полученные при помощи JavaScript.</p>
+        <p>Пример записи:</p>
+        <i>&lt;output name="sum"&gt;[<span>значение по умолчанию</span>]&lt;/output&gt;</i>
+        <p><output name="sum">[значение по умолчанию]</output></p>
+        <p>Значение по умолчанию при этом можно не задавать, тогда область вывода будет пустой.</p>
+        <div>
+          <pre><code><em>
+&lt;form <ins class="Area_for_displaying_the_result">oninput="daysoutput.value=dayscount.value"</ins>&gt;
+  &lt;div class="half-width output-area"&gt;
+  <ins>&lt;output</ins> <ins class="Area_for_displaying_the_result">name="daysoutput"</ins><ins>&gt;&lt;/output&gt;</ins>
+  &lt;/div&gt;
+&lt;/form&gt;
+          </em></code></pre>
+        </div>
+        <form oninput="daysoutput.value=dayscount.value">
+          <div class="Area_for_displaying_the_result">
+            <output name="daysoutput"></output>
+          </div>
+        </form>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Grouping_form_fields" class="Grouping_form_fields">
+        <h3>Группировка полей формы</h3>
+        <p>Когда формы становятся очень большими, возникает потребность зрительно отделить одни поля от других. Для группировки полей используется тег <i>&lt;fieldset&gt;</i>.</p>
+        <p>Пример:</p>
+        <div>
+          <pre><code><em>
+<ins>&lt;fieldset&gt;</ins>
+  &lt;input type="text"&gt;
+  &lt;input type="text"&gt;
+  &lt;input type="text"&gt;
+<ins>&lt;/fieldset&gt;</ins>
+<ins>&lt;fieldset&gt;</ins>
+  &lt;textarea>&lt;/textarea&gt;
+<ins>&lt;/fieldset&gt;</ins>
+          </em></code></pre>
+        </div>      
+        <p>
+        <fieldset>
+          <input type="text">
+          <input type="text">
+          <input type="text">
+        </fieldset>
+        <fieldset>
+          <textarea></textarea>
+        </fieldset>
+      </p>
+        <p>По умолчанию браузеры отображают результат в виде рамки вокруг этой группы полей, но при помощи <em>CSS</em> можно изменить его внешний вид.</p>
+        <p>Также для каждой группы можно добавить её заголовок. Для этого внутрь тега <i>&lt;fieldset&gt;</i> надо поместить тег <i>&lt;legend&gt;</i>:</p>
+        <div>
+          <pre><code><em>
+&lt;fieldset&gt;
+  <ins>&lt;legend&gt;</ins><span>Заголовок группы</span><ins>&lt;/legend&gt;</ins>
+  &lt;input type="text"&gt;
+&lt;/fieldset&gt;
+          </em></code></pre>
+        </div>
+        <p>
+          <fieldset>
+          <legend>Заголовок группы</legend>
+          <input type="text">
+        </fieldset>
+      </p>
+      <div>
+        <pre><code><em>
+&lt;form action="https://echo.htmlacademy.ru/courses" method="post" oninput="dayscountval.value=dayscount.value"&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Поиск отеля&lt;/legend&gt;
+  &lt;label for="search">Название города&lt;/label&gt;
+  &lt;input type="search" id="search" name="search" value="Осло, Норвегия"&gt;
+  &lt;div class="two-third-width"&gt;
+    &lt;label for="day"&gt;Число&lt;/label&gt;
+    &lt;input type="number" min="1" max="31" id="day" name="day" value="17"&gt;
+  &lt;/div&gt;
+  &lt;div class="two-third-width"&gt;
+    &lt;label for="month"&gt;Месяц&lt;/label&gt;
+    &lt;input type="month" id="month" name="month" value="2014-09"&gt;
+  &lt;/div&gt;
+  &lt;div class="half-width"&gt;
+    &lt;label for="dayscount"&gt;Количество дней&lt;/label&gt;
+    1 &lt;input type="range" id="dayscount" name="dayscount" min="1" max="14" step="1"&gt; 14
+  &lt;/div&gt;
+  &lt;div class="half-width output-area"&gt;
+    &lt;output name="dayscountval"&gt;14&lt;/output&gt;
+  &lt;/div&gt;
+  &lt;div class="buttons"&gt;
+    &lt;input type="submit" value="Забронировать"&gt;
+  &lt;/div&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+        </em></code></pre>
+      </div>
+
+      <form action="https://echo.htmlacademy.ru/courses" method="post" oninput="dayscountval.value=dayscount.value">
+        <fieldset>
+          <legend>Поиск отеля</legend>
+        <label for="search">Название города</label>
+        <input type="search" id="search" name="search" value="Осло, Норвегия">
+        <div class="two-third-width">
+          <label for="day">Число</label>
+          <input type="number" min="1" max="31" id="day" name="day" value="17">
+        </div>
+        <div class="two-third-width">
+          <label for="month">Месяц</label>
+          <input type="month" id="month" name="month" value="2014-09">
+        </div>
+        <div class="half-width">
+          <label for="dayscount">Количество дней</label>
+          1 <input type="range" id="dayscount" name="dayscount" min="1" max="14" step="1"> 14
+        </div>
+        <div class="half-width output-area">
+          <output name="dayscountval">14</output>
+        </div>
+        <div class="buttons">
+          <input type="submit" value="Забронировать">
+        </div>
+        </fieldset>
+      </form>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Patterns_of_field_values" class="Patterns_of_field_values">
+        <h3>Паттерны значений полей</h3>
+        <p>Чтобы добавить автоматическую проверку формата в поле, используем атрибут <i>pattern</i>, в котором с помощью регулярного выражения опишем требуемый формат.</p>
+        <p>Пример</p>
+        <div>
+          <pre><code><em>
+&lt;form&gt;
+  &lt;p&gt;<span>Введите паспортные данные xx-xx-xxxxxx, где вместо x 
+  должна быть цифра:</span>&lt;/p&gt;
+  &lt;label for="passport"&gt;паспорт&lt;/label&gt;
+  &lt;br&gt;
+  &lt;input <ins>type="text"</ins> name="passport" 
+  <ins>pattern="[0-9]{2}-[0-9]{2}-[0-9]{6}"</ins> value="15-14-572397" required
+  &gt;
+  &lt;input type="submit" value="Отправить"&gt;
+&lt;/form&gt;  
+          </em></code></pre>
+        </div>                 
+        <form>
+          <p>Введите паспортные данные xx-xx-xxxxxx, где вместо x 
+          должна быть цифра:</p>
+          <label for="passport">паспорт</label>
+          <br>
+          <input type="text" name="passport" id="passport" pattern="[0-9]{2}-[0-9]{2}-[0-9]{6}" value="15-14-572397" required>        
+          <input type="submit" value="Отправить">
+        </form>        
+        <a href="http://htmlbook.ru/html/input/pattern">Возможные значения атрибута pattern в справочнике HTML</a>
+        <p>
+          [0-9]{2}	Две цифры от 1 до 9 <br>         
+          [0-9]{3}	Три цифры от 1 до 9 <br>
+          [0-9]{4}	Четыре цифры от 1 до 9 <br>
+          [0-9]{6}	Шесть цифр от 1 до 9 <br>
+        </p>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="The_input_box_for_phone" class="The_input_box_for_phone">
+        <h3>Поле ввода телефона</h3>
+        <div>
+          <pre><code><em>
+&lt;form action="https://echo.htmlacademy.ru/courses" method="post"&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;<span>Заявление на получение визы</span>&lt;/legend&gt;
+    &lt;label for="passport"&gt;<span>Номер паспорта</span>&lt;/label&gt;
+    &lt;input <ins>type="text"</ins> name="passport" id="passport" 
+    <ins>pattern="[0-9]{2}-[0-9]{2}-[0-9]{6}"</ins> value="15-14-572397" 
+    <ins>required</ins>&gt;
+    &lt;label for="tel"&gt;<span>Номер телефона</span>&lt;/label&gt;
+    &lt;input <ins>type="tel"</ins> id="tel" name="tel" 
+    <ins>pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"</ins> value="8-905-335-72-55" 
+    <ins>required</ins>&gt;
+  &lt;/fieldset&gt;
+  &lt;div class="The_input_box_for_phone"&gt;
+    &lt;input type="submit" value="<span>Оформить</span>"&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+          </em></code></pre>
+        </div>
+        <form action="https://echo.htmlacademy.ru/courses" method="post">
+          <fieldset>
+            <legend>Заявление на получение визы</legend>
+            <label for="passport">Номер паспорта</label>
+            <input type="text" name="passport" id="passport" pattern="[0-9]{2}-[0-9]{2}-[0-9]{6}" value="15-14-572397" required>
+            <label for="tel">Номер телефона</label>
+            <input type="tel" id="tel" name="tel" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" value="8-905-335-72-55" required>
+         </fieldset>
+          <div class="The_input_box_for_phone">
+            <input type="submit" value="Оформить">
+          </div>
+        </form>
+        <p>где:<i>required</i> - атрибут <q>обязательного поля</q></p>
+        <p></p>
+        <p></p>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article
+        id="Hint_when_filling_in_fields"
+        class="Hint_when_filling_in_fields"
+      >
+        <h3>Подсказка при заполнении полей</h3>
+        <p>У полей, в которые вводятся текстовые значения <q>(textarea, разные типы input и так далее)</q> есть возможность вывести подсказку.</p>
+        <p>Для этого используется специальный атрибут <i>placeholder</i>:</p>
+        <i>&lt;input type="text" placeholder="Текст подсказки"&gt;</i>
+        <p><input type="text" placeholder="Текст подсказки"></p>
+        <p>Текст подсказки выводится внутри текстового поля, а при вводе значения — автоматически убирается.</p>
+        <p>Воспользуемся этим атрибутом, чтобы подсказывать в каком именно формате следует вводить номера паспорта и телефона.</p>
+        <div>
+          <pre><code><em>
+&lt;form action="https://echo.htmlacademy.ru/courses" method="post"&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;<span>Заявление на получение визы</span>&lt;/legend&gt;
+    &lt;label for="passport"&gt;<span>Номер паспорта</span>&lt;/label&gt;
+    &lt;input type="text" id="passport" name="passport" 
+    pattern="[0-9]{2}-[0-9]{2}-[0-9]{6}" required
+    <ins>placeholder="Формат номера XX-XX-XXXXXX"</ins>&gt;
+    &lt;br&gt;
+    &lt;label for="tel"&gt;<span>Номер телефона</span>&lt;/label&gt;
+    &lt;input type="tel" id="tel" name="tel" 
+    pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required
+    <ins>placeholder="Формат номера X-XXX-XXX-XX-XX"</ins>&gt;
+  &lt;/fieldset&gt;
+  &lt;div class="Hint_when_filling_in_fields"&gt;
+    &lt;input type="submit" value="<span>Оформить</span>"&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+          </em></code></pre>
+        </div>
+        <form action="https://echo.htmlacademy.ru/courses" method="post">
+          <fieldset>
+            <legend>Заявление на получение визы</legend>
+            <label for="passport">Номер паспорта</label>
+            <input type="text" id="passport" name="passport" pattern="[0-9]{2}-[0-9]{2}-[0-9]{6}" required placeholder="Формат номера XX-XX-XXXXXX">
+            <br>
+            <label for="tel">Номер телефона</label>
+            <input type="tel" id="tel" name="tel" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required placeholder="Формат номера X-XXX-XXX-XX-XX">
+          </fieldset>
+          <div class="Hint_when_filling_in_fields">
+            <input type="submit" value="Оформить">
+          </div>
+        </form>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Fields_for_entering_site" class="Fields_for_entering_site">
+        <h3>Поля ввода адресов сайтов и email</h3>
+        <p><em>В HTML5</em> добавлены два типа полей <i>email</i> и <i>url</i>, предназначенные для ввода электронной почты и адреса сайта. Особенностью этих полей является то, что они автоматически проверяют формат введённых данных.</p>
+        <p>Пример записи:</p>
+        <ul>
+          <li><i>&lt;input type="email"&gt;</i></li>
+          <li><i>&lt;input type="url"&gt;</i></li>
+        </ul>
+        <p>Внешне эти поля не отличаются от обычных текстовых полей, но обладают важной особенностью, которая очень полезна на мобильных устройствах.</p>
+        <p>Когда вы начинаете заполнять такое поле на мобильнике, там автоматически переключается раскладка клавиатуры. Например, для <i>email</i> отобразятся латинские символы, цифры, знак <i>@</i> и некоторые другие. Посмотрите:</p>
+        <div>
+          <pre><code><em>
+&lt;form action="https://echo.htmlacademy.ru/courses" method="post"&gt;
+  &lt;fieldset&gt;
+    &lt;legend><span>Заявление на получение визы</span>&lt;/legend&gt;
+    &lt;div class="Fields_for_entering_site"&gt;
+    &lt;label for="passport"&gt;<span>Номер паспорта</span>&lt;/label&gt;
+    &lt;input type="text" id="passport" name="passport" 
+    pattern="[0-9]{2}-[0-9]{2}-[0-9]{6}" 
+    placeholder="Формат номера XX-XX-XXXXXX"&gt;
+  &lt;/div&gt;
+    &lt;div class="Fields_for_entering_site"&gt;  
+    &lt;label for="tel"&gt;<span>Номер телефона</span>&lt;/label&gt;
+    &lt;input type="tel" id="tel" name="tel" 
+    pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" 
+    placeholder="Формат номера X-XXX-XXX-XX-XX"&gt;
+  &lt;/div&gt;
+    &lt;div class="Fields_for_entering_site"&gt;
+      &lt;label for="email"&gt;<span>Email</span>&lt;/label&gt;
+      &lt;input <ins>type="email"</ins> id="email" name="email" required&gt;
+  &lt;/div&gt;
+    &lt;div class="Fields_for_entering_site"&gt;
+      &lt;label for="url"&gt;<span>Личный сайт</span>&lt;/label&gt;
+      &lt;input <ins>type="url"</ins> id="url" name="url" required&gt;
+  &lt;/div&gt;
+  &lt;/fieldset&gt;
+  &lt;div class="Fields_for_entering_site"&gt;
+            &lt;input type="submit" value="Оформить"&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+          </em></code></pre>
+        </div>
+        <form action="https://echo.htmlacademy.ru/courses" method="post">
+          <fieldset>
+            <legend>Заявление на получение визы</legend>
+            <div class="Fields_for_entering_site">
+            <label for="passport">Номер паспорта</label>
+            <input type="text" id="passport" name="passport"pattern="[0-9]{2}-[0-9]{2}-[0-9]{6}" placeholder="Формат номера XX-XX-XXXXXX">
+          </div>
+            <div class="Fields_for_entering_site">
+            <label for="tel">Номер телефона</label>
+            <input type="tel" id="tel" name="tel" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="Формат номера X-XXX-XXX-XX-XX">
+          </div>
+            <div class="Fields_for_entering_site">
+              <label for="email">Email</label>
+             <input type="email" id="email" name="email" required>
+            </div>
+            <div class="Fields_for_entering_site">
+              <label for="url">Личный сайт</label>
+              <input type="url" id="url" name="url" required>
+            </div>
+          </fieldset>
+          <div class="Fields_for_entering_site">
+            <input type="submit" value="Оформить">
+          </div>
+        </form>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Color_selection_field" class="Color_selection_field">
+        <h3>Поле выбора цвета</h3>
+        <p>В <em>HTML5</em> добавили новый тип <i>color</i>, предназначенный для полей выбора цвета. При клике на такое поле появляется окно с возможностью выбрать цвет из палитры.</p>
+        <p>Пример записи: 
+          <i>&lt;input type="color"&gt;</i>
+          </p>
+        <p>Если браузер не поддерживает поле для выбора цвета, то вместо него отображается обычное текстовое поле.</p>
+        <p></p>
+        <p></p>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Grouping_list_items" class="Grouping_list_items">
+        <h3>Группировка элементов списка</h3>
+        <p>И последнее по очерёдности, но очень важное поле в нашей форме —  <q>поле создания групп элементов списка</q>.</p>
+        <p>Тег <i>&lt;select&gt;</i> даёт возможность объединять <i>&lt;option&gt;</i> в группы. Обычно это используется для большей наглядности и удобства поиска нужного варианта.</p>
+        <p>Для формирования группы используется тег <i>&lt;optgroup&gt;</i>. Атрибут <i>label</i> этого тега определяет, присваивает имя заголовку группы.</p>
+        <p>Атрибут для общего списка <i>multiple</i> добавляет в браузере к этому списку <q>ползунок</q>. 
+        </p>
+        <p>Пример использования:</p>
+        <div>
+          <pre><code><em>
+&lt;form>
+  &lt;label for="variant"&gt;<span>Выберите вариант</span>&lt;/label&gt;
+  &lt;br&gt;
+  &lt;select name="variants" id="variant" multiple&gt;
+    <ins>&lt;optgroup</ins> <ins>label="Группа вариантов 1"&gt;</ins>
+      &lt;option value="1"&gt;Вариант 1&lt;/option&gt;
+      &lt;option value="2"&gt;Вариант 2&lt;/option&gt;
+      &lt;option value="3"&gt;Вариант 3&gt;/option&gt;
+    <ins>&lt;/optgroup&gt;</ins>
+    <ins>&lt;optgroup</ins> <ins>label="Группа вариантов 2"&gt;</ins>
+      &lt;option value="4"&gt;Вариант 4&lt;/option&gt;
+      &lt;option value="5"&gt;Вариант 5&lt;/option&gt;
+      &lt;option value="6"&gt;Вариант 6&lt;/option&gt;
+    <ins>&lt;/optgroup&gt;</ins>
+  &lt;/select&gt;
+&lt;/form&gt;
+          </em></code></pre>
+        </div>
+
+        <form>
+          <label for="variant">Выберите вариант</label>
+          <br>
+          <select name="variants" id="variant" multiple>
+            <optgroup label="Группа вариантов 1">
+              <option value="1">Вариант 1</option>
+              <option value="2">Вариант 2</option>
+              <option value="3">Вариант 3</option>
+            </optgroup>
+            <optgroup label="Группа вариантов 2">
+              <option value="4">Вариант 4</option>
+              <option value="5">Вариант 5</option>
+              <option value="6">Вариант 6</option>
+            </optgroup>
+          </select>
+        </form>
+          
+        <p></p>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Prevent_editing_fields" class="Prevent_editing_fields">
+        <h3>Запрет редактирования полей</h3>
+        <p>Иногда возникают ситуации, когда какие-то поля требуется сделать недоступными для редактирования.</p>
+        <p>Есть два способа: использование атрибута <i>readonly</i> и использование атрибута <i>disabled</i></p>
+        <p>Пример записи:</p>
+        <ul>
+          <li><i>&lt;input type="text" readonly&gt; </i></li>
+          <li><i>&lt;input type="text" disabled&gt; </i></li>
+        </ul>
+        <p>В чем же отличие между ними?</p>
+        <p>Атрибут <i>readonly</i> не дает пользователю изменять поле (вводить новый текст, модифицировать существующий). Введенное значение <em class="Prevent_editing_fields">можно</em> выделить и скопировать. Данные из этого поля <em class="Prevent_editing_fields">отправляются</em> на сервер.</p>
+        <p>Атрибут <i>disabled</i> не дает пользователю изменять поле (вводить новый текст, модифицировать существующий). <em class="Prevent_editing_fields">Нельзя</em> поставить фокус в это поле, введенное значение <em class="Prevent_editing_fields">нельзя</em> выделять и копировать. Данные из этого поля <em class="Prevent_editing_fields">НЕ отправляются</em> на сервер.</p>
+              
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Managing_AutoFill_fields" class="Managing_AutoFill_fields">
+        <h3>Управление автозаполнением полей</h3>
+        <p>Браузер может запоминать значения, вводимые в текстовые поля. При вводе первых букв текста выводится список сохранённых ранее значений, из которого можно выбрать подходящее. Параметрами автозаполнения можно управлять используя атрибут <i>autocomplete</i>.</p>
+        <p>Он может принимать два значения <i>on</i> и <i>off</i>. Первое включает автозаполнение, второе — отключает. Отключение автозаполнения обычно используется из соображений безопасности, например, чтобы не сохранялись пароли, номера банковских карт и так далее.</p>
+        <p>Пример использования:</p>
+        <i>&lt;input type="text" autocomplete="off"&gt;</i>
+        <p>Значение по умолчанию зависит от настроек браузера.</p>
+      
+      
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="Switching_between¬_fields" class="Switching_between¬_fields">
+        <h3>Переключение между полями</h3>
+        <p>При нажатии клавиши <i>Tab</i> браузер передает управление <q>(фокус)</q> от одного элемента к другому в том порядке, в котором они были объявлены на странице. Этим порядком можно управлять при помощи атрибута <i>tabindex</i>.</p>
+        <p>Пример записи:</p>
+        <i>&lt;input type="text" tabindex="3"&gt;</i>
+        <p>В качестве значения может использоваться любое целое положительное число. Значения выстраиваются последовательно и переход между элементами происходит от меньшего значения к большему.</p>
+        <p>Если представлено отрицательное значение — элемент может быть выделен, однако не участвует в последовательной навигации</p>
+        <P>Если представлен 0 — элемент может быть выделен и достигнут с помощью последовательной навигации, однако порядок навигации определён платформой</P>
+        <p>Из соображений доступности не рекомендуется менять порядок навигации по полям ввода по умолчанию.</p>
+       
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article id="local_warehouse" class="local_warehouse">
+        <h3>localStorage</h3>
+        <p>Как справиться с этой довольно часто встречающейся проблемой, когда введённые в форму данные теряются?</p>
+        <p>Для этого можно использовать одну из новинок <em>HTML5 — localStorage</em>. Эта технология относится к <em>JavaScript</em>, а не к <em>HTML</em> или <em>CSS</em>, но промолчать о ней мы не можем.</p>
+        <p>Суть <i>localStorage</i> или <q>локального хранилища</q> заключается в том, что в него можно записывать данные, которые будут сохраняться в браузере. Эти данные не исчезнут даже если вы закроете браузер и откроете его снова или уйдете со страницы и потом вернётесь на неё.</p>
+        <p>Получается, что можно сохранять данные из формы в хранилище при работе с формой, а при загрузке страницы проверять хранилище на наличие данных, и если они есть, то подставлять их в форму. Таким образом можно предотвратить потерю данных при работе с формами.</p>
+        <p>Давайте проверим работу <i>localStorage</i>. </p>
+        <div>
+          <pre><code><em>
+  
+    &lt;script&gt;
+      if (window.localStorage) {
+        var elements = document.querySelectorAll('[name]');
+  
+        for (var i = 0, length = elements.length; i &lt; length; i++) {
+          (function(element) {
+            var name = element.getAttribute('name');
+  
+            element.value = localStorage.getItem(name) || element.value;
+  
+            element.onkeyup = function() {
+              localStorage.setItem(name, element.value);
+            };
+          })(elements[i]);
+        }
+      }
+      &lt;/script&gt;
+          </em></code></pre>
+        </div>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article
+        id="interactions with forms"
+        class="interactions with forms"
+      >
+         <h3>Улучшаем опыт взаимодействия с формами</h3>       
+        <a href="http://simonenko.su/38146501854/improving-ux-for-web-form">Статья о формах в HTML5 Алексея Симоненко</a> 
+       <br>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+      <article
+        id="Test_through_thorns_to_the_stars"
+        class="Test_through_thorns_to_the_stars"
+      >
+        <h3>Испытание: через тернии к звёздам</h3>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+
+        <a href="#top" class="top">вверх</a>
+      </article>
+    </main>
+    <footer></footer>
+  </body>
+</html>
