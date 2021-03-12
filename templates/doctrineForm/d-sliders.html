@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../../styles/css/reset.css" />
     <link rel="stylesheet" href="../../styles/css/grids.css" />
-    <link rel="stylesheet" href="../../styles/css/typography.css" />
     <link
       rel="stylesheet"
       href="../../styles/css/doctrineGeneral/d-general.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../styles/css/doctrineGeneral/d-formMenu.css"
     />
     <link
       rel="stylesheet"
@@ -21,149 +24,279 @@
     <!-- main -->
     <main class="main">
       <article class="article">
-        <!-- Ползунок -->
+        <!-- Ползунок теория -->
         <section class="form">
-          <h1 id="image_ranges" class="form__heading h1-font">Ползунок</h1>
-          <p class="form__description">
-            Ползунок предназначен для ввода чисел в указанном диапазоне, но в
-            отличие от поля <b>input type="number"</b> имеет другой интерфейс и
-            применяется в тех случаях, когда не особенно важно указывать точное
-            значение. На рис. 1 продемонстрирован вид ползунка в разных
-            браузерах.
-          </p>
-          <div class="form__container-image">
-            <img
-              class="form__image form__image_ranges"
-              src="../assets/icons/htmlBook/ranges.png"
-              alt=""
-            />
+          <h1 id="image_ranges" class="form__heading">
+            <a
+              class="form__link"
+              target="_blank"
+              href="http://htmlbook.ru/samhtml5/formy/polzunok"
+              >Ползунки</a
+            >
+          </h1>
+          <div class="form__info">
+            <p class="form__description">
+              Ползунок предназначен для ввода чисел в указанном диапазоне, но в
+              отличие от поля <b>input type="number"</b> имеет другой интерфейс
+              и применяется в тех случаях, когда не особенно важно указывать
+              точное значение. На рис. 1 продемонстрирован вид ползунка в разных
+              браузерах.
+            </p>
+            <div class="form__container-image">
+              <img
+                class="form__image form__image_ranges"
+                src="../../assets/icons/doctrineForm/ranges.png"
+                alt=""
+              />
+            </div>
+            <p class="form__syntax">Синтаксис создания ползунка следующий.</p>
+            <p class="form__description">
+              input type="range" min="0" max="100" step="1" value="50"
+            </p>
+            <p class="form__description">
+              Здесь min — минимальное число в диапазоне (по умолчанию 0), max —
+              максимальное число (по умолчанию 100), step — шаг изменения чисел
+              (по умолчанию 1), value — текущее значение. По умолчанию value
+              вычисляется по формуле:
+            </p>
+            <div class="form__container-image">
+              <img
+                class="form__image form__image_formula"
+                src="../../assets/icons/doctrineForm/rangeFormula.png"
+                alt=""
+              />
+            </div>
+            <p class="form__description">
+              Если значение max меньше, чем значение min, то value равно min.
+            </p>
+            <p class="form__description">
+              Атрибуты не являются обязательными, их можно опустить, в таком
+              случае они принимают значения по умолчанию.
+            </p>
+            <p class="form__description">
+              Независимо от минимального и максимального числа ширина ползунка
+              остаётся одинаковой. Изменить ширину, можно, только сбросив стили.
+            </p>
+            <p class="form__description">
+              <b>
+                input[type=range] { <br />
+                width: 200px; <br />
+                -webkit-appearance: none; <br />
+                -moz-appearance: none; <br />
+                appearance: none; <br />
+                }</b
+              >
+            </p>
+            <p class="form__description">
+              Здесь помимо ширины мы указали специальное свойство
+              <b>appearance</b> которое отвечает за базовые стили отображения
+              элемента вашей операционной системы. Значение
+              <b>'none'</b> указывает на то что мы эти стили сбрасываем. По
+              итогу поле range будет отображаться не полностью. Это нам
+              необходимо чтобы задать свои собственные стили для ползунка.
+            </p>
+            <p class="form__description">
+              Сами ползунки редко применяются в «чистом» виде, поскольку не
+              обеспечивают необходимую обратную связь с пользователем, а вот в
+              сочетании с JavaScript это становится мощным и удобным элементом
+              интерфейса.
+            </p>
           </div>
-          <p class="form__syntax h2-font">
-            Синтаксис создания ползунка следующий.
-          </p>
-          <p class="form__description">
-            input type="range" min="0" max="100" step="1" value="50"
-          </p>
-          <p class="form__description">
-            Здесь min — минимальное число в диапазоне (по умолчанию 0), max —
-            максимальное число (по умолчанию 100), step — шаг изменения чисел
-            (по умолчанию 1), value — текущее значение. По умолчанию value
-            вычисляется по формуле:
-          </p>
-          <div class="form__container-image">
-            <img
-              class="form__image form__image_formula"
-              src="../assets/icons/htmlBook/rangeFormula.png"
-              alt=""
+        </section>
+        <!-- Ползунок теория -->
+
+        <!-- Ползунок slider-bicolor-->
+        <section class="form">
+          <!-- slider -->
+          <div class="form__slider-container">
+            <h2 class="form__subheading">
+              Ползунок двухцветный slider-bicolor
+            </h2>
+            <p class="form__slider-subheading">Сумма кредита</p>
+
+            <input
+              class="slider-bicolor"
+              type="range"
+              min="1"
+              max="100"
+              id="size"
+              value="50"
             />
+            <div class="form__sector">
+              <p class="form__title">90 000 р.</p>
+              <p class="form__title">2 000 000 р.</p>
+            </div>
+          </div>
+          <!-- slider -->
+
+          <!-- slider -->
+          <div class="form__slider-container">
+            <p class="form__slider-subheading">Срок кредита</p>
+
+            <input
+              class="slider-bicolor"
+              type="range"
+              min="1"
+              max="100"
+              id="size"
+              value="50"
+            />
+            <div class="form__sector">
+              <p class="form__title">1 год</p>
+              <p class="form__title">5 лет</p>
+            </div>
+          </div>
+          <!-- slider -->
+
+          <div class="form__code-body">
+            <p class="form__subtitle">HTML посмотреть код</p>
+            <pre class="form__code-box">
+                      <code >                                   
+                          &lt;input 
+                              class="slider-bicolor" 
+                              type="range" 
+                              min="1" 
+                              max="100" 
+                              id="size" 
+                              value="50" 
+                        /&gt;                                   
+                      </code>
+              </pre>
+          </div>
+          <div class="form__code-body">
+            <p class="form__subtitle">SCSS посмотреть код</p>
+            <pre class="form__code-box">
+                 <code>
+                  .slider-bicolor {
+                    width: 100%;
+                    appearance: none;
+                    outline: none;
+                    overflow: hidden;
+                    height: 7px;
+                  
+                    &::-webkit-slider-runnable-track {
+                      height: 7px;
+                      background-color: #43e5f7;
+                    }
+                  
+                    &::-webkit-slider-thumb {
+                      background: #ecf0f1;
+                      cursor: pointer;
+                      width: 15px;
+                      height: 15px;
+                      -webkit-appearance: none;
+                      margin-top: -4px;
+                      box-shadow: -500px 0 0 500px blue;
+                    }
+                  } 
+                </code>
+              </pre>
+          </div>
+        </section>
+        <!-- Ползунок slider-bicolor-->
+
+        <!-- Ползунок slider-icon -->
+        <section class="form">
+          <h2 class="form__subheading">слайдер с иконкой slider-icon</h2>
+
+          <div class="form__slider-container">
+            <p class="form__slider-title">Сумма вклада</p>
+            <p class="slider-icon__value">100 000</p>
+            <!-- slider-icon -->
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider-icon"
+              id="myRange"
+            />
+            <!--  slider-icon -->
+          </div>
+
+          <div class="form__code-body">
+            <p class="form__subtitle">HTML посмотреть код</p>
+            <pre class="form__code-box">
+                <code >                                   
+                      &lt;input
+                          type="range"
+                          min="1"
+                          max="100"
+                          value="50"
+                          class="slider-icon"
+                          id="myRange"
+                    /&gt;                                   
+                </code>
+              </pre>
+          </div>
+          <div class="form__code-body">
+            <div>
+              <p class="form__subtitle">SCSS посмотреть код</p>
+              <pre class="form__code-box">
+                <code>                                   
+                  .slider-icon {
+                    appearance: none;
+                    width: 100%;
+                    height: 0px;
+                    background: #d3d3d3;
+                    outline: none;
+
+                    &::-webkit-slider-thumb {
+                      -webkit-appearance: none;
+                      appearance: none;
+                      width: 14px;
+                      height: 20px;
+                      // не забыть скачать 
+                      иконку и подключить её
+                      background: 
+                      url(../../../assets/icons/iconSlider.svg);
+                      cursor: pointer;
+                      position: relative;
+                    }
+
+                    &::-webkit-range-thumb {
+                      width: 14px;
+                      height: 20px;
+                      background: 
+                      url(../../../assets/icons/iconSlider.svg);
+                      cursor: pointer;
+                      position: relative;
+                    }
+
+                    &__value {
+                      width: 100%;
+                      font-size: 18px;
+                      line-height: 24px;
+                      text-align: center;
+                      padding: 15px;
+                      border: 1px solid #c4c4c4;
+                      box-sizing: border-box;
+                      border-radius: 10px;
+                      position: absolute;
+                      bottom: 12px;
+                      left: 0;
+                    }
+                  }                               
+                </code>
+              </pre>
+            </div>
           </div>
           <p class="form__description">
-            Если значение max меньше, чем значение min, то value равно min.
+            не забыть скачать иконку и подключить её <br />
+            <b> background: url(../../assets/icons/iconSlider.svg);</b>
           </p>
           <p class="form__description">
-            Атрибуты не являются обязательными, их можно опустить, в таком
-            случае они принимают значения по умолчанию.
-          </p>
-          <p class="form__description">
-            Независимо от минимального и максимального числа ширина ползунка
-            остаётся одинаковой. Изменить ширину, можно, только сбросив стили.
-          </p>
-          <p class="form__description">
-            <b>
-              input[type=range] { <br />
-              width: 200px; <br />
-              -webkit-appearance: none; <br />
-              -moz-appearance: none; <br />
-              appearance: none; <br />
-              }</b
+            ps. Как сделать -
+            <a
+              target="_blank"
+              href="https://html5css.ru/howto/howto_js_rangeslider.php"
+              class="form__link"
+            >
+              пользовательские ползунки</a
             >
           </p>
-          <p class="form__description">
-            Здесь помимо ширины мы указали специальное свойство
-            <b>appearance</b> которое отвечает за базовые стили отображения
-            элемента вашей операционной системы. Значение
-            <b>'none'</b> указывает на то что мы эти стили сбрасываем. По итогу
-            поле range будет отображаться не полностью. Это нам необходимо чтобы
-            задать свои собственные стили для ползунка.
-          </p>
-          <p class="form__description">
-            Сами ползунки редко применяются в «чистом» виде, поскольку не
-            обеспечивают необходимую обратную связь с пользователем, а вот в
-            сочетании с JavaScript это становится мощным и удобным элементом
-            интерфейса. В примере 1 с помощью ползунка изменяется размер
-            изображения, такая возможность часто используется в различных
-            фотогалереях.
-          </p>
-
-          <!-- slider -->
-          <div class="slider__block">
-            <p class="slider__subheading">Сумма кредита</p>
-
-            <div class="slider">
-              <input
-                class="slider__range"
-                type="range"
-                min="1"
-                max="100"
-                id="size"
-                value="50"
-              />
-              <div class="slider__title">
-                <p class="slider__title_item">90 000 р.</p>
-                <p class="slider__title_item">2 000 000 р.</p>
-              </div>
-            </div>
-          </div>
-          <!-- slider -->
-
-          <!-- slider -->
-          <div class="slider__block">
-            <p class="slider__subheading">Срок кредита</p>
-            <div class="slider">
-              <input
-                class="slider__range"
-                type="range"
-                min="1"
-                max="100"
-                id="size"
-                value="50"
-              />
-              <div class="slider__title">
-                <p class="slider__title_item">1 год</p>
-                <p class="slider__title_item">5 лет</p>
-              </div>
-            </div>
-          </div>
-          <!-- slider -->
-
-          <!--  slider-icon -->
-          <h1 class="form__heading h1-font">"slider-icon" слайдер с иконкой</h1>
-          <p class="form-description">
-            не забыть скачать иконку и подключить её
-          </p>
-          <p class="form__syntax">
-            background: url(../../assets/icons/iconSlider.svg);
-          </p>
-          <div class="revenue">
-            <div class="form__slider-container">
-              <p class="form__slider-title">Сумма вклада</p>
-              <p class="form__slider-value">100 000</p>
-              <!-- slider-icon -->
-              <input
-                type="range"
-                min="1"
-                max="100"
-                value="50"
-                class="slider-icon"
-                id="myRange"
-              />
-              <!--  slider-icon -->
-            </div>
-            <!-- switch-currency twin-switch -->
-          </div>
-          <!--  slider-icon -->
         </section>
-        <!-- Ползунок -->
+        <!-- Ползунок slider-icon -->
       </article>
 
       <!-- menu-mobile -->

@@ -4,10 +4,15 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../../styles/css/reset.css" />
     <link rel="stylesheet" href="../../styles/css/grids.css" />
-    <link rel="stylesheet" href="../../styles/css/typography.css" />
+
     <link
       rel="stylesheet"
       href="../../styles/css/doctrineGeneral/d-general.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../../styles/css/doctrineGeneral/d-formMenu.css"
     />
     <link
       rel="stylesheet"
@@ -21,10 +26,10 @@
     <!-- main -->
     <main class="main">
       <article class="article">
-        <!--  radio Переключатели (radiobutton) -->
+        <!--   Переключатели info -->
         <section class="form">
-          <h1 id="primary-radio" class="form__heading h1-font">
-            radio Переключатели (radiobutton).
+          <h1 id="primary-radio" class="form__heading">
+            radio переключатели (radiobutton).
           </h1>
 
           <p class="form__description">
@@ -42,211 +47,598 @@
             (radiobutton), может быть отмечен только один элемент группы, для
             флажков (checkbox) допустимо пометить хоть все элементы.
           </p>
-          <h2 class="form__subheading h2-font">Тройной переключатель</h2>
-          <!--  -->
+        </section>
+        <!--   Переключатели info -->
 
-          <!-- primary-radio Тройной переключатель -->
-          <div class="form__primary-radio primary-radio__container">
-            <p class="primary-radio__subheading">
+        <!-- multicolor-switch Тройной переключатель -->
+        <section class="form">
+          <h2 class="form__subheading">Тройной переключатель</h2>
+          <div class="form__multicolor-switch multicolor-switch__container">
+            <p class="multicolor-switch__subheading">
               Каким браузером в основном пользуетесь?
             </p>
-            <form class="primary-radio">
-              <label class="primary-radio__item" for="">
+
+            <div class="multicolor-switch">
+              <label class="multicolor-switch__item">
                 <input
-                  class="primary-radio__field"
+                  class="multicolor-switch__field"
                   type="radio"
                   name="browser"
                   value="ie"
                 />
-                <div class="primary-radio__title sm-font">Explorer</div>
+                <p class="multicolor-switch__title">Explorer</p>
               </label>
 
-              <label class="primary-radio__item" for="">
+              <label class="multicolor-switch__item">
                 <input
-                  class="primary-radio__field"
+                  class="multicolor-switch__field"
                   type="radio"
                   name="browser"
                   value="ie"
                 />
-                <div class="primary-radio__title sm-font">Opera</div>
+                <p class="multicolor-switch__title">Opera</p>
               </label>
 
-              <label class="primary-radio__item" for="">
+              <label class="multicolor-switch__item">
                 <input
-                  class="primary-radio__field"
+                  class="multicolor-switch__field"
                   type="radio"
                   name="browser"
                   value="ie"
                 />
-                <div class="primary-radio__title sm-font">Firefox</div>
+                <p class="multicolor-switch__title">Firefox</p>
               </label>
-            </form>
+            </div>
           </div>
-          <!-- primary-radio Тройной переключатель -->
 
-          <!--  -->
-          <h2 class="form__subheading h2-font">
-            Двойной спаренный переключатель
-          </h2>
-          <!--  -->
-
-          <!-- secondary-radio Двойной спаренный переключатель -->
-          <div class="form__secondary-radio">
-            <p class="secondary-radio__subheading">Выберете окно просмотра</p>
-            <form class="secondary-radio">
-              <label
-                class="secondary-radio__item secondary-radio__item_left"
-                for=""
-              >
-                <input
-                  class="secondary-radio__field"
-                  type="radio"
-                  name="browser"
-                  value="ie"
-                />
-                <div
-                  class="secondary-radio__title secondary-radio__title_left sm-font"
-                >
-                  Список
-                </div>
-              </label>
-
-              <label
-                class="secondary-radio__item secondary-radio__item_right"
-                for=""
-              >
-                <input
-                  class="secondary-radio__field"
-                  type="radio"
-                  name="browser"
-                  value="ie"
-                />
-                <div
-                  class="secondary-radio__title secondary-radio__title_right sm-font"
-                >
-                  Карта
-                </div>
-              </label>
-            </form>
+          <div class="form__code-body">
+            <p class="form__subtitle">HTML посмотреть код</p>
+            <pre class="form__code-box">
+                <code class="form__code-font">                                   
+                  &lt;div class="form__multicolor-switch multicolor-switch__container"&gt;
+                  &lt;p class="multicolor-switch__subheading"&gt;
+                      Каким браузером в основном пользуетесь?
+                      &lt;/p&gt;
+        
+                      &lt;div class="multicolor-switch"&gt;
+                      &lt;label class="multicolor-switch__item"&gt;
+                      &lt;input
+                          class="multicolor-switch__field"
+                          type="radio"
+                          name="browser"
+                          value="ie"
+                        /&gt;
+                        &lt;p class="multicolor-switch__title"&gt;Explorer&lt;/p&gt;
+                        &lt;/label&gt;
+        
+                        &lt;label class="multicolor-switch__item"&gt;
+                        &lt;input
+                          class="multicolor-switch__field"
+                          type="radio"
+                          name="browser"
+                          value="ie"
+                        /&gt;
+                        &lt;p class="multicolor-switch__title"&gt;Opera&lt;/p&gt;
+                        &lt;/label&gt;
+        
+                        &lt;label class="multicolor-switch__item"&gt;
+                        &lt;input
+                          class="multicolor-switch__field"
+                          type="radio"
+                          name="browser"
+                          value="ie"
+                        /&gt;
+                        &lt;p class="multicolor-switch__title">Firefox&lt;/p&gt;
+                        &lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;                                    
+                </code>
+             </pre>
           </div>
-          <!-- secondary-radio Двойной спаренный переключатель -->
 
-          <!--  -->
+          <div class="form__code-body">
+            <p class="form__subtitle">SCSS посмотреть код</p>
+            <pre class="form__code-box">
+                <code>                                   
+                  .multicolor-switch {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  
+                    &__container {
+                      width: 100%;
+                      max-width: 272px;
+                  
+                      @media screen and (min-width: 375px) {
+                        max-width: 372px;
+                      }
+                    }
+                  
+                    &__subheading {
+                      font-size: 16px;
+                      line-height: 24px;
+                      color: blue;
+                      margin-bottom: 36px;
+                    }
+                  
+                    &__item {
+                      width: calc(33.333333% - 12px);
+                      cursor: pointer;
+                      border-radius: 24px;
+                      background-image: 
+                      linear-gradient(blue, green, yellow);
+                      box-shadow: 0 -5px 10px -3px #3498db, 
+                      0 5px 10px -3px #2ecc71;
+                      margin-left: 6px;
+                      margin-right: 6px;
+                      text-align: center;
+                      flex: auto;
+                  
+                      &:hover {
+                        transform: scale(1.05);
+                        opacity: 0.8;
+                        transition: all 0.2s linear;
+                      }
+                  
+                      &:hover .multicolor-switch__title {
+                        transform: rotate(360deg);
+                        transition: all 0.2s linear;
+                      }
+                  
+                      &:first-child {
+                        margin-left: 0px;
+                      }
+                  
+                      &:last-child {
+                        margin-right: 0px;
+                      }
+                  
+                      &:active {
+                        border: 1px solid #3498db;
+                      }
+                    }
+                  
+                    &__field {
+                      display: none;
+                    }
+                  
+                    &__title {
+                      font-size: 13px;
+                      color: white;
+                      padding: 8px 0px;
+                    }
+                  }                                   
+                </code>
+             </pre>
+          </div>
         </section>
-        <!--   radio Переключатели (radiobutton)-->
+        <!-- multicolor-switch Тройной переключатель -->
+
+        <!-- triple-switch Тройной переключатель * -->
+        <section class="form">
+          <h2 class="form__subheading">
+            Тройной переключатель <br />
+            "triple-switch"
+          </h2>
+          <div class="form__triple-switch">
+            <div class="triple-switch">
+              <label class="triple-switch__item">
+                <input
+                  class="triple-switch__field"
+                  type="radio"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="triple-switch__title">Первый</p>
+              </label>
+
+              <label class="triple-switch__item">
+                <input
+                  class="triple-switch__field"
+                  type="radio"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="triple-switch__title">Второй</p>
+              </label>
+
+              <label class="triple-switch__item">
+                <input
+                  class="triple-switch__field"
+                  type="radio"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="triple-switch__title">Третий</p>
+              </label>
+            </div>
+          </div>
+          <div class="form__code-body">
+            <p class="form__subtitle">HTML посмотреть код</p>
+            <pre class="form__code-box">
+                <code class="form__code-font">                                   
+                  &lt;div class="form__triple-switch"&gt;
+                    &lt;div class="triple-switch"&gt;
+                      &lt;label class="triple-switch__item"&gt;
+                        &lt;input
+                          class="triple-switch__field"
+                          type="radio"
+                          name="browser"
+                          value="ie"
+                        /&gt;
+                        &lt;p class="triple-switch__title"&gt;Первый&lt;/p&gt;
+                      &lt;/label&gt;
+        
+                      &lt;label class="triple-switch__item"&gt;
+                        &lt;input
+                          class="triple-switch__field"
+                          type="radio"
+                          name="browser"
+                          value="ie"
+                        /&gt;
+                        &lt;p class="triple-switch__title">Второй&lt;/p&gt;
+                      &lt;/label&gt;
+        
+                      &lt;label class="triple-switch__item"&gt;
+                        &lt;input
+                          class="triple-switch__field"
+                          type="radio"
+                          name="browser"
+                          value="ie"
+                        /&gt;
+                        &lt;p class="triple-switch__title">Третий&lt;/p&gt;
+                      &lt;/label&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;                                   
+                </code>
+             </pre>
+          </div>
+
+          <div class="form__code-body">
+            <p class="form__subtitle">SCSS посмотреть код</p>
+            <pre class="form__code-box">
+                <code>                                   
+                  .triple-switch {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: #b6d3f0;
+                    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
+                    border-radius: 36px;
+                  
+                    &__item {
+                      cursor: pointer;
+                      padding: 19px 27px;
+                      margin: 5px;
+                      color: #5a646e;
+                      background: #f3f5f7;
+                      box-sizing: border-box;
+                      border-radius: 31px;
+                  
+                      &:hover {
+                        box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
+                      }
+                  
+                      &:active {
+                        background: #ffffff;
+                        border: 2px solid #00d2ff;
+                      }
+                    }
+                  
+                    &__field {
+                      display: none;
+                    }
+                  
+                    &__title {
+                      font-size: 13px;
+                      color: #5a646e;
+                    }
+                  }                                    
+                </code>
+             </pre>
+          </div>
+        </section>
+        <!-- triple-switch Тройной переключатель * -->
+
+        <!-- secondary-radio Двойной спаренный переключатель -->
+        <section class="form">
+          <h2 class="form__subheading">
+            Двойной спаренный переключатель <br />
+            "secondary-radio"
+          </h2>
+
+          <div class="form__secondary-radio">
+            <p class="secondary-radio__subheading">Выберите окно просмотра</p>
+            <form class="secondary-radio">
+              <label class="secondary-radio__item">
+                <input
+                  class="secondary-radio__field"
+                  type="radio"
+                  checked="checked"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="secondary-radio__title">Список</p>
+              </label>
+
+              <label class="secondary-radio__item">
+                <input
+                  class="secondary-radio__field"
+                  type="radio"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="secondary-radio__title">Карта</p>
+              </label>
+            </form>
+          </div>
+
+          <div class="form__code-body">
+            <p class="form__subtitle">HTML посмотреть код</p>
+            <pre class="form__code-box">
+                <code class="form__code-font">                                   
+                  &lt;div class="form__secondary-radio"&gt;&gt;
+                    &lt;p class="secondary-radio__subheading">Выберите окно просмотра&lt;/p&gt;
+                    &lt;div  class="secondary-radio"&gt;
+                      &lt;label class="secondary-radio__item"&gt;
+                        &lt;input
+                          class="secondary-radio__field"
+                          type="radio"
+                          checked="checked"
+                          name="browser"
+                          value="ie"
+                        />
+                        &lt;p class="secondary-radio__title"&gt;Список&lt;/p&gt;
+                      &lt;/label&gt;
+        
+                      &lt;label class="secondary-radio__item"&gt;
+                        &lt;input
+                          class="secondary-radio__field"
+                          type="radio"
+                          name="browser"
+                          value="ie"
+                        />
+                        &lt;p class="secondary-radio__title"&gt;Карта&lt;/p&gt;
+                      &lt;/label&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;                                   
+                </code>
+             </pre>
+          </div>
+
+          <div class="form__code-body">
+            <p class="form__subtitle">SCSS посмотреть код</p>
+            <pre class="form__code-box">
+                <code>                                   
+                  .secondary-radio {
+                    width: 100%;
+                    max-width: 132px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  
+                    &__subheading {
+                      font-size: 16px;
+                      line-height: 24px;
+                      color: blue;
+                      margin-bottom: 36px;
+                    }
+                  
+                    &__item {
+                      width: 50%;
+                      cursor: pointer;
+                      padding: 7px 12px;
+                      box-sizing: border-box;
+                      background-color: white;
+                      border: 1px solid black;
+                  
+                      &:active,
+                      &:hover {
+                        background-color: #15499f;
+                        border: 1px solid #15499f;
+                      }
+                  
+                      &:active .secondary-radio__title,
+                      &:hover .secondary-radio__title {
+                        color: #ffffff;
+                      }
+                  
+                      &:first-child {
+                        // border-right: none;
+                        border-radius: 8px 0 0 8px;
+                      }
+                  
+                      &:last-child {
+                        // border-left: none;
+                        border-radius: 0 8px 8px 0;
+                      }
+                  
+                      &:hover {
+                        transform: scale(1.05);
+                        transition: 0.2s linear;
+                      }
+                    }
+                  
+                    &__field {
+                      display: none;
+                    }
+                  
+                    &__title {
+                      font-size: 13px;
+                    }
+                  }                                    
+                </code>
+             </pre>
+          </div>
+        </section>
+        <!-- secondary-radio Двойной спаренный переключатель -->
 
         <!-- twin-switch -->
         <section class="form">
           <p class="form__description"></p>
-          <h1 id="twin-switch" class="form__heading h1-font">
+          <h1 id="twin-switch" class="form__subheading">
             Переключатель <br />
             "twin-switch"
           </h1>
-          <p class="form__description">
-            form__switch-currency <br />
-            form__switch-capitalization <br />
-            form__switch-package
-          </p>
 
-          <div class="form__block-switch">
-            <!-- switch-currency twin-switch -->
-            <div class="form__switch-currency">
-              <form class="twin-switch">
-                <label class="twin-switch__item">
-                  <input
-                    class="twin-switch__field"
-                    type="radio"
-                    name="browser"
-                    value="ie"
-                  />
-                  <div class="twin-switch__title">₽</div>
-                </label>
+          <!-- package twin-switch -->
+          <div class="form__package">
+            <div class="twin-switch">
+              <label class="twin-switch__item">
+                <input
+                  class="twin-switch__field"
+                  type="radio"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="twin-switch__title">Первый</p>
+              </label>
 
-                <label class="twin-switch__item">
-                  <input
-                    class="twin-switch__field"
-                    type="radio"
-                    name="browser"
-                    value="ie"
-                  />
-                  <div class="twin-switch__title">$</div>
-                </label>
-              </form>
+              <label class="twin-switch__item">
+                <input
+                  class="twin-switch__field"
+                  type="radio"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="twin-switch__title">Второй</p>
+              </label>
+
+              <label class="twin-switch__item">
+                <input
+                  class="twin-switch__field"
+                  type="radio"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="twin-switch__title">Третий</p>
+              </label>
+
+              <label class="twin-switch__item">
+                <input
+                  class="twin-switch__field"
+                  type="radio"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="twin-switch__title">Четвёртый</p>
+              </label>
             </div>
-            <!-- switch-currency twin-switch -->
-
-            <!-- switch-capitalization twin-switch -->
-            <div class="form__switch-capitalization">
-              <form class="twin-switch">
-                <label class="twin-switch__item">
-                  <input
-                    class="twin-switch__field"
-                    type="radio"
-                    name="browser"
-                    value="ie"
-                  />
-                  <div class="twin-switch__title">С капитализацией %</div>
-                </label>
-
-                <label class="twin-switch__item">
-                  <input
-                    class="twin-switch__field"
-                    type="radio"
-                    name="browser"
-                    value="ie"
-                  />
-                  <div class="twin-switch__title">Без капитализации %</div>
-                </label>
-              </form>
-            </div>
-            <!-- switch-capitalization twin-switch -->
           </div>
 
-          <!-- switch-package twin-switch -->
-          <div class="form__switch-package">
-            <form class="twin-switch">
-              <label class="twin-switch__item">
-                <input
-                  class="twin-switch__field"
-                  type="radio"
-                  name="browser"
-                  value="ie"
-                />
-                <div class="twin-switch__title">Без пакета услуг</div>
-              </label>
-
-              <label class="twin-switch__item">
-                <input
-                  class="twin-switch__field"
-                  type="radio"
-                  name="browser"
-                  value="ie"
-                />
-                <div class="twin-switch__title">Эконом</div>
-              </label>
-
-              <label class="twin-switch__item">
-                <input
-                  class="twin-switch__field"
-                  type="radio"
-                  name="browser"
-                  value="ie"
-                />
-                <div class="twin-switch__title">Оптимум</div>
-              </label>
-
-              <label class="twin-switch__item">
-                <input
-                  class="twin-switch__field"
-                  type="radio"
-                  name="browser"
-                  value="ie"
-                />
-                <div class="twin-switch__title">Максимум +</div>
-              </label>
-            </form>
+          <div class="form__code-body">
+            <p class="form__subtitle">HTML посмотреть код</p>
+            <pre class="form__code-box">
+                <code class="form__code-font">                                   
+                  &lt;div class="form__package"&gt;
+                    &lt;div class="twin-switch"&gt;
+                      &lt;label class="twin-switch__item"&gt;
+                        &lt;input
+                          class="twin-switch__field"
+                          type="radio"
+                          name="browser"
+                          value="ie"
+                        /&gt;
+                        &lt;p class="twin-switch__title"&gt;Первый&lt;/p&gt;
+                      &lt;/label&gt;
+        
+                      &lt;label class="twin-switch__item"&gt;
+                        &lt;input
+                          class="twin-switch__field"
+                          type="radio"
+                          name="browser"
+                          value="ie"
+                        /&gt;
+                        &lt;p class="twin-switch__title"&gt;Второй&lt;/p&gt;
+                      &lt;/label&gt;
+        
+                      &lt;label class="twin-switch__item"&gt;
+                        &lt;input
+                          class="twin-switch__field"
+                          type="radio"
+                          name="browser"
+                          value="ie"
+                        /&gt;
+                        &lt;p class="twin-switch__title"&gt;Третий&lt;/p&gt;
+                      &lt;/label&gt;
+        
+                      &lt;label class="twin-switch__item"&gt;
+                        &lt;input
+                          class="twin-switch__field"
+                          type="radio"
+                          name="browser"
+                          value="ie"
+                        /&gt;
+                        &lt;p class="twin-switch__title"&gt;Четвёртый&lt;/p&gt;
+                      &lt;/label&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;                                   
+                </code>
+             </pre>
           </div>
-          <!-- switch-package twin-switch -->
+
+          <div class="form__code-body">
+            <p class="form__subtitle">SCSS посмотреть код</p>
+            <pre class="form__code-box">
+                <code>                                   
+                  .twin-switch {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  
+                    &__subheading {
+                      color: blue;
+                      margin-bottom: 36px;
+                    }
+                  
+                    &__item {
+                      width: 50%;
+                      cursor: pointer;
+                      box-sizing: border-box;
+                      background-color: white;
+                      border: 1px solid #c4c4c4;
+                  
+                      &:first-child {
+                        border-radius: 8px 0px 0px 8px;
+                      }
+                  
+                      &:last-child {
+                        border-radius: 0px 8px 8px 0px;
+                      }
+                  
+                      &:active .twin-switch__title,
+                      &:hover .twin-switch__title {
+                        color: white;
+                      }
+                  
+                      &:hover {
+                        transform: scale(1.05);
+                        transition: 0.2s linear;
+                      }
+                  
+                      &:active,
+                      &:hover {
+                        background-color: #1998a7;
+                        border: 1px solid #1998a7;
+                      }
+                    }
+                  
+                    &__field {
+                      display: none;
+                    }
+                  
+                    &__title {
+                      font-size: 14px;
+                      text-align: center;
+                      padding: 16px 12px;
+                    }
+                  }                                    
+                </code>
+             </pre>
+          </div>
+          <!-- package twin-switch -->
         </section>
         <!-- twin-switch -->
       </article>

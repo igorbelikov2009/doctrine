@@ -362,7 +362,7 @@ body * {
 }
 // twin-switch  спаренный переключатель *
 
-// triple-switch Тройной переключатель
+// triple-switch Тройной переключатель *
 .triple-switch {
   display: flex;
   justify-content: center;
@@ -398,7 +398,7 @@ body * {
     color: #5a646e;
   }
 }
-// triple-switch Тройной переключатель
+// triple-switch Тройной переключатель *
 
 // drop-down выпадающий список *
 .drop-down {
@@ -559,6 +559,31 @@ body * {
 }
 // стилизация ползунка slider-breaker *
 
+// стилизация ползунка slider-bicolor *
+.slider-bicolor {
+  width: 100%;
+  appearance: none;
+  outline: none;
+  overflow: hidden;
+  height: 7px;
+
+  &::-webkit-slider-runnable-track {
+    height: 7px;
+    background-color: #43e5f7;
+  }
+
+  &::-webkit-slider-thumb {
+    background: #ecf0f1;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    -webkit-appearance: none;
+    margin-top: -4px;
+    box-shadow: -500px 0 0 500px blue;
+  }
+}
+// стилизация ползунка slider-bicolor *
+
 // r-checkbox *
 .r-checkbox {
   user-select: none;
@@ -569,6 +594,7 @@ body * {
   align-items: flex-start;
   position: relative;
   cursor: pointer;
+  margin-bottom: 24px;
 
   &__checker {
     width: 20px;
@@ -578,7 +604,7 @@ body * {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: relative;
     top: 2px;
     left: 2px;
 
@@ -605,7 +631,7 @@ body * {
     display: none;
   }
 
-  &__agreeLink {
+  &__agree-link {
     line-height: 24px;
     position: absolute;
     top: 0;
@@ -614,9 +640,6 @@ body * {
 
   &__link {
     color: #50287d;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
     cursor: pointer;
     outline: 0;
     text-decoration: none;

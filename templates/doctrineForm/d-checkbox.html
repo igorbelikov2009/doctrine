@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../../styles/css/reset.css" />
     <link rel="stylesheet" href="../../styles/css/grids.css" />
-    <link rel="stylesheet" href="../../styles/css/typography.css" />
-    <link rel="stylesheet" href="../../styles/css/general.css" />
     <link
       rel="stylesheet"
       href="../../styles/css/doctrineGeneral/d-general.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../styles/css/doctrineGeneral/d-formMenu.css"
     />
     <link
       rel="stylesheet"
@@ -49,10 +51,10 @@
           </div>
           <!-- r-checkbox -->
 
-          <div class="form__body-code">
-            <p class="form__subtitle">HTML</p>
-            <pre class="form__box-code">
-                <code class="form__code">                                   
+          <div class="form__code-body">
+            <p class="form__subtitle">HTML посмотреть код</p>
+            <pre class="form__code-box">
+                <code class="form__code-font">                                   
                     &lt;label tabindex="0" role="checkbox" id=" " class="r-checkbox"&gt;
                           &lt;span class="r-checkbox__checker">&lt;/span&gt;
                           &lt;input id="Checkbox" type="checkbox" class="r-checkbox__input" /&gt;
@@ -70,95 +72,74 @@
                 </code>
               </pre>
           </div>
-          <div class="form__row">
-            <div class="form__column-2">
-              <p class="form__subtitle">SCSS-1</p>
-              <p class="form__code-scss">
-                .r-checkbox { <br />
-                <b>user-select: none;</b> <br />
-                -webkit-user-select: none; <br />
-                -ms-user-select: none; <br />
-                -moz-user-select: none; <br />
-                display: flex; <br />
-                align-items: flex-start; <br />
-                position: relative; <br />
-                cursor: pointer; <br />
-                <br />
-              </p>
-            </div>
-            <div class="form__column-2">
-              <p class="form__subtitle">SCSS-2</p>
-              <p class="form__code-scss">
-                &__checker { <br />
-                width: 20px; <br />
-                height: 20px; <br />
-                border: 2px solid #95bef0; <br />
-                border-radius: 4px; <br />
-                display: flex; <br />
-                justify-content: center; <br />
-                align-items: center; <br />
-                position: absolute; <br />
-                top: 2px; <br />
-                left: 2px;
-              </p>
-            </div>
-            <div class="form__column-2">
-              <p class="form__subtitle">SCSS-3</p>
-              <p class="form__code-scss">
-                <b>
-                  &:hover::before { <br />
-                  content: "";
-                </b>
-                <br />
-                width: 10px; <br />
-                height: 10px; <br />
-                margin: auto; <br />
-                background-color: transparent; <br />
-                } <br />
-                <br />
-                <b
-                  >&:active::before { <br />
-                  content: "";
-                </b>
-                <br />
-                width: 10px; <br />
-                height: 10px; <br />
-                margin: auto; <br />
-                background-color: #00d2ff; <br />
-                transform: scale(1.2); transition: all 0.2s linear; <br />
-                } <br />
-                } <br />
-              </p>
-            </div>
 
-            <div class="form__column-2">
-              <p class="form__subtitle">SCSS-4</p>
-              <p class="form__code-scss">
-                &__input { <br />
-                display: none; <br />
-                } <br />
-                <br />
-                &__agree-link { <br />
-                line-height: 24px; <br />
-                position: absolute; <br />
-                top: 0; <br />
-                left: 42px; <br />
-                } <br />
-                <br />
-                &__link { <br />
-                color: #50287d; <br />
-                -webkit-user-select: none; <br />
-                -ms-user-select: none; <br />
-                -moz-user-select: none; <br />
-                cursor: pointer; <br />
-                outline: 0; <br />
-                text-decoration: none; <br />
-                } <br />
-                } <br />
-              </p>
-            </div>
+          <div class="form__code-body">
+            <p class="form__subtitle">SCSS посмотреть код</p>
+            <pre class="form__code-box">
+            <code>
+              .r-checkbox {
+                user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                -moz-user-select: none;
+                display: flex;
+                align-items: flex-start;
+                position: relative;
+                cursor: pointer;
+                margin-bottom: 24px;
+              
+                &__checker {
+                  width: 20px;
+                  height: 20px;
+                  border: 2px solid #95bef0;
+                  border-radius: 4px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  position: relative;
+                  top: 2px;
+                  left: 2px;
+              
+                  &:hover::before {
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    margin: auto;
+                    background-color: transparent;
+                  }
+              
+                  &:active::before {
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    margin: auto;
+                    background-color: #00d2ff;
+                    transform: scale(1.2);
+                    transition: all 0.2s linear;
+                  }
+                }
+              
+                &__input {
+                  display: none;
+                }
+              
+                &__agree-link {
+                  line-height: 24px;
+                  position: absolute;
+                  top: 0;
+                  left: 42px;
+                }
+              
+                &__link {
+                  color: #50287d;
+                  cursor: pointer;
+                  outline: 0;
+                  text-decoration: none;
+                }
+              }
+            </code>
+          </pre>
           </div>
-
           <p class="form__description">
             ps. Что такое
             <a

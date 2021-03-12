@@ -25,7 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: relative;
     top: 2px;
     left: 2px;
 
@@ -61,9 +61,6 @@
 
   &__link {
     color: #50287d;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
     cursor: pointer;
     outline: 0;
     text-decoration: none;
