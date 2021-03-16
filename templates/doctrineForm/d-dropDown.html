@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../../styles/css/reset.css" />
     <link rel="stylesheet" href="../../styles/css/grids.css" />
-    <link rel="stylesheet" href="../../styles/css/typography.css" />
+    <link rel="stylesheet" href="../../styles/css/general.css" />
     <link
       rel="stylesheet"
-      href="../../styles/css/doctrineGeneral/d-general.css"
+      href="../../styles/css/doctrineGeneral/d-formMenu.css"
     />
     <link
       rel="stylesheet"
-      href="../../styles/css/doctrineGeneral/d-dropDownMenu.css"
+      href="../../styles/css/doctrineGeneral/d-dropDown.css"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -21,106 +21,713 @@
     <!-- main -->
     <main class="main">
       <article class="article">
-        <!-- Форма "form"-->
+        <!-- раскрывающийся и выпадающий списки-->
+        <section class="form-drop-down">
+          <h1 class="form__heading">Выпадающий или раскрывающийся список.</h1>
+          <div class="form__row">
+            <div class="form__column">
+              <div class="nav">
+                <h2 class="nav__heading">Скрытое меню</h2>
+                <p class="nav__description">
+                  Ширина блока названия меню и скрытого поля одинаковая. <br />
+                  У скрытого поля <b>{position: relative;} </b>. <br />
+                  Нижеследующий контент сдвигается вниз.
+                </p>
+                <p class="nav__direction">
+                  Наведите указатель мыши на название меню.
+                </p>
+                <ul class="nav__list">
+                  <a class="nav__link" href="#"> Формы form </a>
+                  <div class="nav__hidden">
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#"> Формы form</a>
+                    </li>
 
-        <!-- nav menu рыскрывающийся список-->
-        <section class="nav">
-          <h2 id="drop-down-list" class="nav__heading">
-            Подвижный раскрывающийся список
-          </h2>
-          <p class="nav__description">
-            Наведите указатель мыши на кнопку, чтобы открыть раскрывающееся
-            меню.
-          </p>
-          <aside class="nav__container">
-            <!-- forms_list -->
-            <ul class="nav__list">
-              <a class="nav__link" href="../templates/forms.html">
-                Формы form
-              </a>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#"> Типы форм</a>
+                    </li>
 
-              <li class="nav__item">
-                <a class="nav__item_link" href="#forms"> Формы form</a>
-              </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#">Кнопки button </a>
+                    </li>
 
-              <li class="nav__item">
-                <a class="nav__item_link" href="#type-input"> Типы форм</a>
-              </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#"> Поля input</a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#"
+                        >Самая простая кнопка button
+                      </a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#">Поле выбора даты </a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#">primary-checkbox </a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#"> Ползунок</a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#"
+                        >radio Переключатели (radiobutton).
+                      </a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#"
+                        >Раскрывающийся список, тег select
+                      </a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#">
+                        Переключатель "twin-switch"
+                      </a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#">
+                        Меню - раскрывающийся список
+                      </a>
+                    </li>
+                  </div>
+                </ul>
+                <!-- forms_list -->
+              </div>
+            </div>
+            <div class="form__column">
+              <div class="guide">
+                <h2 class="guide__heading">Скрытое меню</h2>
+                <p class="guide__description">
+                  Ширина блока названия меню и скрытого поля одинаковая. <br />
+                  У скрытого поля <b> {position: absolute; z-index: 1;} </b>.
+                  <br />
+                  Нижеследующий контент остаётся на месте.
+                </p>
+                <p class="nav__direction">
+                  Наведите указатель мыши на название меню.
+                </p>
+                <ul class="guide__list">
+                  <a class="guide__link" href="#"> Формы form </a>
+                  <div class="guide__hidden">
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#"> Формы form</a>
+                    </li>
 
-              <li class="nav__item">
-                <a class="nav__item_link" href="#button">Кнопки button </a>
-              </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#"> Типы форм</a>
+                    </li>
 
-              <li class="nav__item">
-                <a class="nav__item_link" href="#inputs"> Поля input</a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__item_link" href="#primary-button"
-                  >Самая простая кнопка button
-                </a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__item_link" href="#form__subhe"
-                  >Поле выбора даты
-                </a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__item_link" href="#primary-checkbox"
-                  >primary-checkbox
-                </a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__item_link" href="#image_ranges"> Ползунок</a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__item_link" href="#primary-radio"
-                  >radio Переключатели (radiobutton).
-                </a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__item_link" href="#teg-select"
-                  >Раскрывающийся список, тег select
-                </a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__item_link" href="#twin-switch">
-                  Переключатель "twin-switch"
-                </a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__item_link" href="#drop-down-list">
-                  Меню - раскрывающийся список
-                </a>
-              </li>
-            </ul>
-            <!-- forms_list -->
-          </aside>
-        </section>
-        <!-- nav menu рыскрывающийся список-->
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#">Кнопки button </a>
+                    </li>
 
-        <!-- drop-down выпадающий список -->
-        <section class="form-down">
-          <h1 id="form-down__dropdown" class="form-down__heading">
-            drop-down Выпадающее меню.
-          </h1>
-          <p class="form-down__description">
-            Наведите указатель мыши на кнопку, чтобы открыть выпадающее меню.
-          </p>
-          <!-- drop-down Выпадающее меню. -->
-          <div class="form-down__dropdown drop-down">
-            <button class="drop-down__button">Dropdown</button>
-            <div class="drop-down__content">
-              <a class="drop-down__link" href="#">Link 1</a>
-              <a class="drop-down__link" href="#">Link 2</a>
-              <a class="drop-down__link" href="#">Link 3</a>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#"> Поля input</a>
+                    </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#"
+                        >Самая простая кнопка button
+                      </a>
+                    </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#">Поле выбора даты </a>
+                    </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#">primary-checkbox </a>
+                    </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#"> Ползунок</a>
+                    </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#"
+                        >radio Переключатели (radiobutton).
+                      </a>
+                    </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#"
+                        >Раскрывающийся список, тег select
+                      </a>
+                    </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#">
+                        Переключатель "twin-switch"
+                      </a>
+                    </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#">
+                        Меню - раскрывающийся список
+                      </a>
+                    </li>
+                  </div>
+                </ul>
+                <!-- forms_list -->
+              </div>
             </div>
           </div>
-          <!-- drop-down Выпадающее меню. -->
-          <p>
-            Наведите указатель мыши на кнопку, чтобы открыть выпадающее меню.
-          </p>
+
+          <!-- encoding-->
+          <section class="encoding-bloc">
+            <div class="encoding">
+              <!-- -->
+              <p class="encoding__prompt">HTML</p>
+              <pre class="encoding__code-box">
+                <code class="form__code-font">                                   
+                  &lt;div class="nav"&gt;
+                    &lt;h2 class="nav__heading"&gt;Скрытое меню&lt;/h2&gt;
+                    &lt;p class="nav__direction"&gt;
+                      Наведите указатель мыши, чтобы открыть меню.
+                    &lt;/p&gt;
+                    &lt;div class="nav__container"&gt;
+                      &lt;ul class="nav__list"&gt;
+                        &lt;a class="nav__link" href="#"&gt; Формы form &lt;/a&gt;
+                          &lt;div class="nav__hidden"&gt;
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"&gt; Формы form&lt;/a&gt;
+                            &lt;/li&gt;
+        
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"&gt; Типы форм&lt;a&gt;
+                            &lt;/li&gt;
+        
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"&gt; Кнопки button &lt;a&gt;
+                            &lt;/li&gt;
+        
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"&gt; Поля input&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"
+                              &gt;Самая простая кнопка button
+                              &lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"&gt; Поле выбора даты &lt;a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"&gt; primary-checkbox &lt;/a&gt;
+                            &lt;li&gt;
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"&gt; Ползунок &lt;/a&gt;
+                            &lt;li&gt;
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"
+                              &gt; radio Переключатели (radiobutton).
+                              &lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"
+                              &gt; Раскрывающийся список, тег select
+                              &lt;a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="nav__item"&gt;
+                            &lt;a class="nav__item_link" href="#"&gt;
+                                Переключатель "twin-switch"
+                              &lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"&gt;
+                                Меню - раскрывающийся список
+                              &lt;/a&gt;
+                            &lt;/li&gt;
+                          &lt;/div&gt;  
+                      &lt;/ul&gt;
+                    
+                    &lt;/div&gt;
+                  &lt;/div&gt;                                   
+                </code>
+             </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_second">
+                SCSS relative
+              </p>
+              <pre class="encoding__code-box">
+                <code >                                   
+                  .nav {
+                    width: 100%;
+                    padding-bottom: 36px;
+                    background-color: #fff;
+                  
+                    &__heading {
+                      font-size: 18px;
+                      line-height: 24px;
+                      margin-bottom: 12px;
+                  
+                      @media screen and (min-width: 767px) {
+                        font-size: 24px;
+                        line-height: 36px;
+                      }
+                    }
+                  
+                    &__description {
+                      font-size: 11px;
+                      line-height: 24px;
+                      margin-bottom: 12px;
+                    }
+                  
+                    &__direction {
+                      display: block;
+                      font-size: 11px;
+                      line-height: 24px;
+                      margin-top: 24px;
+                    }
+                  
+                    &__list {
+                      max-width: 320px;
+                      margin-right: 10px;
+                      border-top: 1px solid #bfd1e4;
+                      background: rgba(230, 240, 250, 0.75);
+                      position: relative;
+                  
+                      &:hover .nav__hidden {
+                        display: block;
+                        width: 100%;
+                        background: rgba(230, 240, 250, 1);
+                        position: relative;
+                      }
+                  
+                      @media screen and (min-width: 375px) {
+                        max-width: 375px;
+                      }
+                  
+                      &:hover .nav__link {
+                        background-color: #ddd;
+                        color: black;
+                        transform: scaleY(1.05);
+                        transition: all 2ms linear;
+                      }
+                    }
+                    &__hidden {
+                      display: none;
+                    }
+                  
+                    &__link {
+                      display: block;
+                      text-decoration: none;
+                      font-size: 15px;
+                      line-height: 20px;
+                      color: #333333;
+                      padding: 6px 24px;
+                    }
+                  
+                    &__item {
+                      padding-left: 48px;
+                      position: relative;
+                      border-top: 1px solid #bfd1e4;
+                  
+                      &_link {
+                        display: block;
+                        width: 100%;
+                        font-size: 14px;
+                        line-height: 14px;
+                        text-decoration: none;
+                        color: #333333;
+                        padding: 6px 0;
+                        margin-right: 10px;
+                  
+                        &:hover {
+                          background-color: #ddd;
+                          color: black;
+                          transform: scaleY(1.05);
+                          transition: all 2ms linear;
+                        }
+                      }
+                    }
+                  }
+                </code>
+             </pre>
+            </div>
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_third">
+                SCSS absolute
+              </p>
+              <pre class="encoding__code-box">
+                <code >                                   
+                  .nav {
+                    width: 100%;
+                    padding-bottom: 36px;
+                    background-color: #fff;
+                  
+                    &__heading {
+                      font-size: 18px;
+                      line-height: 24px;
+                      margin-bottom: 12px;
+                  
+                      @media screen and (min-width: 767px) {
+                        font-size: 24px;
+                        line-height: 36px;
+                      }
+                    }
+                  
+                    &__description {
+                      font-size: 11px;
+                      line-height: 24px;
+                      margin-bottom: 12px;
+                    }
+                  
+                    &__direction {
+                      display: block;
+                      font-size: 11px;
+                      line-height: 24px;
+                      margin-top: 24px;
+                    }
+                  
+                    &__list {
+                      max-width: 320px;
+                      margin-right: 10px;
+                      border-top: 1px solid #bfd1e4;
+                      background: rgba(230, 240, 250, 0.75);
+                      position: relative;
+                  
+                      &:hover .nav__hidden {
+                        display: block;
+                        width: 100%;
+                        background: rgba(230, 240, 250, 1);
+                        position: absolute;
+                        z-index: 1;
+                      }
+                  
+                      @media screen and (min-width: 375px) {
+                        max-width: 375px;
+                      }
+                  
+                      &:hover .nav__link {
+                        background-color: #ddd;
+                        color: black;
+                        transform: scaleY(1.05);
+                        transition: all 2ms linear;
+                      }
+                    }
+                    &__hidden {
+                      display: none;
+                    }
+                  
+                    &__link {
+                      display: block;
+                      text-decoration: none;
+                      font-size: 15px;
+                      line-height: 20px;
+                      color: #333333;
+                      padding: 6px 24px;
+                    }
+                  
+                    &__item {
+                      padding-left: 48px;
+                      position: relative;
+                      border-top: 1px solid #bfd1e4;
+                  
+                      &_link {
+                        display: block;
+                        width: 100%;
+                        font-size: 14px;
+                        line-height: 14px;
+                        text-decoration: none;
+                        color: #333333;
+                        padding: 6px 0;
+                        margin-right: 10px;
+                  
+                        &:hover {
+                          background-color: #ddd;
+                          color: black;
+                          transform: scaleY(1.05);
+                          transition: all 2ms linear;
+                        }
+                      }
+                    }
+                  }
+                </code>
+             </pre>
+            </div>
+            <p class="form__description">HTML одинаковый для обоих списков</p>
+            <p class="form__description">
+              Стилизация отличается позиционированием
+              <b>position: absolute;</b> и <b>z-index: 1;</b> для него.
+            </p>
+          </section>
+          <!-- encoding-->
+          <!-- nav menu рыскрывающийся список-->
         </section>
-        <!-- drop-down выпадающий список -->
+        <!-- раскрывающийся и выпадающий списки-->
+
+        <!-- Выпадающее меню -->
+        <section class="form-menu">
+          <h2 class="form__subheading">Выпадающее меню</h2>
+          <p class="form-menu__direction">
+            Наведите указатель мыши на название, чтобы открыть выпадающее меню.
+          </p>
+          <div class="form-menu__header">
+            <div class="form-menu__header-item">
+              <button class="form-menu__button">название</button>
+              <div class="form-menu__content">
+                <a class="form-menu__link" href="#">первый</a>
+                <a class="form-menu__link" href="#">второй</a>
+                <a class="form-menu__link" href="#">третий</a>
+                <a class="form-menu__link" href="#">четвёртый</a>
+                <a class="form-menu__link" href="#">пятый</a>
+              </div>
+            </div>
+            <div class="form-menu__header-item">
+              <button class="form-menu__button">название</button>
+              <div class="form-menu__content">
+                <a class="form-menu__link" href="#">первый</a>
+                <a class="form-menu__link" href="#">второй</a>
+                <a class="form-menu__link" href="#">третий</a>
+                <a class="form-menu__link" href="#">четвёртый</a>
+                <a class="form-menu__link" href="#">пятый</a>
+              </div>
+            </div>
+            <div class="form-menu__header-item">
+              <button class="form-menu__button">название</button>
+              <div class="form-menu__content">
+                <a class="form-menu__link" href="#">первый</a>
+                <a class="form-menu__link" href="#">второй</a>
+                <a class="form-menu__link" href="#">третий</a>
+                <a class="form-menu__link" href="#">четвёртый</a>
+                <a class="form-menu__link" href="#">пятый</a>
+              </div>
+            </div>
+            <div class="form-menu__header-item">
+              <button class="form-menu__button">название</button>
+              <div class="form-menu__content">
+                <a class="form-menu__link" href="#">первый</a>
+                <a class="form-menu__link" href="#">второй</a>
+                <a class="form-menu__link" href="#">третий</a>
+                <a class="form-menu__link" href="#">четвёртый</a>
+                <a class="form-menu__link" href="#">пятый</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                <code class="encoding__code-font">                                   
+                  &lt;div class="form-menu__header"&gt;&gt;
+                    &lt;div class="form-menu__header-item"&gt;
+                     &lt;button class="form-menu__button">название&lt;button&gt;
+                     &lt;div class="form-menu__content"&gt;
+                        &lt;a class="form-menu__link" href="#">первый&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">второй&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">третий&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">четвёртый&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">пятый&lt;/a&gt;
+                     &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="form-menu__header-item"&gt;
+                     &lt;button class="form-menu__button">название&lt;button&gt;
+                     &lt;div class="form-menu__content"&gt;
+                        &lt;a class="form-menu__link" href="#">первый&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">второй&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">третий&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">четвёртый&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">пятый&lt;/a&gt;
+                     &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="form-menu__header-item"&gt;
+                     &lt;button class="form-menu__button">название&lt;button&gt;
+                     &lt;div class="form-menu__content"&gt;
+                        &lt;a class="form-menu__link" href="#">первый&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">второй&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">третий&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">четвёртый&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">пятый&lt;/a&gt;
+                     &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="form-menu__header-item"&gt;
+                     &lt;button class="form-menu__button">название&lt;button&gt;
+                     &lt;div class="form-menu__content"&gt;
+                        &lt;a class="form-menu__link" href="#">первый&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">второй&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">третий&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">четвёртый&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">пятый&lt;/a&gt;
+                     &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;                                   
+                </code>
+             </pre>
+          </div>
+
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">SCSS</p>
+            <pre class="encoding__code-box">
+                <code>                                   
+                  .form-menu {
+                    width: 100%;
+                    padding: 48px 0 600px;
+                  
+                    &__header {
+                      width: 100%;
+                      display: flex;
+                      flex-wrap: wrap;
+                      justify-content: space-around;
+                      align-items: center;
+                      background-image: linear-gradient(white, rgb(224, 16, 214), white);
+                    }                                                
+                                    
+                    &__header-item {
+                      position: relative;
+                  
+                      &:hover .form-menu__content {
+                        display: block;
+                      }
+                    }
+                  
+                    &__button {
+                      min-width: 150px;
+                      padding: 24px 12px;
+                      font-weight: normal;
+                      color: #ffffff;
+                  
+                      &:hover {
+                        font-weight: bold;
+                      }
+                    }
+                  
+                    &__content {
+                      display: none;
+                      position: absolute;
+                      background-color: #f1f1f1;
+                      min-width: 160px;
+                      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                      z-index: 1;
+                    }
+                  
+                    &__link {
+                      font-size: 14px;
+                      padding: 6px 24px;
+                      text-decoration: none;
+                      display: block;
+                      border-top: 1px solid rgb(149, 202, 223);
+                  
+                      &:hover {
+                        background-color: #ddd;
+                      }
+                    }
+                  }                                   
+                </code>
+             </pre>
+          </div>
+        </section>
+        <!-- Выпадающее меню -->
+
+        <!-- Раскрывающийся список, тег select , а также поле с одним или...  -->
+        <section class="form-select">
+          <h1 id="teg-select" class="form__heading">
+            Раскрывающийся список,
+            <a
+              class="form__link"
+              target="_blank"
+              rel="noopener"
+              href="http://htmlbook.ru/html/select"
+              >тег select</a
+            >
+            , а также
+            <a
+              class="form__link"
+              target="_blank"
+              rel="noopener"
+              href="http://htmlbook.ru/samhtml5/formy/pole-so-spiskom"
+              >поле выбора с одним или множественным списком.</a
+            >
+          </h1>
+          <div>
+            <p class="form__description">
+              Тег <b>select</b> позволяет создать элемент интерфейса в виде
+              раскрывающегося списка, а также список с одним или множественным
+              выбором. В зависимости от настроек, в списке можно выбирать одно
+              или несколько значений. Преимущество списка в его компактности и
+              универсальности, список может занимать одну или несколько строк, в
+              нём можно выбирать одно или несколько значений.
+            </p>
+            <p class="form__description">
+              Тег <b>select</b> выступает контейнером для пунктов списка и
+              определяет его вид, будет ли это раскрывающийся список или же
+              список с одним или множественным выбором.
+            </p>
+            <p class="form__description">
+              Конечный вид зависит от использования атрибута <b>size</b> тега
+              <b>select</b>, который устанавливает высоту списка. <br />
+            </p>
+            <p class="form__description">
+              Ширина списка при этом определяется автоматически исходя из длины
+              самого широкого текста внутри <b> option</b>, а также может
+              изменяться с помощью стилей. <br />
+            </p>
+            <p class="form__description">
+              Каждый пункт создается с помощью тега <b>option</b>, который
+              должен быть вложен в контейнер <b>select</b>. Если планируется
+              отправлять данные списка на сервер, то требуется поместить элемент
+              <b>select</b> внутрь формы. Это также необходимо, когда к данным
+              списка идет обращение через скрипты.
+            </p>
+          </div>
+          <h2 class="form__subheading">Поле выбора</h2>
+
+          <!-- поле выбора  -->
+          <div class="form-select__select">
+            <label class="select">
+              <select class="select__list" name="">
+                <option class="select__item" value="">Частным лицам</option>
+                <option class="select__item" value="">Кредиты</option>
+                <option class="select__item" value="">Ипотека</option>
+                <option class="select__item" value="">
+                  Кассовое обслуживание
+                </option>
+                <option class="select__item" value="">Вклады</option>
+                <option class="select__item" value="">Денежные переводы</option>
+              </select>
+            </label>
+          </div>
+          <!-- поле выбора  -->
+
+          <!-- encoding -->
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                <code class="encoding__code-font">                                   
+                  &lt;div class="form__select select"&gt;
+                    &lt;label class="select__title"&gt;
+                      &lt;select class="select__list" name=""&gt;
+                        &lt;option class="select__item" value=""&gt;Частным лицам&lt;/option&gt;
+                        &lt;option class="select__item" value=""&gt;Кредиты&lt;/option&gt;
+                        &lt;option class="select__item" value=""&gt;Ипотека&lt;/option&gt;
+                        &lt;option class="select__item" value=""&gt;
+                            Кассовое обслуживание
+                            &lt;/option&gt;
+                        &lt;option class="select__item" value="">Вклады&lt;/option&gt;
+                        &lt;option class="select__item" value="">Денежные переводы&lt;/option&gt;
+                      &lt;select&gt;
+                    &lt;/label&gt;
+                  &lt;/div&gt;                                   
+                </code>
+             </pre>
+          </div>
+
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">SCSS</p>
+            <pre class="encoding__code-box">
+                <code>                                   
+                  .select {
+                    width: 100%;
+                  
+                    &__list {
+                      font-size: 13px;
+                      width: 100%;
+                    }
+                  
+                    &__item {
+                      font-size: 13px;
+                      width: 100%;
+                    }
+                  }                                    
+                </code>
+             </pre>
+          </div>
+          <!-- encoding -->
+        </section>
+        <!-- Раскрывающийся список, тег select , а также поле с одним или... -->
       </article>
 
       <!-- menu-mobile -->

@@ -101,15 +101,16 @@ body * {
   }
 }
 
-//      Поле выбора даты с иконкой "треугольник"
+// Поле выбора даты *
 .input-date {
   width: 100%;
 
   &__label {
+    font-size: 13px;
     color: #b5bdc8;
   }
 
-  &__block {
+  &__bloc {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -122,27 +123,10 @@ body * {
     color: #b5bdc8;
     border-bottom: 1px solid #b5bdc8;
   }
-
-  &__icon {
-    // высота блока зависит от высоты line-height field
-    width: 24px;
-    height: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  &__triangle {
-    width: 8px;
-    height: 6px;
-    background-position: center;
-    background-size: cover;
-  }
 }
-//      Поле выбора даты с иконкой "треугольник"
+// Поле выбора даты *
 
-// поле с подсказкой
+// поле с подсказкой *
 .input-prompt {
   width: 100%;
 
@@ -155,9 +139,9 @@ body * {
     box-sizing: border-box;
   }
 }
-// поле с подсказкой
+// поле с подсказкой *
 
-// поле с подсказкой и подзаголовком
+// поле с подсказкой и подзаголовком *
 .input-subtitle {
   width: 100%;
 
@@ -177,7 +161,7 @@ body * {
     color: #b5bdc8;
   }
 }
-// поле с подсказкой и подзаголовком
+// поле с подсказкой и подзаголовком *
 
 // primary-checkbox
 .primary-checkbox {
@@ -230,7 +214,7 @@ body * {
 }
 // primary-checkbox
 
-// primary-button
+// primary-button *
 .primary-button {
   cursor: pointer;
 
@@ -244,10 +228,11 @@ body * {
   text-align: center;
   box-sizing: border-box;
 }
-// primary-button
+// primary-button *
 
-// secondary-button
+// secondary-button *
 .secondary-button {
+  cursor: pointer;
   width: 100%;
   padding: 16px 12px;
   border-radius: 8px;
@@ -258,7 +243,7 @@ body * {
   color: white;
   text-align: center;
 }
-// secondary-button
+// secondary-button *
 
 // tertiary-button
 .tertiary-button {
@@ -305,6 +290,58 @@ body * {
 }
 // primary-radio *
 
+// secondary-radio Двойной спаренный переключатель *
+.secondary-radio {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__item {
+    width: 50%;
+    cursor: pointer;
+    padding: 7px 12px;
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px solid black;
+
+    &:active,
+    &:hover {
+      background-color: #15499f;
+      border: 1px solid #15499f;
+    }
+
+    &:active .secondary-radio__title,
+    &:hover .secondary-radio__title {
+      color: #ffffff;
+    }
+
+    &:first-child {
+      // border-right: none;
+      border-radius: 8px 0 0 8px;
+    }
+
+    &:last-child {
+      // border-left: none;
+      border-radius: 0 8px 8px 0;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      transition: 0.2s linear;
+    }
+  }
+
+  &__field {
+    display: none;
+  }
+
+  &__title {
+    font-size: 13px;
+  }
+}
+// secondary-radio Двойной спаренный переключатель *
+
 // twin-switch  спаренный переключатель *
 .twin-switch {
   width: 100%;
@@ -312,22 +349,14 @@ body * {
   justify-content: center;
   align-items: center;
 
-  &__subheading {
-    color: blue;
-    margin-bottom: 36px;
-  }
-
   &__item {
     width: 50%;
     cursor: pointer;
-    // padding: 12px;
     box-sizing: border-box;
     background-color: white;
     border: 1px solid #c4c4c4;
 
     &:first-child {
-      background-color: #1998a7;
-      border: 1px solid #1998a7;
       border-radius: 8px 0px 0px 8px;
     }
 
@@ -335,7 +364,8 @@ body * {
       border-radius: 0px 8px 8px 0px;
     }
 
-    &:first-child .twin-switch__title {
+    &:active .twin-switch__title,
+    &:hover .twin-switch__title {
       color: white;
     }
 
@@ -344,8 +374,10 @@ body * {
       transition: 0.2s linear;
     }
 
-    &:active {
-      border: 2px;
+    &:active,
+    &:hover {
+      background-color: #1998a7;
+      border: 1px solid #1998a7;
     }
   }
 
@@ -355,7 +387,6 @@ body * {
 
   &__title {
     font-size: 14px;
-    font-weight: normal;
     text-align: center;
     padding: 16px 12px;
   }
@@ -367,7 +398,7 @@ body * {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f3f5f7;
+  background: #b6d3f0;
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
   border-radius: 36px;
 
@@ -395,10 +426,65 @@ body * {
   }
 
   &__title {
+    font-size: 13px;
     color: #5a646e;
   }
 }
 // triple-switch Тройной переключатель *
+
+// multicolor-switch  Тройной переключатель *
+.multicolor-switch {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__item {
+    width: calc(33.333333% - 12px);
+    cursor: pointer;
+    border-radius: 24px;
+    background-image: linear-gradient(blue, green, yellow);
+    box-shadow: 0 -5px 10px -3px #3498db, 0 5px 10px -3px #2ecc71;
+    margin-left: 6px;
+    margin-right: 6px;
+    text-align: center;
+    flex: auto;
+
+    &:hover {
+      transform: scale(1.05);
+      opacity: 0.8;
+      transition: all 0.2s linear;
+    }
+
+    &:hover .multicolor-switch__title {
+      transform: rotate(360deg);
+      transition: all 0.2s linear;
+    }
+
+    &:first-child {
+      margin-left: 0px;
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+
+    &:active {
+      border: 1px solid #3498db;
+    }
+  }
+
+  &__field {
+    display: none;
+  }
+
+  &__title {
+    font-size: 13px;
+    color: white;
+    padding: 8px 0px;
+  }
+}
+// multicolor-switch  Тройной переключатель *
 
 // drop-down выпадающий список *
 .drop-down {

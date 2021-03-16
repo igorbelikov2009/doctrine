@@ -4,12 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../../styles/css/reset.css" />
     <link rel="stylesheet" href="../../styles/css/grids.css" />
-
-    <link
-      rel="stylesheet"
-      href="../../styles/css/doctrineGeneral/d-general.css"
-    />
-
+    <link rel="stylesheet" href="../../styles/css/general.css" />
     <link
       rel="stylesheet"
       href="../../styles/css/doctrineGeneral/d-formMenu.css"
@@ -27,7 +22,7 @@
     <main class="main">
       <article class="article">
         <!--   Переключатели info -->
-        <section class="form">
+        <section class="form-radiobutton">
           <h1 id="primary-radio" class="form__heading">
             radio переключатели (radiobutton).
           </h1>
@@ -39,8 +34,12 @@
 
           <p class="form__description">
             С ними используются
-            <a. class="form__link" href="http://htmlbook.ru/html/input/checked"
-              >атрибуты checked</a.
+            <a
+              class="form__link"
+              target="_blank"
+              rel="noopener"
+              href="http://htmlbook.ru/html/input/checked"
+              >атрибуты checked</a
             >
             Этот атрибут определяет, помечен ли заранее такой элемент формы, как
             флажок или переключатель. В случае использования переключателей
@@ -51,10 +50,10 @@
         <!--   Переключатели info -->
 
         <!-- multicolor-switch Тройной переключатель -->
-        <section class="form">
+        <section class="form-radiobutton">
           <h2 class="form__subheading">Тройной переключатель</h2>
-          <div class="form__multicolor-switch multicolor-switch__container">
-            <p class="multicolor-switch__subheading">
+          <div class="form-radiobutton__multicolor-switch">
+            <p class="form__description">
               Каким браузером в основном пользуетесь?
             </p>
 
@@ -91,12 +90,12 @@
             </div>
           </div>
 
-          <div class="form__code-body">
-            <p class="form__subtitle">HTML посмотреть код</p>
-            <pre class="form__code-box">
-                <code class="form__code-font">                                   
-                  &lt;div class="form__multicolor-switch multicolor-switch__container"&gt;
-                  &lt;p class="multicolor-switch__subheading"&gt;
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                <code class="encoding__code-font">                                   
+                  &lt;div class="form-radiobutton__multicolor-switch"&gt;
+                  &lt;p class="form__subheading"&gt;
                       Каким браузером в основном пользуетесь?
                       &lt;/p&gt;
         
@@ -136,9 +135,9 @@
              </pre>
           </div>
 
-          <div class="form__code-body">
-            <p class="form__subtitle">SCSS посмотреть код</p>
-            <pre class="form__code-box">
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">general.scss</p>
+            <pre class="encoding__code-box">
                 <code>                                   
                   .multicolor-switch {
                     width: 100%;
@@ -146,30 +145,12 @@
                     justify-content: center;
                     align-items: center;
                   
-                    &__container {
-                      width: 100%;
-                      max-width: 272px;
-                  
-                      @media screen and (min-width: 375px) {
-                        max-width: 372px;
-                      }
-                    }
-                  
-                    &__subheading {
-                      font-size: 16px;
-                      line-height: 24px;
-                      color: blue;
-                      margin-bottom: 36px;
-                    }
-                  
                     &__item {
                       width: calc(33.333333% - 12px);
                       cursor: pointer;
                       border-radius: 24px;
-                      background-image: 
-                      linear-gradient(blue, green, yellow);
-                      box-shadow: 0 -5px 10px -3px #3498db, 
-                      0 5px 10px -3px #2ecc71;
+                      background-image: linear-gradient(blue, green, yellow);
+                      box-shadow: 0 -5px 10px -3px #3498db, 0 5px 10px -3px #2ecc71;
                       margin-left: 6px;
                       margin-right: 6px;
                       text-align: center;
@@ -208,7 +189,7 @@
                       color: white;
                       padding: 8px 0px;
                     }
-                  }                                   
+                  }
                 </code>
              </pre>
           </div>
@@ -216,12 +197,12 @@
         <!-- multicolor-switch Тройной переключатель -->
 
         <!-- triple-switch Тройной переключатель * -->
-        <section class="form">
+        <section class="form-radiobutton">
           <h2 class="form__subheading">
             Тройной переключатель <br />
             "triple-switch"
           </h2>
-          <div class="form__triple-switch">
+          <div class="form-radiobutton__triple-switch">
             <div class="triple-switch">
               <label class="triple-switch__item">
                 <input
@@ -254,10 +235,10 @@
               </label>
             </div>
           </div>
-          <div class="form__code-body">
-            <p class="form__subtitle">HTML посмотреть код</p>
-            <pre class="form__code-box">
-                <code class="form__code-font">                                   
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                <code class="encoding__code-font">                                   
                   &lt;div class="form__triple-switch"&gt;
                     &lt;div class="triple-switch"&gt;
                       &lt;label class="triple-switch__item"&gt;
@@ -295,9 +276,9 @@
              </pre>
           </div>
 
-          <div class="form__code-body">
-            <p class="form__subtitle">SCSS посмотреть код</p>
-            <pre class="form__code-box">
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">general.scss</p>
+            <pre class="encoding__code-box">
                 <code>                                   
                   .triple-switch {
                     display: flex;
@@ -342,15 +323,15 @@
         <!-- triple-switch Тройной переключатель * -->
 
         <!-- secondary-radio Двойной спаренный переключатель -->
-        <section class="form">
+        <section class="form-radiobutton">
           <h2 class="form__subheading">
             Двойной спаренный переключатель <br />
             "secondary-radio"
           </h2>
 
-          <div class="form__secondary-radio">
-            <p class="secondary-radio__subheading">Выберите окно просмотра</p>
-            <form class="secondary-radio">
+          <div class="form-radiobutton__container-secondary-radio">
+            <p class="form__description">Выберите окно просмотра</p>
+            <div class="form-radiobutton__secondary-radio secondary-radio">
               <label class="secondary-radio__item">
                 <input
                   class="secondary-radio__field"
@@ -371,15 +352,15 @@
                 />
                 <p class="secondary-radio__title">Карта</p>
               </label>
-            </form>
+            </div>
           </div>
 
-          <div class="form__code-body">
-            <p class="form__subtitle">HTML посмотреть код</p>
-            <pre class="form__code-box">
-                <code class="form__code-font">                                   
-                  &lt;div class="form__secondary-radio"&gt;&gt;
-                    &lt;p class="secondary-radio__subheading">Выберите окно просмотра&lt;/p&gt;
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                <code class="encoding__code-font">                                   
+                  &lt;div class="form-radiobutton__secondary-radio"&gt;&gt;
+                    &lt;p class="form__subheading">Выберите окно просмотра&lt;/p&gt;
                     &lt;div  class="secondary-radio"&gt;
                       &lt;label class="secondary-radio__item"&gt;
                         &lt;input
@@ -407,23 +388,15 @@
              </pre>
           </div>
 
-          <div class="form__code-body">
-            <p class="form__subtitle">SCSS посмотреть код</p>
-            <pre class="form__code-box">
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">general.scss</p>
+            <pre class="encoding__code-box">
                 <code>                                   
                   .secondary-radio {
                     width: 100%;
-                    max-width: 132px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                  
-                    &__subheading {
-                      font-size: 16px;
-                      line-height: 24px;
-                      color: blue;
-                      margin-bottom: 36px;
-                    }
                   
                     &__item {
                       width: 50%;
@@ -467,23 +440,21 @@
                     &__title {
                       font-size: 13px;
                     }
-                  }                                    
+                  }
                 </code>
              </pre>
           </div>
         </section>
         <!-- secondary-radio Двойной спаренный переключатель -->
 
-        <!-- twin-switch -->
-        <section class="form">
-          <p class="form__description"></p>
+        <!-- twin-switch  -->
+        <section class="form-radiobutton">
           <h1 id="twin-switch" class="form__subheading">
             Переключатель <br />
             "twin-switch"
           </h1>
 
-          <!-- package twin-switch -->
-          <div class="form__package">
+          <div class="form-radiobutton__twin-switch">
             <div class="twin-switch">
               <label class="twin-switch__item">
                 <input
@@ -526,12 +497,11 @@
               </label>
             </div>
           </div>
-
-          <div class="form__code-body">
-            <p class="form__subtitle">HTML посмотреть код</p>
-            <pre class="form__code-box">
-                <code class="form__code-font">                                   
-                  &lt;div class="form__package"&gt;
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                <code class="encoding__code-font">                                   
+                  &lt;div class="form-radiobutton__twin-switch"&gt;
                     &lt;div class="twin-switch"&gt;
                       &lt;label class="twin-switch__item"&gt;
                         &lt;input
@@ -560,7 +530,7 @@
                           name="browser"
                           value="ie"
                         /&gt;
-                        &lt;p class="twin-switch__title"&gt;Третий&lt;/p&gt;
+                        &lt;p class="twin-switch__title"&gt;Третий&lt;/p>
                       &lt;/label&gt;
         
                       &lt;label class="twin-switch__item"&gt;
@@ -573,25 +543,20 @@
                         &lt;p class="twin-switch__title"&gt;Четвёртый&lt;/p&gt;
                       &lt;/label&gt;
                     &lt;/div&gt;
-                  &lt;/div&gt;                                   
+                  &lt;/div&gt;                                  
                 </code>
              </pre>
           </div>
 
-          <div class="form__code-body">
-            <p class="form__subtitle">SCSS посмотреть код</p>
-            <pre class="form__code-box">
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">general.scss</p>
+            <pre class="encoding__code-box">
                 <code>                                   
                   .twin-switch {
                     width: 100%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                  
-                    &__subheading {
-                      color: blue;
-                      margin-bottom: 36px;
-                    }
                   
                     &__item {
                       width: 50%;
@@ -634,13 +599,12 @@
                       text-align: center;
                       padding: 16px 12px;
                     }
-                  }                                    
+                  }                                   
                 </code>
              </pre>
           </div>
-          <!-- package twin-switch -->
         </section>
-        <!-- twin-switch -->
+        <!-- twin-switch  -->
       </article>
 
       <!-- menu-mobile -->

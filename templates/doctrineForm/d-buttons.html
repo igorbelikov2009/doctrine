@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../../styles/css/reset.css" />
     <link rel="stylesheet" href="../../styles/css/grids.css" />
-    <link rel="stylesheet" href="../../styles/css/typography.css" />
+    <link rel="stylesheet" href="../../styles/css/general.css" />
     <link
       rel="stylesheet"
       href="../../styles/css/doctrineGeneral/d-general.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../styles/css/doctrineGeneral/d-formMenu.css"
     />
     <link
       rel="stylesheet"
@@ -21,11 +25,15 @@
     <!-- main -->
     <main class="main">
       <article class="article">
-        <!-- Кнопки button -->
-        <section id="button" class="form">
-          <h1 class="form__description h1-font">
+        <!-- form-buttons -->
+        <section id="button" class="form-buttons">
+          <h1 class="form__heading">
             Кнопки
-            <a class="form__link" href="http://htmlbook.ru/html/button"
+            <a
+              class="form__link"
+              target="_blank"
+              rel="noopener"
+              href="http://htmlbook.ru/html/button"
               >button</a
             >
           </h1>
@@ -34,53 +42,270 @@
             Кнопку на веб-странице можно создать двумя способами — с помощью
             тега <b>button</b> и тега <b>input</b>. Оба тега используют
             одинаковые
-            <a class="form__link" href="http://htmlbook.ru/html/input/type"
+            <a
+              class="form__link"
+              target="_blank"
+              rel="noopener"
+              href="http://htmlbook.ru/html/input/type"
               >типы.</a
             >
           </p>
 
-          <h2 class="form__subheading h2-font">button кнопка с картинкой</h2>
+          <h2 class="form__subheading">button кнопка с картинкой</h2>
 
           <!-- button кнопка с картинкой -->
-          <form class="form__container" action="">
-            <button class="form__button primary-button" type="submit">
-              button кнопка с картинкой
+          <div class="form-buttons__container-button-img">
+            <button class="primary-button">
               <img
-                class="primary-button_image"
+                class="form-buttons__scale-image"
                 src="../../assets/images/doctrineForm/phone.jpg"
                 alt=""
               />
             </button>
-          </form>
+          </div>
           <!-- button кнопка с картинкой -->
 
-          <h2 class="form__subheading h2-font">Самая простая кнопка button</h2>
+          <!-- encoding -->
+          <div>
+            <div class="encoding">
+              <p class="encoding__prompt">d-buttons.html</p>
+              <pre class="encoding__code-box">
+                  <code class="encoding__code-font">                                   
+                    &lt;div class="form-buttons__container-button-img"&gt;
+                      &lt;button class="primary-button"&gt;
+                        &lt;img
+                          class="primary-button__scale-image"
+                          src="../../assets/images/doctrineForm/phone.jpg"
+                          alt=""
+                        /&gt;
+                      &lt;/button&gt;
+                    &lt;/div&gt;                                    
+                  </code>
+               </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_second">
+                d-buttons.scss
+              </p>
+              <pre class="encoding__code-box">
+                  <code>                                   
+                    .primary-button {
+                      &__scale-image {
+                        width: 102px;
+                        height: 108px;
+                        border-radius: 22px;
+                    
+                        &:hover {
+                          transform: scale(1.1);
+                          opacity: 0.9;
+                          transition: all 0.2s linear;
+                        }
+                      }
+                    }                                      
+                  </code>
+               </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt"></p>
+              <p class="encoding__prompt encoding__prompt_third">
+                general.scss
+              </p>
+              <pre class="encoding__code-box">
+                  <code>                                   
+                    .primary-button {
+                      cursor: pointer;
+                    
+                      width: 100%;
+                      padding: 12px 8px;
+                      font-size: 16px;
+                      line-height: 24px;
+                      color: white;
+                      background-color: #50287d;
+                      border-radius: 24px;
+                      text-align: center;
+                      box-sizing: border-box;
+                    }                                   
+                  </code>
+               </pre>
+            </div>
+          </div>
+          <!-- encoding -->
+          <h2 class="form__subheading">Самая простая кнопка button</h2>
 
           <!-- Самая простая кнопка button-->
-          <button class="form__button primary-button">
-            <p id="primary-button" class="primary-button_scale">
-              Самая простая кнопка button
-            </p>
-          </button>
-          <!-- Самая простая кнопка button-->
-
-          <!-- Две горизонтальные кнопки другой стилизации -->
-          <h2 class="form__subheading h2-font">
-            Две горизонтальные кнопки другой стилизации
-          </h2>
-          <form class="form__button second-buttons__buttons" action="">
-            <button class="second-buttons__button second-buttons__button_left">
-              <p class="second-buttons__button_scale">кнопка button</p>
-            </button>
-            <button class="second-buttons__button second-buttons__button_right">
-              <p class="second-buttons__button_scale">
-                я спрячусь при адаптации
+          <div class="form-buttons__container-button">
+            <button class="primary-button">
+              <p id="#" class="form-buttons__scale-title">
+                Самая простая кнопка button
               </p>
             </button>
-          </form>
+          </div>
+          <!-- Самая простая кнопка button-->
+
+          <!-- encoding -->
+          <div>
+            <div class="encoding">
+              <p class="encoding__prompt">d-buttons.html</p>
+              <pre class="encoding__code-box">
+                          <code class="encoding__code-font">                                   
+                            &lt;div class="form-buttons__container-button"&gt;
+                              &lt;button class="primary-button"&gt;
+                                &lt;p id="#" class="primary-button__scale-title"&gt;
+                                  Самая простая кнопка button
+                                &lt;/p&gt;
+                              &lt;/button&gt;
+                            &lt;/div&gt;                                   
+                          </code>
+                       </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_second">
+                d-buttons.scss
+              </p>
+              <pre class="encoding__code-box">
+                          <code>                                   
+                            .primary-button {
+                                                          
+                              &__scale-title {
+                                color: #fff;
+                                display: block;
+                            
+                                &:hover {
+                                  transform: scale(1.1);
+                                  opacity: 0.9;
+                                  transition: all 0.2s linear;
+                                }
+                              }
+                            }                                   
+                          </code>
+                       </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt"></p>
+              <p class="encoding__prompt encoding__prompt_third">
+                general.scss
+              </p>
+              <pre class="encoding__code-box">
+                          <code>                                   
+                            .primary-button {
+                              cursor: pointer;
+                            
+                              width: 100%;
+                              padding: 12px 8px;
+                              font-size: 16px;
+                              line-height: 24px;
+                              color: white;
+                              background-color: #50287d;
+                              border-radius: 24px;
+                              text-align: center;
+                              box-sizing: border-box;
+                            }                                   
+                          </code>
+                       </pre>
+            </div>
+          </div>
+          <!-- encoding -->
+
           <!-- Две горизонтальные кнопки другой стилизации -->
+          <h2 class="form__subheading">
+            Две горизонтальные кнопки другой стилизации
+          </h2>
+          <div class="form-buttons__container-buttons">
+            <button class="form-buttons__secondary-button secondary-button">
+              кнопка button
+            </button>
+            <button class="form-buttons__secondary-button secondary-button">
+              я спрячусь при адаптации
+            </button>
+          </div>
+          <!-- Две горизонтальные кнопки другой стилизации -->
+
+          <!-- encoding -->
+          <div>
+            <div class="encoding">
+              <p class="encoding__prompt">d-buttons.html</p>
+              <pre class="encoding__code-box">
+                  <code class="encoding__code-font">                                   
+                      &lt;div class="form-buttons__container-buttons"&gt;
+                        &lt;button class="secondary-button"&lt;кнопка button&lt;/button&lt;
+                        &lt;button class="secondary-button"&lt;я спрячусь при адаптации&lt;/button&lt;
+                      &lt;/div&lt;                                   
+                   </code>
+                </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_second">
+                d-buttons.scss
+              </p>
+              <pre class="encoding__code-box">
+                          <code>                                   
+                            .secondary-button {
+                              max-width: 232px;
+                            
+                              &:hover {
+                                opacity: 0.9;
+                                transition: all 0.2s linear;
+                                border: 2px solid #0a0a0a;
+                                box-shadow: 2px 2px 2px 2px #0a0a0a;
+                              }
+                            
+                              &:first-child {
+                                background-color: #50287d;
+                                color: #ffffff;
+                                margin-right: 48px;
+                              }
+                            
+                              &:last-child {
+                                background-color: #fff;
+                                color: #50287d;
+                                border: 1px solid #50287d;
+                                display: none;
+                            
+                                @media screen and (min-width: 576px) {
+                                  display: block;
+                            
+                                  &:hover {
+                                    border: 2px solid #50287d;
+                                    box-shadow: 2px 2px 2px 2px #50287d;
+                                  }
+                                }
+                              }
+                            }                                   
+                          </code>
+                       </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt"></p>
+              <p class="encoding__prompt encoding__prompt_third">
+                general.scss
+              </p>
+              <pre class="encoding__code-box">
+                          <code>                                   
+                            .secondary-button {
+                              cursor: pointer;
+                              width: 100%;
+                              padding: 16px 12px;
+                              border-radius: 8px;
+                              box-sizing: border-box;
+                              border: 1px solid #50287d;
+                              font-size: 16px;
+                              line-height: 24px;
+                              color: white;
+                              text-align: center;
+                            }                                    
+                          </code>
+                       </pre>
+            </div>
+          </div>
+          <!-- encoding -->
         </section>
-        <!-- Кнопки button -->
+        <!-- form-buttons -->
       </article>
 
       <!-- menu-mobile -->

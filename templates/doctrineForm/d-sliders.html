@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../../styles/css/reset.css" />
     <link rel="stylesheet" href="../../styles/css/grids.css" />
-    <link
-      rel="stylesheet"
-      href="../../styles/css/doctrineGeneral/d-general.css"
-    />
+    <link rel="stylesheet" href="../../styles/css/general.css" />
     <link
       rel="stylesheet"
       href="../../styles/css/doctrineGeneral/d-formMenu.css"
@@ -24,12 +21,13 @@
     <!-- main -->
     <main class="main">
       <article class="article">
-        <!-- Ползунок теория -->
+        <!-- Ползунок теория slider-->
         <section class="form">
           <h1 id="image_ranges" class="form__heading">
             <a
               class="form__link"
               target="_blank"
+              rel="noopener"
               href="http://htmlbook.ru/samhtml5/formy/polzunok"
               >Ползунки</a
             >
@@ -43,11 +41,7 @@
               браузерах.
             </p>
             <div class="form__container-image">
-              <img
-                class="form__image form__image_ranges"
-                src="../../assets/icons/doctrineForm/ranges.png"
-                alt=""
-              />
+              <img src="../../assets/icons/doctrineForm/ranges.png" alt="" />
             </div>
             <p class="form__syntax">Синтаксис создания ползунка следующий.</p>
             <p class="form__description">
@@ -61,7 +55,6 @@
             </p>
             <div class="form__container-image">
               <img
-                class="form__image form__image_formula"
                 src="../../assets/icons/doctrineForm/rangeFormula.png"
                 alt=""
               />
@@ -103,16 +96,15 @@
             </p>
           </div>
         </section>
-        <!-- Ползунок теория -->
+        <!-- Ползунок теория slider-->
 
         <!-- Ползунок slider-bicolor-->
-        <section class="form">
-          <!-- slider -->
-          <div class="form__slider-container">
+        <section class="form-slider">
+          <div class="form-slider__container">
             <h2 class="form__subheading">
               Ползунок двухцветный slider-bicolor
             </h2>
-            <p class="form__slider-subheading">Сумма кредита</p>
+            <p class="form-slider__subheading">Сумма кредита</p>
 
             <input
               class="slider-bicolor"
@@ -122,16 +114,14 @@
               id="size"
               value="50"
             />
-            <div class="form__sector">
-              <p class="form__title">90 000 р.</p>
-              <p class="form__title">2 000 000 р.</p>
+            <div class="form-slider__titles">
+              <p>90 000 р.</p>
+              <p>2 000 000 р.</p>
             </div>
           </div>
-          <!-- slider -->
 
-          <!-- slider -->
-          <div class="form__slider-container">
-            <p class="form__slider-subheading">Срок кредита</p>
+          <div class="form-slider__container">
+            <p class="form-slider__subheading">Срок кредита</p>
 
             <input
               class="slider-bicolor"
@@ -141,16 +131,15 @@
               id="size"
               value="50"
             />
-            <div class="form__sector">
-              <p class="form__title">1 год</p>
-              <p class="form__title">5 лет</p>
+            <div class="form-slider__titles">
+              <p>1 год</p>
+              <p>5 лет</p>
             </div>
           </div>
-          <!-- slider -->
 
-          <div class="form__code-body">
-            <p class="form__subtitle">HTML посмотреть код</p>
-            <pre class="form__code-box">
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
                       <code >                                   
                           &lt;input 
                               class="slider-bicolor" 
@@ -163,9 +152,10 @@
                       </code>
               </pre>
           </div>
-          <div class="form__code-body">
-            <p class="form__subtitle">SCSS посмотреть код</p>
-            <pre class="form__code-box">
+
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">SCSS</p>
+            <pre class="encoding__code-box">
                  <code>
                   .slider-bicolor {
                     width: 100%;
@@ -196,11 +186,11 @@
         <!-- Ползунок slider-bicolor-->
 
         <!-- Ползунок slider-icon -->
-        <section class="form">
+        <section class="form-slider">
           <h2 class="form__subheading">слайдер с иконкой slider-icon</h2>
 
-          <div class="form__slider-container">
-            <p class="form__slider-title">Сумма вклада</p>
+          <div class="form-slider__container">
+            <p class="form-slider__title">Сумма вклада</p>
             <p class="slider-icon__value">100 000</p>
             <!-- slider-icon -->
             <input
@@ -214,9 +204,9 @@
             <!--  slider-icon -->
           </div>
 
-          <div class="form__code-body">
-            <p class="form__subtitle">HTML посмотреть код</p>
-            <pre class="form__code-box">
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
                 <code >                                   
                       &lt;input
                           type="range"
@@ -229,10 +219,11 @@
                 </code>
               </pre>
           </div>
-          <div class="form__code-body">
+
+          <div class="encoding">
             <div>
-              <p class="form__subtitle">SCSS посмотреть код</p>
-              <pre class="form__code-box">
+              <p class="encoding__prompt encoding__prompt_second">SCSS</p>
+              <pre class="encoding__code-box">
                 <code>                                   
                   .slider-icon {
                     appearance: none;
@@ -281,6 +272,7 @@
               </pre>
             </div>
           </div>
+
           <p class="form__description">
             не забыть скачать иконку и подключить её <br />
             <b> background: url(../../assets/icons/iconSlider.svg);</b>
@@ -289,6 +281,7 @@
             ps. Как сделать -
             <a
               target="_blank"
+              rel="noopener"
               href="https://html5css.ru/howto/howto_js_rangeslider.php"
               class="form__link"
             >

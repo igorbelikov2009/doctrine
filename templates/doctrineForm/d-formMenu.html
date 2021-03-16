@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="../../styles/css/general.css" />
     <link
       rel="stylesheet"
-      href="../../styles/css/doctrineGeneral/d-formMenu.css"
-    />
-    <link
-      rel="stylesheet"
       href="../../styles/css/doctrineGeneral/d-general.css"
     />
     <link
       rel="stylesheet"
-      href="../../styles/css/doctrineGeneral/d-selectionList.css"
+      href="../../styles/css/doctrineGeneral/d-formMenu.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../styles/css/doctrineGeneral/d-checkbox.css"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -25,159 +25,74 @@
     <!-- main -->
     <main class="main">
       <article class="article">
-        <!-- Раскрывающийся список, тег select , а также поле с одним или...  -->
         <section class="form">
-          <h1 id="teg-select" class="form__heading h1-font">
-            Раскрывающийся список,
-            <a class="form__link" href="http://htmlbook.ru/html/select"
-              >тег select</a
-            >
-            , а также
-            <a
-              class="form__link"
-              href="http://htmlbook.ru/samhtml5/formy/pole-so-spiskom"
-              >поле выбора с одним или множественным списком .</a
-            >
-          </h1>
+          <!--  -->
+
+          <!-- encoding -->
           <div>
-            <p class="form__description">
-              Тег <b>select</b> позволяет создать элемент интерфейса в виде
-              раскрывающегося списка, а также список с одним или множественным
-              выбором. В зависимости от настроек, в списке можно выбирать одно
-              или несколько значений. Преимущество списка в его компактности и
-              универсальности, список может занимать одну или несколько строк, в
-              нём можно выбирать одно или несколько значений.
-            </p>
-            <p class="form__description">
-              Тег <b>select</b> выступает контейнером для пунктов списка и
-              определяет его вид, будет ли это раскрывающийся список или же
-              список с одним или множественным выбором.
-            </p>
-            <p class="form__description">
-              Конечный вид зависит от использования атрибута <b>size</b> тега
-              <b>select</b>, который устанавливает высоту списка. <br />
-            </p>
-            <p class="form__description">
-              Ширина списка при этом определяется автоматически исходя из длины
-              самого широкого текста внутри <b> option</b>, а также может
-              изменяться с помощью стилей. <br />
-            </p>
-            <p class="form__description">
-              Каждый пункт создается с помощью тега <b>option</b>, который
-              должен быть вложен в контейнер <b>select</b>. Если планируется
-              отправлять данные списка на сервер, то требуется поместить элемент
-              <b>select</b> внутрь формы. Это также необходимо, когда к данным
-              списка идет обращение через скрипты.
-            </p>
-          </div>
-          <h2 class="form__subheading h2-font">Поле выбора</h2>
+            <div class="encoding">
+              <p class="encoding__prompt">HTML посмотреть код</p>
+              <pre class="encoding__code-box">
+                  <code class="encoding__code-font">                                   
+                     xxx                                    
+                  </code>
+               </pre>
+            </div>
 
-          <!-- поле выбора_header  -->
-          <form
-            class="form__select select select_header"
-            action=""
-            method="post"
-          >
-            <label class="select__title-header sm-font" for="">
-              <select class="select__list-header sm-font" name="">
-                <option class="select__item-header sm-font" value="">
-                  Частным лицам
-                </option>
-                <option class="select__item-header sm-font" value="">
-                  Кредиты
-                </option>
-                <option class="select__item-header sm-font" value="">
-                  Ипотека
-                </option>
-                <option class="select__item-header sm-font" value="">
-                  Кассовое обслуживание
-                </option>
-                <option class="select__item-header sm-font" value="">
-                  Вклады
-                </option>
-                <option class="select__item-header sm-font" value="">
-                  Денежные переводы
-                </option>
-              </select>
-            </label>
-          </form>
-          <!-- поле выбора_header  -->
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_second">
+                SCSS посмотреть код
+              </p>
+              <pre class="encoding__code-box">
+                  <code>                                   
+                     xxx                                    
+                  </code>
+               </pre>
+            </div>
 
-          <!--  Два поля выбора и переключатель secondary-radio в один ряд -->
-          <div class="form">
-            <h2 class="form__subheading h2-font">
-              Два поля выбора и переключатель "twin-switch" в один ряд
-            </h2>
-
-            <div class="form__list">
-              <div class="form__sector-select">
-                <!-- поле выбора_city  -->
-                <form class="select select_city" action="" method="post">
-                  <label class="select__title x-sm-font" for="">
-                    <select class="select__list" name="city">
-                      <option class="select__item" value="">Москва</option>
-                      <option class="select__item" value="">
-                        Санкт Петербург
-                      </option>
-                      <option class="select__item" value="">Казань</option>
-                      <option class="select__item" value="">
-                        Нижний Новгород
-                      </option>
-                      <option class="select__item" value="">Волгоград</option>
-                      <option class="select__item" value="">Камышин</option>
-                    </select>
-                  </label>
-                </form>
-                <!-- поле выбора_city  -->
-
-                <!-- поле выбора_area  -->
-                <form class="select select_area" action="" method="post">
-                  <label class="select__title x-sm-font" for="">
-                    <select class="select__list" name="area">
-                      <option class="select__item" value="">Кузминки</option>
-                      <option class="select__item" value="">Некрасовка</option>
-                      <option class="select__item" value="">Люберцы</option>
-                      <option class="select__item" value="">Лефортово</option>
-                      <option class="select__item" value="">Дубровка</option>
-                      <option class="select__item" value="">
-                        Волгоградский проспект
-                      </option>
-                    </select>
-                  </label>
-                </form>
-                <!-- поле выбора_area  -->
-
-                <!-- switch-viewport twin-switch -->
-                <div class="form__switch-viewport">
-                  <form class="twin-switch">
-                    <label class="twin-switch__item">
-                      <input
-                        class="twin-switch__field"
-                        type="radio"
-                        name="browser"
-                        value="ie"
-                      />
-                      <div class="twin-switch__title">Список</div>
-                    </label>
-
-                    <label class="form__item-color twin-switch__item">
-                      <input
-                        class="twin-switch__field"
-                        type="radio"
-                        name="browser"
-                        value="ie"
-                      />
-                      <div class="twin-switch__title">Карта</div>
-                    </label>
-                  </form>
-                </div>
-                <!-- switch-viewport twin-switch -->
-              </div>
+            <div class="encoding">
+              <p class="encoding__prompt"></p>
+              <p class="encoding__prompt encoding__prompt_third">
+                SCSS посмотреть код
+              </p>
+              <pre class="encoding__code-box">
+                  <code>                                   
+                     xxx                                    
+                  </code>
+               </pre>
             </div>
           </div>
-          <!-- Два поля выбора и переключатель secondary-radio в один ряд -->
+          <!-- encoding -->
+
+          <!--  -->
+          <p class="form__description">
+            ps. Что такое
+            <a target="_blank" rel="noopener" href="#" class="form__link"
+              >xxxx</a
+            >
+          </p>
+          <p class="form__description">
+            ps. Что такое
+            <a target="_blank" rel="noopener" href="#" class="form__link">
+              xxxx</a
+            >
+          </p>
+          <p class="form__description">
+            ps. Что такое
+            <a target="_blank" rel="noopener" href="#" class="form__link">
+              xxxx</a
+            >
+          </p>
+          <p class="form__description">
+            ps. Другая
+            <a target="_blank" rel="noopener" href="#" class="form__link">
+              xxxxx</a
+            >
+          </p>
+
+          <!-- rh-checkbox -->
         </section>
-        <!-- Раскрывающийся список, тег select , а также поле с одним или... -->
+        <!--  -->
       </article>
 
       <!-- menu-mobile -->
@@ -688,6 +603,18 @@
         </li>
       </ul>
       <!-- table_list -->
+
+      <!-- doctrineForm -->
+      <ul class="menu__list">
+        <a class="menu__link h2-font" href="#"> doctrine form </a>
+
+        <li class="menu__item">
+          <a class="menu__item_link" href="../doctrineForm/d-checkbox.html">
+            Таблица</a
+          >
+        </li>
+      </ul>
+      <!-- doctrineForm -->
     </nav>
     <!-- menu -->
 

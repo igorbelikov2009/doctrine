@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../styles/css/reset.css" />
-    <link rel="stylesheet" href="../styles/css/general.css" />
     <link rel="stylesheet" href="../styles/css/grids.css" />
-    <link rel="stylesheet" href="../styles/css/typography.css" />
+    <link rel="stylesheet" href="../styles/css/general.css" />
+    <link rel="stylesheet" href="../styles/css/formMenu.css" />
     <link rel="stylesheet" href="../styles/css/forms.css" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
@@ -15,194 +16,15 @@
     <!-- main -->
     <main class="main">
       <article class="article">
-        <!-- Форма "form"-->
-        <section class="form">
-          <h1 id="forms" class="form__heading h1-font">
-            Форма
-            <a class="form__link h1-font" href="http://htmlbook.ru/html/form">
-              "form"</a
-            >
-          </h1>
-
-          <p class="form__description">
-            Тег <b>form</b> устанавливает форму на веб-странице. Форма
-            предназначена для обмена данными между пользователем и сервером.
-            Область применения форм не ограничена отправкой данных на сервер, с
-            помощью клиентских скриптов можно получить доступ к любому элементу
-            формы, изменять его и применять по своему усмотрению.
-          </p>
-
-          <p class="form__description">
-            Документ может содержать любое количество форм, но одновременно на
-            сервер может быть отправлена только одна форма. По этой причине
-            данные форм должны быть независимы друг от друга.
-          </p>
-
-          <p class="form__description">
-            Для отправки формы на сервер используется кнопка <b>Submit</b>, того
-            же можно добиться, если нажать клавишу <b>Enter</b> в пределах
-            формы. Если кнопка <b>Submit</b> отсутствует в форме, клавиша
-            <b>Enter</b> имитирует ее использование.
-          </p>
-
-          <p class="form__description">
-            Когда форма отправляется на сервер, управление данными передается
-            программе, заданной атрибутом <b>action</b> тега <b>form</b>.
-            <b>Action</b> задаёт адрес, <b>URL</b>, отправки формы.
-            Предварительно браузер подготавливает информацию в виде пары
-            «имя=значение», где имя определяется атрибутом name тега
-            <b>input</b>, а значение введено пользователем или установлено в
-            поле формы по умолчанию.
-          </p>
-
-          <p class="form__description">
-            <b>Method</b> задаёт метод отправки формы. Для отправки формы обычно
-            используют методы <b>get</b> или <b>post</b>. Если не указать
-            атрибут <b>method</b>, то будет использован <b>get</b>. Метод
-            <b>get</b> посылает данные формы в строке запроса, то есть они видны
-            в адресной строке браузера и следуют после знака вопроса.
-          </p>
-        </section>
-        <!-- Форма "form" -->
-
-        <!-- Типы форм -->
-        <section class="form">
-          <h1 id="type-input" class="form__heading h1-font">
-            <a class="form__link" href="http://htmlbook.ru/html/input/type"
-              >Типы</a
-            >
-            форм
-          </h1>
-          <p class="form__description">
-            Основной атрибут тега <b>input</b>, определяющий вид элемента —
-            type. Он позволяет задавать следующие элементы формы: текстовое поле
-            <b>(text)</b>, поле с паролем <b>(password)</b>, переключатель
-            (<b>radio)</b>, флажок <b>(checkbox)</b>, скрытое поле
-            <b>(hidden)</b>, кнопка <b>(button)</b>, кнопка для отправки формы
-            <b>(submit)</b>, кнопка для очистки формы <b>(reset)</b>, поле для
-            отправки файла <b>(file)</b> и кнопка с изображением <b>(image)</b>.
-            Для каждого элемента существует свой список атрибутов, которые
-            определяют его вид и характеристики. Кроме того, в
-            <b>HTML5</b> добавлено еще более десятка новых элементов.
-          </p>
-        </section>
-        <!-- Типы форм -->
-
-        <!-- Кнопки button -->
-        <section id="button" class="form">
-          <h1 class="form__description h1-font">
-            Кнопки
-            <a class="form__link" href="http://htmlbook.ru/html/button"
-              >button</a
-            >
-          </h1>
-
-          <p class="form__description">
-            Кнопку на веб-странице можно создать двумя способами — с помощью
-            тега <b>button</b> и тега <b>input</b>.
-          </p>
-          <p class="form__description">
-            Тег <b>input </b> для кнопки лучше не использовать. Оба тега
-            используют одинаковые
-            <a class="form__link" href="http://htmlbook.ru/html/input/type"
-              >типы.</a
-            >
-          </p>
-          <p class="form__description">
-            <b>button</b> предлагает расширенные возможности по созданию кнопок.
-            Например, на подобной кнопке можно размещать любые элементы HTML
-            включая изображения и таблицы.
-          </p>
-          <h2 class="form__subheading h2-font">button кнопка с картинкой</h2>
-
-          <!-- button кнопка с картинкой -->
-          <form class="form__container" action="">
-            <button class="form__button primary-button" type="submit">
-              button кнопка с картинкой
-              <img
-                class="primary-button_image"
-                src="../assets/images/tsarLanding/tsarLandingWomenCall.jpg"
-                alt=""
-              />
-            </button>
-          </form>
-          <!-- button кнопка с картинкой -->
-
-          <p class="form__description">
-            Для отправки данных на сервер предназначена специальная кнопка
-            <b>type="submit"</b> (кнопка "Enter" на клавиатуре). Её вид ничем не
-            отличается от обычных кнопок, но при нажатии на нее происходит
-            выполнение серверной программы, указанной атрибутом action тега
-            <b>form</b>.
-          </p>
-          <p class="form__description">
-            Эта программа, называемая еще обработчиком формы, получает данные,
-            введенные пользователем в полях формы, производит с ними необходимые
-            манипуляции, после чего возвращает результат в виде HTML-документа.
-            Что именно делает обработчик, зависит от автора сайта, например,
-            подобная технология применяется при создании опросов, форумов,
-            тестов и многих других вещей.
-          </p>
-          <p class="form__description">
-            Значениями атрибута type также могут быть <b>button</b> и
-            <b>reset</b>: <br />
-          </p>
-
-          <p class="form__description">
-            Кнопка <b>button</b> со значением <b>type="reset"</b> аналогично
-            <b>input type="reset"</b> сбрасывает значения полей формы к
-            изначальным.
-          </p>
-          <p class="form__description">
-            А вот значение <b>type="button"</b> избавит кнопку от всей
-            изначальной функциональности. То есть кнопка просто будет выглядеть
-            как кнопка, но ничего по умолчанию не делать. Это удобно, если вы
-            хотите сами добавить кнопке дополнительное действие с помощью
-            <b>JavaScript</b>.
-          </p>
-          <h2 class="form__subheading h2-font">Самая простая кнопка button</h2>
-
-          <!-- Самая простая кнопка button-->
-          <button class="form__button primary-button">
-            <p id="primary-button" class="primary-button_scale">
-              Самая простая кнопка button
-            </p>
-          </button>
-          <!-- Самая простая кнопка button-->
-
-          <!-- Две горизонтальные кнопки другой стилизации -->
-          <h2 class="form__subheading h2-font">
-            Две горизонтальные кнопки другой стилизации
-          </h2>
-          <form class="form__button second-buttons__buttons" action="">
-            <button class="second-buttons__button second-buttons__button_left">
-              <p class="second-buttons__button_scale">кнопка button</p>
-            </button>
-            <button class="second-buttons__button second-buttons__button_right">
-              <p class="second-buttons__button_scale">
-                я спрячусь при адаптации
-              </p>
-            </button>
-          </form>
-          <!-- Две горизонтальные кнопки другой стилизации -->
-
-          <!--  -->
-          <p class="form__description">
-            В сетке, да и так, все виды кнопок желательно помещать в
-            <b>div</b>, иначе левый падинг кнопки будет вылазить за левый край.
-            <br />
-            Если родителю ( <b>form</b> или <b>input</b>) задан
-            <b>display:flex;</b>, то потомку, возможно, следует задать
-            <b>flex: auto;</b> или <b>flex:none;</b> <br />
-          </p>
-        </section>
-        <!-- Кнопки button -->
-
-        <!-- Поля "input" -->
-        <section class="form">
-          <h1 id="inputs" class="form__heading h1-font">
-            Поля
-            <a class="form__link" href="http://htmlbook.ru/html/input"
+        <!-- form-input -->
+        <section class="form-input">
+          <h1 id="inputs" class="form__heading">
+            Ввод
+            <a
+              class="form__link"
+              target="_blank"
+              rel="noopener"
+              href="http://htmlbook.ru/html/input"
               >"input"</a
             >
           </h1>
@@ -222,413 +44,1297 @@
             <b>input</b>ов в единый или в несколько <b>form</b>.
           </p>
         </section>
-        <!-- Поля "input" -->
+        <!-- form-input -->
 
         <!-- policy-form -->
         <section class="policy-form">
-          <h2 id="form__subhe" class="policy-form__subheading h2-font">
-            Поле выбора даты с иконкой "треугольник"
-          </h2>
-          <div class="row">
-            <!-- Поле выбора даты с иконкой треугольник -->
+          <div class="bloc">
+            <h2 id="form__subhe" class="policy-form__subheading">
+              Поле выбора даты
+            </h2>
+            <div class="row">
+              <!-- Поле выбора даты  -->
 
-            <label
-              class="policy-form__input-date input-date col-7 col-md-3"
-              for=""
-            >
-              <p class="input-date__label x-sm-font">Начало действия</p>
-              <div class="input-date__block">
-                <input class="input-date__field" type="date" name="date" />
-                <div class="input-date__icon">
-                  <div
-                    class="input-date__triangle"
-                    style="background-image: url(../assets/icons/triangle.svg)"
-                  ></div>
-                </div>
+              <div class="policy-form__input-date col-7 col-md-3">
+                <label class="input-date">
+                  <p class="input-date__label">Начало действия</p>
+                  <div class="input-date__bloc">
+                    <input class="input-date__field" type="date" name="date" />
+                  </div>
+                </label>
               </div>
-            </label>
+              <!-- Поле выбора даты  -->
+            </div>
+            <div class="encoding">
+              <p class="encoding__prompt">HTML</p>
+              <pre class="encoding__code-box">
+                  <code class="encoding__code-font">                                   
+                    &lt;label class="input-date"&gt;
+                      &lt;p class="input-date__label"&gt;Начало действия&lt;/p&gt;
+                      &lt;div class="input-date__bloc"&gt;
+                        &lt;input class="input-date__field" type="date" name="date" /&gt;
+                      &lt;/div&gt;
+                    &lt;/label&gt;                                    
+                  </code>
+               </pre>
+            </div>
 
-            <!-- Поле выбора даты с иконкой треугольник -->
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_second">SCSS</p>
+              <pre class="encoding__code-box">
+                  <code>                                   
+                    .input-date {
+                      width: 100%;
+                    
+                      &__label {
+                        font-size: 13px;
+                        color: #b5bdc8;
+                      }
+                    
+                      &__bloc {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                      }
+                    
+                      &__field {
+                        width: 100%;
+                        font-size: 16px;
+                        line-height: 34px;
+                        color: #b5bdc8;
+                        border-bottom: 1px solid #b5bdc8;
+                      }
+                    }                                   
+                  </code>
+               </pre>
+            </div>
           </div>
+
           <!-- Поля с подсказской для заполнения и подзаголовком внизу -->
-          <h2 class="policy-form__subheading h2-font">
+          <h2 class="policy-form__subheading">
             Поля с подсказской для заполнения и подзаголовком внизу
           </h2>
-          <div class="row">
-            <label
-              class="policy-form__input-prompt input-prompt col-10 col-md-5"
-              for=""
-            >
-              <input
-                class="input-prompt__field"
-                type="text"
-                placeholder="Фамилия (поле с подсказской)"
-            /></label>
-            <!-- Поля с подсказской для заполнения -->
+          <div class="bloc">
+            <div class="row">
+              <label
+                class="policy-form__input-prompt input-prompt col-10 col-md-5"
+              >
+                <input
+                  class="input-prompt__field"
+                  type="text"
+                  placeholder="Фамилия (поле с подсказской)"
+              /></label>
 
-            <!-- Поля с подсказской для заполнения -->
-            <label
-              class="policy-form__input-prompt input-prompt col-10 col-md-5"
-              for=""
-            >
-              <input
-                class="input-prompt__field"
-                type="text"
-                placeholder="Имя (поле с подсказской)"
-            /></label>
+              <!-- Поля с подсказской для заполнения -->
+
+              <!-- Поля с подсказской для заполнения -->
+              <label
+                class="policy-form__input-prompt input-prompt col-10 col-md-5"
+              >
+                <input
+                  class="input-prompt__field"
+                  type="text"
+                  placeholder="Имя (поле с подсказской)"
+              /></label>
+            </div>
+
+            <!-- form__prompt -->
+            <div class="encoding">
+              <p class="encoding__prompt">HTML</p>
+              <pre class="encoding__code-box">
+                      <code class="encoding__code-font">                                   
+                        &lt;label
+                        class="input-prompt"
+                      &gt;
+                       &lt;input
+                          class="input-prompt__field"
+                          type="text"
+                          placeholder="Имя (поле с подсказской)"
+                      /&gt;&lt;/label&gt;                                    
+                      </code>
+                   </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_second">SCSS</p>
+              <pre class="encoding__code-box">
+                      <code>                                   
+                        .input-prompt {
+                          width: 100%;
+                        
+                          &__field {
+                            width: 100%;
+                            font-size: 16px;
+                            line-height: 47px;
+                            color: #b5bdc8;
+                            border-bottom: 1px solid #b5bdc8;
+                            box-sizing: border-box;
+                          }
+                        }                                    
+                      </code>
+                   </pre>
+            </div>
+            <!-- form__prompt -->
           </div>
-          <div class="row">
-            <label
-              class="policy-form__input-subtitle input-subtitle col-10 col-md-5"
-              for=""
-            >
-              <input
-                class="input-subtitle__field"
-                type="text"
-                placeholder="Отчество (поле с подсказской)"
-              />
-              <div class="input-subtitle__subtitle">и подзаголовком</div>
-            </label>
+          <div class="bloc">
+            <div class="row">
+              <label
+                class="policy-form__input-subtitle input-subtitle col-10 col-md-5"
+              >
+                <input
+                  class="input-subtitle__field"
+                  type="text"
+                  placeholder="Отчество (поле с подсказской)"
+                />
+                <p class="input-subtitle__subtitle">и подзаголовком</p>
+              </label>
+            </div>
+
+            <!-- form__prompt -->
+            <div class="encoding">
+              <p class="encoding__prompt">HTML</p>
+              <pre class="encoding__code-box">
+                  <code class="encoding__code-font">                                   
+                  &lt;label
+                    class="input-subtitle"
+                    &gt;
+                    &lt;input
+                      class="input-subtitle__field"
+                      type="text"
+                      placeholder="Отчество (поле с подсказской)"
+                    /&gt;
+                    &lt;p class="input-subtitle__subtitle">и подзаголовком&lt;/p&gt;
+                  &lt;/label&gt;                                   
+                  </code>
+               </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_second">SCSS</p>
+              <pre class="encoding__code-box">
+                  <code>                                   
+                    .input-subtitle {
+                      width: 100%;
+                    
+                      &__field {
+                        width: 100%;
+                        font-size: 16px;
+                        line-height: 47px;
+                        color: #b5bdc8;
+                        border-bottom: 1px solid #b5bdc8;
+                        box-sizing: border-box;
+                      }
+                    
+                      &__subtitle {
+                        width: 100%;
+                        font-size: 11px;
+                        line-height: 24px;
+                        color: #b5bdc8;
+                      }
+                    }                                   
+                  </code>
+               </pre>
+            </div>
+            <!-- form__prompt -->
           </div>
           <!-- Поля с подсказской для заполнения и подзаголовком внизу -->
 
           <!-- input-subtitle Контактные данные Email -->
-          <div class="row">
-            <label
-              class="policy-form__input-subtitle input-subtitle col-10 col-md-5"
-              for=""
-            >
-              <input
-                class="input-subtitle__field"
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="Email"
-              />
-              <div class="input-subtitle__subtitle">
-                для получения электронного полиса
-              </div>
-            </label>
-            <!-- input-subtitle Контактные данные Email -->
+          <div class="bloc__email-tel">
+            <div class="row">
+              <label
+                class="policy-form__input-subtitle input-subtitle col-10 col-md-5"
+              >
+                <input
+                  class="input-subtitle__field"
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="Email"
+                />
+                <p class="input-subtitle__subtitle">
+                  для получения электронного полиса
+                </p>
+              </label>
 
-            <!-- input-subtitle Контактные данные Номер телефона -->
-            <label
-              class="policy-form__input-subtitle input-subtitle col-10 col-md-5"
-              for=""
-            >
-              <input
-                class="input-subtitle__field"
-                type="tel"
-                id="tel"
-                name="tel"
-                pattern="+7 [0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
-                placeholder="Номер телефона"
-              />
-              <div class="input-subtitle__subtitle">на экстренный случай</div>
-            </label>
-            <!-- input-subtitle Контактные данные Номер телефона -->
+              <!-- input-subtitle Контактные данные Email -->
+
+              <!-- input-subtitle Контактные данные Номер телефона -->
+              <label
+                class="policy-form__input-subtitle input-subtitle col-10 col-md-5"
+              >
+                <input
+                  class="input-subtitle__field"
+                  type="tel"
+                  id="tel"
+                  name="tel"
+                  pattern="+7 [0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                  placeholder="Номер телефона"
+                />
+                <p class="input-subtitle__subtitle">на экстренный случай</p>
+              </label>
+              <!-- input-subtitle Контактные данные Номер телефона -->
+            </div>
+
+            <!-- form__prompt -->
+            <div class="encoding">
+              <p class="encoding__prompt">HTML email</p>
+              <pre class="encoding__code-box">
+                      <code class="encoding__code-font">                                   
+                      &lt;label
+                        class="input-subtitle"
+                        &gt;
+                        &lt;input
+                          class="input-subtitle__field"
+                          type="email"
+                          id="email"
+                          name="email"
+                          required
+                          placeholder="Email"
+                        /&gt;
+                        &lt;p class="input-subtitle__subtitle"&gt;
+                          для получения электронного полиса
+                        &lt;/p&gt;
+                      &lt;/label&gt;                                   
+                      </code>
+                   </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_second">HTML tel</p>
+              <pre class="encoding__code-box">
+                  <code class="encoding__code-font">                                   
+                   &lt;label
+                    class="input-subtitle"
+                  &gt;
+                    &lt;input
+                      class="input-subtitle__field"
+                      type="tel"
+                      id="tel"
+                      name="tel"
+                      pattern="+7 [0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                      placeholder="Номер телефона"
+                    /&gt;
+                    &lt;p class="input-subtitle__subtitle">на экстренный случай&lt;/p&gt;
+                  &lt;/label&gt;                                   
+                  </code>
+               </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_third">SCSS</p>
+              <pre class="encoding__code-box">
+                  <code class="encoding__code-font">                                   
+                    .input-subtitle {
+                      width: 100%;
+                    
+                      &__field {
+                        width: 100%;
+                        font-size: 16px;
+                        line-height: 47px;
+                        color: #b5bdc8;
+                        border-bottom: 1px solid #b5bdc8;
+                        box-sizing: border-box;
+                      }
+                    
+                      &__subtitle {
+                        width: 100%;
+                        font-size: 11px;
+                        line-height: 24px;
+                        color: #b5bdc8;
+                      }
+                    }                                 
+                  </code>
+               </pre>
+            </div>
+
+            <!-- form__prompt -->
           </div>
-          <div class="row mr-bot-24">
-            <p class="policy-form__contact-details col-12 sm-font">
-              Паспортные данные
-            </p>
-          </div>
-          <div class="row">
-            <!-- input-prompt  Паспортные данные серия -->
-            <label
-              class="policy-form__input-prompt input-prompt col-4 col-md-2"
-              for=""
-            >
-              <input
-                class="input-prompt__field"
-                type="text"
-                id="passport"
-                name="passport"
-                placeholder="Серия"
-            /></label>
-            <!-- input-prompt  Паспортные данные серия-->
 
-            <!-- input-prompt  Паспортные данные номер-->
-            <label
-              class="policy-form__input-prompt input-prompt col-4 col-md-2"
-              for=""
-            >
-              <input
-                class="input-prompt__field"
-                type="text"
-                id="passport"
-                name="passport"
-                placeholder="Номер"
-            /></label>
-            <!-- input-prompt  Паспортные данные номер-->
+          <p class="policy-form__contact-details">Паспортные данные</p>
 
-            <!-- input-date Паспортные данные дата выдачи-->
-            <label
-              class="policy-form__input-date input-date col-7 offset-md-1 col-md-3"
-              for=""
-            >
-              <div class="input-date__label">Дата выдачи</div>
-              <div class="input-date__block">
-                <input class="input-date__field" type="date" name="date" />
-                <div class="input-date__icon">
-                  <div
-                    class="input-date__triangle"
-                    style="background-image: url(../assets/icons/triangle.svg)"
-                  ></div>
+          <div class="bloc__passport">
+            <div class="row">
+              <!-- input-prompt  Паспортные данные серия -->
+              <label
+                class="policy-form__input-prompt input-prompt col-4 col-md-2"
+              >
+                <input
+                  class="input-prompt__field"
+                  type="text"
+                  id="passport"
+                  name="passport"
+                  placeholder="Серия"
+              /></label>
+              <!-- input-prompt  Паспортные данные серия-->
+
+              <!-- input-prompt  Паспортные данные номер-->
+              <label
+                class="policy-form__input-prompt input-prompt col-4 col-md-2"
+              >
+                <input
+                  class="input-prompt__field"
+                  type="text"
+                  id="passport"
+                  name="passport"
+                  placeholder="Номер"
+              /></label>
+              <!-- input-prompt  Паспортные данные номер-->
+
+              <!-- input-date Паспортные данные дата выдачи-->
+              <label
+                class="policy-form__input-date input-date col-7 offset-md-1 col-md-3"
+              >
+                <div class="input-date__label">Дата выдачи</div>
+                <div class="input-date__bloc">
+                  <input class="input-date__field" type="date" name="date" />
                 </div>
-              </div>
-            </label>
-            <!-- input-date Паспортные данные дата выдачи-->
-          </div>
-          <div class="row">
-            <!-- input-prompt  Паспортные данные Кем выдан-->
-            <label
-              class="policy-form__input-prompt input-prompt col-10 col-md-5"
-              for=""
-            >
-              <input
-                class="input-prompt__field"
-                type="text"
-                id="passport"
-                name="passport"
-                placeholder="Кем выдан"
-            /></label>
-            <!-- input-prompt  Паспортные данные Кем выдан-->
+              </label>
+              <!-- input-date Паспортные данные дата выдачи-->
+            </div>
           </div>
 
-          <div class="row mr-bot-24">
-            <p class="policy-form__contact-details col-12 sm-font">
-              Адрес регистрации
-            </p>
-          </div>
-          <div class="row">
-            <!-- input-prompt  Паспортные данные Адрес в свободной форме-->
-            <label
-              class="policy-form__input-prompt input-prompt col-10 col-md-5"
-              for=""
-            >
-              <input
-                class="input-prompt__field"
-                type="text"
-                id="passport"
-                name="passport"
-                placeholder="Адрес в свободной форме"
-            /></label>
-            <!-- input-prompt  Паспортные данные Кем выдан-->
+          <div class="bloc__passport">
+            <div class="row">
+              <!-- input-prompt  Паспортные данные Кем выдан-->
+              <label
+                class="policy-form__input-prompt input-prompt col-10 col-md-5"
+              >
+                <input
+                  class="input-prompt__field"
+                  type="text"
+                  id="passport"
+                  name="passport"
+                  placeholder="Кем выдан"
+              /></label>
+              <!-- input-prompt  Паспортные данные Кем выдан-->
+            </div>
           </div>
 
-          <!-- primary-checkbox  Является застрахованным -->
-          <div id="primary-checkbox" class="row">
-            <label
-              tabindex="0"
-              role="checkbox"
-              id=""
-              class="policy-form__checkbox primary-checkbox col-7 col-md-3"
-            >
-              <div class="primary-checkbox__icon">
-                <span class="primary-checkbox__checker"></span>
+          <p class="policy-form__contact-details">Адрес регистрации</p>
+
+          <div class="bloc__passport">
+            <div class="row">
+              <!-- input-prompt  Паспортные данные Адрес в свободной форме-->
+              <label
+                class="policy-form__input-prompt input-prompt col-10 col-md-5"
+              >
+                <input
+                  class="input-prompt__field"
+                  type="text"
+                  id="passport"
+                  name="passport"
+                  placeholder="Адрес в свободной форме"
+              /></label>
+              <!-- input-prompt  Паспортные данные Кем выдан-->
+            </div>
+          </div>
+
+          <div class="bloc__checkbox">
+            <!-- rh-checkbox -->
+            <div class="policy-form__checkbox">
+              <label tabindex="0" role="checkbox" id="" class="r-checkbox">
+                <span class="r-checkbox__checker"></span>
+
                 <input
                   id="Checkbox"
                   type="checkbox"
-                  class="primary-checkbox__input"
+                  class="r-checkbox__input"
                 />
-              </div>
-              <div class="policy-form__label primary-checkbox__label sm-font">
-                Является застрахованным
-              </div>
-            </label>
+                <p class="r-checkbox__agree-link">
+                  Продолжая, соглашаюсь с
+                  <a target="_blank" href="#" class="r-checkbox__link">
+                    правилами
+                  </a>
+                  и
+                  <a target="_blank" href="#" class="r-checkbox__link"
+                    >программой</a
+                  >
+                  страхования
+                </p>
+              </label>
+            </div>
+            <!-- rh-checkbox -->
+            <!-- form__prompt -->
+            <div class="encoding">
+              <p class="encoding__prompt">HTML</p>
+              <pre class="encoding__code-box">
+                  <code class="encoding__code-font">                                   
+                    &lt;label tabindex="0" role="checkbox" id="" class="r-checkbox"&gt;
+                      &lt;span class="r-checkbox__checker"&gt;&lt;/span&gt;
+      
+                      &lt;input
+                        id="Checkbox"
+                        type="checkbox"
+                        class="r-checkbox__input"
+                      /&gt;
+                      &lt;p class="r-checkbox__agree-link"&gt;
+                        Продолжая, соглашаюсь с
+                        &lt;a target="_blank" href="#" class="r-checkbox__link"&gt;
+                          правилами
+                        &lt;/a&gt;
+                        и
+                        &lt;a target="_blank" href="#" class="r-checkbox__link"
+                        &gt;программой&lt;/a
+                        &gt;
+                        страхования
+                      &lt;/p&gt;
+                    &lt;/label&gt;                                   
+                  </code>
+               </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_second">SCSS</p>
+              <pre class="encoding__code-box">
+                  <code>                                   
+                    .r-checkbox {
+                      user-select: none;
+                      -webkit-user-select: none;
+                      -ms-user-select: none;
+                      -moz-user-select: none;
+                      display: flex;
+                      align-items: flex-start;
+                      position: relative;
+                      cursor: pointer;
+                      margin-bottom: 24px;
+                    
+                      &__checker {
+                        width: 20px;
+                        height: 20px;
+                        border: 2px solid #95bef0;
+                        border-radius: 4px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                        top: 2px;
+                        left: 2px;
+                    
+                        &:hover::before {
+                          content: "";
+                          width: 10px;
+                          height: 10px;
+                          margin: auto;
+                          background-color: transparent;
+                        }
+                    
+                        &:active::before {
+                          content: "";
+                          width: 10px;
+                          height: 10px;
+                          margin: auto;
+                          background-color: #00d2ff;
+                          transform: scale(1.2);
+                          transition: all 0.2s linear;
+                        }
+                      }
+                    
+                      &__input {
+                        display: none;
+                      }
+                    
+                      &__agree-link {
+                        line-height: 24px;
+                        position: absolute;
+                        top: 0;
+                        left: 42px;
+                      }
+                    
+                      &__link {
+                        color: #50287d;
+                        cursor: pointer;
+                        outline: 0;
+                        text-decoration: none;
+                      }
+                    }                                   
+                  </code>
+               </pre>
+            </div>
+            <!-- form__prompt -->
           </div>
-          <!-- primary-checkbox  Является застрахованным -->
+
+          <div class="bloc__button">
+            <div class="policy-form__button-container">
+              <button class="policy-form__button primary-button">
+                Оформить полис за 2 000 ₽
+              </button>
+            </div>
+          </div>
+
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                    <code class="encoding__code-font">                                   
+                      &lt;button class="primary-button"&gt;
+                        Оформить полис за 2 000 ₽
+                      &lt;/button&gt;                                   
+                    </code>
+                 </pre>
+          </div>
+
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">SCSS</p>
+            <pre class="encoding__code-box">
+                    <code>                                   
+                      .primary-button {
+                        cursor: pointer;
+                      
+                        width: 100%;
+                        padding: 12px 8px;
+                        font-size: 16px;
+                        line-height: 24px;
+                        color: white;
+                        background-color: #50287d;
+                        border-radius: 24px;
+                        text-align: center;
+                        box-sizing: border-box;
+                      }                                   
+                    </code>
+                 </pre>
+          </div>
         </section>
         <!-- policy-form -->
 
-        <!-- agreement -->
-        <section class="agreement">
-          <div class="agreement__block">
-            <div class="row">
-              <!-- rh-checkbox -->
-              <div class="policy-form__checkbox">
-                <label tabindex="0" role="checkbox" id="" class="r-checkbox">
-                  <span class="r-checkbox__checker"></span>
+        <!-- form-buttons -->
+        <section id="button" class="form-buttons">
+          <h1 class="form__heading">
+            Кнопки
+            <a
+              class="form__link"
+              target="_blank"
+              rel="noopener"
+              href="http://htmlbook.ru/html/button"
+              >button</a
+            >
+          </h1>
 
-                  <input
-                    id="Checkbox"
-                    type="checkbox"
-                    class="r-checkbox__input"
-                  />
-                  <div class="r-checkbox__agreeLink">
-                    Продолжая, соглашаюсь с
-                    <a target="_blank" href="#" class="r-checkbox__link">
-                      правилами
-                    </a>
-                    и
-                    <a target="_blank" href="#" class="r-checkbox__link"
-                      >программой</a
-                    >
-                    страхования
-                  </div>
-                </label>
-              </div>
-              <!-- rh-checkbox -->
+          <p class="form__description">
+            Кнопку на веб-странице можно создать двумя способами — с помощью
+            тега <b>button</b> и тега <b>input</b>. Оба тега используют
+            одинаковые
+            <a
+              class="form__link"
+              target="_blank"
+              rel="noopener"
+              href="http://htmlbook.ru/html/input/type"
+              >типы.</a
+            >
+          </p>
 
-              <div class="col-12">
-                <button class="agreement__button primary-button">
-                  Оформить полис за 2 000 ₽
-                </button>
-              </div>
+          <h2 class="form__subheading">button кнопка с картинкой</h2>
+
+          <!-- button кнопка с картинкой -->
+          <div class="form-buttons__container-button-img">
+            <button class="primary-button">
+              <img
+                class="form-buttons__scale-image"
+                src="../../assets/images/doctrineForm/phone.jpg"
+                alt=""
+              />
+            </button>
+          </div>
+          <!-- button кнопка с картинкой -->
+
+          <!-- encoding -->
+          <div>
+            <div class="encoding">
+              <p class="encoding__prompt">d-buttons.html</p>
+              <pre class="encoding__code-box">
+                        <code class="encoding__code-font">                                   
+                          &lt;div class="form-buttons__container-button-img"&gt;
+                            &lt;button class="primary-button"&gt;
+                              &lt;img
+                                class="primary-button__scale-image"
+                                src="../../assets/images/doctrineForm/phone.jpg"
+                                alt=""
+                              /&gt;
+                            &lt;/button&gt;
+                          &lt;/div&gt;                                    
+                        </code>
+                     </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_second">
+                d-buttons.scss
+              </p>
+              <pre class="encoding__code-box">
+                        <code>                                   
+                          .primary-button {
+                            &__scale-image {
+                              width: 102px;
+                              height: 108px;
+                              border-radius: 22px;
+                          
+                              &:hover {
+                                transform: scale(1.1);
+                                opacity: 0.9;
+                                transition: all 0.2s linear;
+                              }
+                            }
+                          }                                      
+                        </code>
+                     </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt"></p>
+              <p class="encoding__prompt encoding__prompt_third">
+                general.scss
+              </p>
+              <pre class="encoding__code-box">
+                        <code>                                   
+                          .primary-button {
+                            cursor: pointer;
+                          
+                            width: 100%;
+                            padding: 12px 8px;
+                            font-size: 16px;
+                            line-height: 24px;
+                            color: white;
+                            background-color: #50287d;
+                            border-radius: 24px;
+                            text-align: center;
+                            box-sizing: border-box;
+                          }                                   
+                        </code>
+                     </pre>
             </div>
           </div>
-        </section>
-        <!-- agreement -->
+          <!-- encoding -->
+          <h2 class="form__subheading">Самая простая кнопка button</h2>
 
-        <!-- Ползунок -->
-        <section class="form">
-          <h1 id="image_ranges" class="form__heading h1-font">Ползунок</h1>
-          <p class="form__description">
-            Ползунок предназначен для ввода чисел в указанном диапазоне, но в
-            отличие от поля <b>input type="number"</b> имеет другой интерфейс и
-            применяется в тех случаях, когда не особенно важно указывать точное
-            значение. На рис. 1 продемонстрирован вид ползунка в разных
-            браузерах.
-          </p>
-          <div class="form__container-image">
-            <img
-              class="form__image form__image_ranges"
-              src="../assets/icons/htmlBook/ranges.png"
-              alt=""
-            />
+          <!-- Самая простая кнопка button-->
+          <div class="form-buttons__container-button">
+            <button class="primary-button">
+              <p id="#" class="form-buttons__scale-title">
+                Самая простая кнопка button
+              </p>
+            </button>
           </div>
-          <p class="form__syntax h2-font">
-            Синтаксис создания ползунка следующий.
-          </p>
-          <p class="form__description">
-            input type="range" min="0" max="100" step="1" value="50"
-          </p>
-          <p class="form__description">
-            Здесь min — минимальное число в диапазоне (по умолчанию 0), max —
-            максимальное число (по умолчанию 100), step — шаг изменения чисел
-            (по умолчанию 1), value — текущее значение. По умолчанию value
-            вычисляется по формуле:
-          </p>
-          <div class="form__container-image">
-            <img
-              class="form__image form__image_formula"
-              src="../assets/icons/htmlBook/rangeFormula.png"
-              alt=""
-            />
+          <!-- Самая простая кнопка button-->
+
+          <!-- encoding -->
+          <div>
+            <div class="encoding">
+              <p class="encoding__prompt">d-buttons.html</p>
+              <pre class="encoding__code-box">
+                                <code class="encoding__code-font">                                   
+                                  &lt;div class="form-buttons__container-button"&gt;
+                                    &lt;button class="primary-button"&gt;
+                                      &lt;p id="#" class="primary-button__scale-title"&gt;
+                                        Самая простая кнопка button
+                                      &lt;/p&gt;
+                                    &lt;/button&gt;
+                                  &lt;/div&gt;                                   
+                                </code>
+                             </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_second">
+                d-buttons.scss
+              </p>
+              <pre class="encoding__code-box">
+                                <code>                                   
+                                  .primary-button {
+                                                                
+                                    &__scale-title {
+                                      color: #fff;
+                                      display: block;
+                                  
+                                      &:hover {
+                                        transform: scale(1.1);
+                                        opacity: 0.9;
+                                        transition: all 0.2s linear;
+                                      }
+                                    }
+                                  }                                   
+                                </code>
+                             </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt"></p>
+              <p class="encoding__prompt encoding__prompt_third">
+                general.scss
+              </p>
+              <pre class="encoding__code-box">
+                                <code>                                   
+                                  .primary-button {
+                                    cursor: pointer;
+                                  
+                                    width: 100%;
+                                    padding: 12px 8px;
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    color: white;
+                                    background-color: #50287d;
+                                    border-radius: 24px;
+                                    text-align: center;
+                                    box-sizing: border-box;
+                                  }                                   
+                                </code>
+                             </pre>
+            </div>
+          </div>
+          <!-- encoding -->
+
+          <!-- Две горизонтальные кнопки другой стилизации -->
+          <h2 class="form__subheading">
+            Две горизонтальные кнопки другой стилизации
+          </h2>
+          <div class="form-buttons__container-buttons">
+            <button class="form-buttons__secondary-button secondary-button">
+              кнопка button
+            </button>
+            <button class="form-buttons__secondary-button secondary-button">
+              я спрячусь при адаптации
+            </button>
+          </div>
+          <!-- Две горизонтальные кнопки другой стилизации -->
+
+          <!-- encoding -->
+          <div>
+            <div class="encoding">
+              <p class="encoding__prompt">d-buttons.html</p>
+              <pre class="encoding__code-box">
+                        <code class="encoding__code-font">                                   
+                            &lt;div class="form-buttons__container-buttons"&gt;
+                              &lt;button class="secondary-button"&lt;кнопка button&lt;/button&lt;
+                              &lt;button class="secondary-button"&lt;я спрячусь при адаптации&lt;/button&lt;
+                            &lt;/div&lt;                                   
+                         </code>
+                      </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_second">
+                d-buttons.scss
+              </p>
+              <pre class="encoding__code-box">
+                                <code>                                   
+                                  .secondary-button {
+                                    max-width: 232px;
+                                  
+                                    &:hover {
+                                      opacity: 0.9;
+                                      transition: all 0.2s linear;
+                                      border: 2px solid #0a0a0a;
+                                      box-shadow: 2px 2px 2px 2px #0a0a0a;
+                                    }
+                                  
+                                    &:first-child {
+                                      background-color: #50287d;
+                                      color: #ffffff;
+                                      margin-right: 48px;
+                                    }
+                                  
+                                    &:last-child {
+                                      background-color: #fff;
+                                      color: #50287d;
+                                      border: 1px solid #50287d;
+                                      display: none;
+                                  
+                                      @media screen and (min-width: 576px) {
+                                        display: block;
+                                  
+                                        &:hover {
+                                          border: 2px solid #50287d;
+                                          box-shadow: 2px 2px 2px 2px #50287d;
+                                        }
+                                      }
+                                    }
+                                  }                                   
+                                </code>
+                             </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt"></p>
+              <p class="encoding__prompt encoding__prompt_third">
+                general.scss
+              </p>
+              <pre class="encoding__code-box">
+                                <code>                                   
+                                  .secondary-button {
+                                    cursor: pointer;
+                                    width: 100%;
+                                    padding: 16px 12px;
+                                    border-radius: 8px;
+                                    box-sizing: border-box;
+                                    border: 1px solid #50287d;
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    color: white;
+                                    text-align: center;
+                                  }                                    
+                                </code>
+                             </pre>
+            </div>
+          </div>
+          <!-- encoding -->
+        </section>
+        <!-- form-buttons -->
+
+        <!-- checkbox -->
+        <section class="form-checkbox">
+          <h1 class="form__heading">checkbox</h1>
+
+          <!-- r-checkbox -->
+          <div class="form-checkbox__checkbox">
+            <label tabindex="0" role="checkbox" id="" class="r-checkbox">
+              <span class="r-checkbox__checker"></span>
+
+              <input id="Checkbox" type="checkbox" class="r-checkbox__input" />
+              <div class="r-checkbox__agree-link">
+                Продолжая, соглашаюсь с
+                <a target="_blank" href="#" class="r-checkbox__link">
+                  правилами
+                </a>
+                и
+                <a target="_blank" href="#" class="r-checkbox__link"
+                  >программой</a
+                >
+                страхования
+              </div>
+            </label>
+          </div>
+          <!-- r-checkbox -->
+
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                    <code class="encoding__code-font">                                   
+                        &lt;label tabindex="0" role="checkbox" id=" " class="r-checkbox"&gt;
+                              &lt;span class="r-checkbox__checker">&lt;/span&gt;
+                              &lt;input id="Checkbox" type="checkbox" class="r-checkbox__input" /&gt;
+                            &lt;div class="r-checkbox__agree-link"&gt;
+                                    Продолжая, соглашаюсь с
+                                &lt;a <b>target="_blank"</b> href="#" class="r-checkbox__link"&gt;
+                                    правилами
+                                  &lt;/a&gt;
+                                  и
+                                &lt;a target="_blank" href="#" class="r-checkbox__link"
+                                &gt;программой&lt;/a&gt;
+                                  страхования
+                             &lt;/div&gt;
+                        &lt;/label&gt;                                   
+                    </code>
+                  </pre>
+          </div>
+
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">general.scss</p>
+            <pre class="encoding__code-box">
+                <code>
+                  .r-checkbox {
+                    user-select: none;
+                    -webkit-user-select: none;
+                    -ms-user-select: none;
+                    -moz-user-select: none;
+                    display: flex;
+                    align-items: flex-start;
+                    position: relative;
+                    cursor: pointer;
+                    margin-bottom: 24px;
+                  
+                    &__checker {
+                      width: 20px;
+                      height: 20px;
+                      border: 2px solid #95bef0;
+                      border-radius: 4px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      position: relative;
+                      top: 2px;
+                      left: 2px;
+                  
+                      &:hover::before {
+                        content: "";
+                        width: 10px;
+                        height: 10px;
+                        margin: auto;
+                        background-color: transparent;
+                      }
+                  
+                      &:active::before {
+                        content: "";
+                        width: 10px;
+                        height: 10px;
+                        margin: auto;
+                        background-color: #00d2ff;
+                        transform: scale(1.2);
+                        transition: all 0.2s linear;
+                      }
+                    }
+                  
+                    &__input {
+                      display: none;
+                    }
+                  
+                    &__agree-link {
+                      line-height: 24px;
+                      position: absolute;
+                      top: 0;
+                      left: 42px;
+                    }
+                  
+                    &__link {
+                      color: #50287d;
+                      cursor: pointer;
+                      outline: 0;
+                      text-decoration: none;
+                    }
+                  }
+                </code>
+              </pre>
           </div>
           <p class="form__description">
-            Если значение max меньше, чем значение min, то value равно min.
-          </p>
-          <p class="form__description">
-            Атрибуты не являются обязательными, их можно опустить, в таком
-            случае они принимают значения по умолчанию.
-          </p>
-          <p class="form__description">
-            Независимо от минимального и максимального числа ширина ползунка
-            остаётся одинаковой. Изменить ширину, можно, только сбросив стили.
-          </p>
-          <p class="form__description">
-            <b>
-              input[type=range] { <br />
-              width: 200px; <br />
-              -webkit-appearance: none; <br />
-              -moz-appearance: none; <br />
-              appearance: none; <br />
-              }</b
+            ps. Что такое
+            <a
+              target="_blank"
+              rel="noopener"
+              href="https://yandex.ru/turbo/internet-technologies.ru/s/articles/target-blank-i-drugie-znacheniya-atributa-target.html"
+              class="form__link"
+              >target = «_blank» и другие значения атрибута target</a
             >
           </p>
           <p class="form__description">
-            Здесь помимо ширины мы указали специальное свойство
-            <b>appearance</b> которое отвечает за базовые стили отображения
-            элемента вашей операционной системы. Значение
-            <b>'none'</b> указывает на то что мы эти стили сбрасываем. По итогу
-            поле range будет отображаться не полностью. Это нам необходимо чтобы
-            задать свои собственные стили для ползунка.
+            ps. Что такое
+            <a
+              target="_blank"
+              rel="noopener"
+              href="https://habr.com/ru/post/282880/"
+              class="form__link"
+              >Опасный target="_blank" и решения проблемы: <br />
+              1. Добавить в ссылки: rel="noopener" <br />
+              2. Это так же может быть rel="nofollow noopener"
+            </a>
           </p>
           <p class="form__description">
-            Сами ползунки редко применяются в «чистом» виде, поскольку не
-            обеспечивают необходимую обратную связь с пользователем, а вот в
-            сочетании с JavaScript это становится мощным и удобным элементом
-            интерфейса. В примере 1 с помощью ползунка изменяется размер
-            изображения, такая возможность часто используется в различных
-            фотогалереях.
+            ps. Что такое
+            <a
+              target="_blank"
+              rel="noopener"
+              href="https://webref.ru/css/user-select"
+              class="form__link"
+            >
+              user-select: none;</a
+            >
+          </p>
+          <p class="form__description">
+            ps. Что такое
+            <a
+              target="_blank"
+              rel="noopener"
+              href="https://webref.ru/layout/after-before/pseudo-class"
+              class="form__link"
+            >
+              Сочетание ::after.visited или ::before:hover не действует. <br />
+              А вот псевдоэлементы к псевдоклассам присоединять допустимо и
+              связка .visited::after или :hover::before уже работает.</a
+            >
+          </p>
+          <p class="form__description">
+            ps. Другая
+            <a
+              target="_blank"
+              rel="noopener"
+              href="https://itchief.ru/html-and-css/styling-checkbox-and-radio"
+              class="form__link"
+            >
+              CSS стилизация checkbox и radio – 2 варианта
+              <img
+                src="../../assets/icons/doctrineForm/checkbox.png"
+                width="30px"
+                height="20px"
+                alt=""
+            /></a>
           </p>
 
-          <!-- slider -->
-          <div class="slider__block">
-            <p class="slider__subheading">Сумма кредита</p>
-
-            <div class="slider">
-              <input
-                class="slider__range"
-                type="range"
-                min="1"
-                max="100"
-                id="size"
-                value="50"
-              />
-              <div class="slider__title">
-                <p class="slider__title_item">90 000 р.</p>
-                <p class="slider__title_item">2 000 000 р.</p>
-              </div>
-            </div>
-          </div>
-          <!-- slider -->
-
-          <!-- slider -->
-          <div class="slider__block">
-            <p class="slider__subheading">Срок кредита</p>
-            <div class="slider">
-              <input
-                class="slider__range"
-                type="range"
-                min="1"
-                max="100"
-                id="size"
-                value="50"
-              />
-              <div class="slider__title">
-                <p class="slider__title_item">1 год</p>
-                <p class="slider__title_item">5 лет</p>
-              </div>
-            </div>
-          </div>
-          <!-- slider -->
-
-          <!--  slider-icon -->
-          <h1 class="form__heading h1-font">"slider-icon" слайдер с иконкой</h1>
-          <p class="form-description">
-            не забыть скачать иконку и подключить её
-          </p>
-          <p class="form__syntax">
-            background: url(../../assets/icons/iconSlider.svg);
-          </p>
-          <div class="revenue">
-            <div class="form__slider-container">
-              <p class="form__slider-title">Сумма вклада</p>
-              <p class="form__slider-value">100 000</p>
-              <!-- slider-icon -->
-              <input
-                type="range"
-                min="1"
-                max="100"
-                value="50"
-                class="slider-icon"
-                id="myRange"
-              />
-              <!--  slider-icon -->
-            </div>
-            <!-- switch-currency twin-switch -->
-          </div>
-          <!--  slider-icon -->
+          <!-- rh-checkbox -->
         </section>
-        <!-- Ползунок -->
-        <!--  radio Переключатели (radiobutton) -->
+        <!-- checkbox -->
+
+        <!-- Ползунок теория slider-->
         <section class="form">
-          <h1 id="primary-radio" class="form__heading h1-font">
-            radio Переключатели (radiobutton).
+          <h1 id="image_ranges" class="form__heading">
+            Ползунки
+            <a
+              class="form__link"
+              target="_blank"
+              rel="noopener"
+              href="http://htmlbook.ru/samhtml5/formy/polzunok"
+              >slider</a
+            >
+          </h1>
+          <div class="form__info">
+            <p class="form__description">
+              Ползунок предназначен для ввода чисел в указанном диапазоне, но в
+              отличие от поля <b>input type="number"</b> имеет другой интерфейс
+              и применяется в тех случаях, когда не особенно важно указывать
+              точное значение. На рис. 1 продемонстрирован вид ползунка в разных
+              браузерах.
+            </p>
+            <div class="form__container-image">
+              <img src="../../assets/icons/doctrineForm/ranges.png" alt="" />
+            </div>
+            <p class="form__syntax">Синтаксис создания ползунка следующий.</p>
+            <p class="form__description">
+              input type="range" min="0" max="100" step="1" value="50"
+            </p>
+            <p class="form__description">
+              Здесь min — минимальное число в диапазоне (по умолчанию 0), max —
+              максимальное число (по умолчанию 100), step — шаг изменения чисел
+              (по умолчанию 1), value — текущее значение. По умолчанию value
+              вычисляется по формуле:
+            </p>
+            <div class="form__container-image">
+              <img
+                src="../../assets/icons/doctrineForm/rangeFormula.png"
+                alt=""
+              />
+            </div>
+            <p class="form__description">
+              Если значение max меньше, чем значение min, то value равно min.
+            </p>
+            <p class="form__description">
+              Атрибуты не являются обязательными, их можно опустить, в таком
+              случае они принимают значения по умолчанию.
+            </p>
+            <p class="form__description">
+              Независимо от минимального и максимального числа ширина ползунка
+              остаётся одинаковой. Изменить ширину, можно, только сбросив стили.
+            </p>
+            <p class="form__description">
+              <b>
+                input[type=range] { <br />
+                width: 200px; <br />
+                -webkit-appearance: none; <br />
+                -moz-appearance: none; <br />
+                appearance: none; <br />
+                }</b
+              >
+            </p>
+            <p class="form__description">
+              Здесь помимо ширины мы указали специальное свойство
+              <b>appearance</b> которое отвечает за базовые стили отображения
+              элемента вашей операционной системы. Значение
+              <b>'none'</b> указывает на то что мы эти стили сбрасываем. По
+              итогу поле range будет отображаться не полностью. Это нам
+              необходимо чтобы задать свои собственные стили для ползунка.
+            </p>
+            <p class="form__description">
+              Сами ползунки редко применяются в «чистом» виде, поскольку не
+              обеспечивают необходимую обратную связь с пользователем, а вот в
+              сочетании с JavaScript это становится мощным и удобным элементом
+              интерфейса.
+            </p>
+          </div>
+        </section>
+        <!-- Ползунок теория slider-->
+
+        <!-- Ползунок slider-bicolor-->
+        <section class="form-slider">
+          <div class="form-slider__container">
+            <h2 class="form__subheading">
+              Ползунок двухцветный slider-bicolor
+            </h2>
+            <p class="form-slider__subheading">Сумма кредита</p>
+
+            <input
+              class="slider-bicolor"
+              type="range"
+              min="1"
+              max="100"
+              id="size"
+              value="50"
+            />
+            <div class="form-slider__titles">
+              <p>90 000 р.</p>
+              <p>2 000 000 р.</p>
+            </div>
+          </div>
+
+          <div class="form-slider__container">
+            <p class="form-slider__subheading">Срок кредита</p>
+
+            <input
+              class="slider-bicolor"
+              type="range"
+              min="1"
+              max="100"
+              id="size"
+              value="50"
+            />
+            <div class="form-slider__titles">
+              <p>1 год</p>
+              <p>5 лет</p>
+            </div>
+          </div>
+
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                      <code >                                   
+                          &lt;input 
+                              class="slider-bicolor" 
+                              type="range" 
+                              min="1" 
+                              max="100" 
+                              id="size" 
+                              value="50" 
+                        /&gt;                                   
+                      </code>
+              </pre>
+          </div>
+
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">SCSS</p>
+            <pre class="encoding__code-box">
+                 <code>
+                  .slider-bicolor {
+                    width: 100%;
+                    appearance: none;
+                    outline: none;
+                    overflow: hidden;
+                    height: 7px;
+                  
+                    &::-webkit-slider-runnable-track {
+                      height: 7px;
+                      background-color: #43e5f7;
+                    }
+                  
+                    &::-webkit-slider-thumb {
+                      background: #ecf0f1;
+                      cursor: pointer;
+                      width: 15px;
+                      height: 15px;
+                      -webkit-appearance: none;
+                      margin-top: -4px;
+                      box-shadow: -500px 0 0 500px blue;
+                    }
+                  } 
+                </code>
+              </pre>
+          </div>
+        </section>
+        <!-- Ползунок slider-bicolor-->
+
+        <!-- Ползунок slider-icon -->
+        <section class="form-slider">
+          <h2 class="form__subheading">слайдер с иконкой slider-icon</h2>
+
+          <div class="form-slider__container">
+            <p class="form-slider__title">Сумма вклада</p>
+            <p class="slider-icon__value">100 000</p>
+            <!-- slider-icon -->
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider-icon"
+              id="myRange"
+            />
+            <!--  slider-icon -->
+          </div>
+
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                <code >                                   
+                      &lt;input
+                          type="range"
+                          min="1"
+                          max="100"
+                          value="50"
+                          class="slider-icon"
+                          id="myRange"
+                    /&gt;                                   
+                </code>
+              </pre>
+          </div>
+
+          <div class="encoding">
+            <div>
+              <p class="encoding__prompt encoding__prompt_second">SCSS</p>
+              <pre class="encoding__code-box">
+                <code>                                   
+                  .slider-icon {
+                    appearance: none;
+                    width: 100%;
+                    height: 0px;
+                    background: #d3d3d3;
+                    outline: none;
+
+                    &::-webkit-slider-thumb {
+                      -webkit-appearance: none;
+                      appearance: none;
+                      width: 14px;
+                      height: 20px;
+                      // не забыть скачать 
+                      иконку и подключить её
+                      background: 
+                      url(../../../assets/icons/iconSlider.svg);
+                      cursor: pointer;
+                      position: relative;
+                    }
+
+                    &::-webkit-range-thumb {
+                      width: 14px;
+                      height: 20px;
+                      background: 
+                      url(../../../assets/icons/iconSlider.svg);
+                      cursor: pointer;
+                      position: relative;
+                    }
+
+                    &__value {
+                      width: 100%;
+                      font-size: 18px;
+                      line-height: 24px;
+                      text-align: center;
+                      padding: 15px;
+                      border: 1px solid #c4c4c4;
+                      box-sizing: border-box;
+                      border-radius: 10px;
+                      position: absolute;
+                      bottom: 12px;
+                      left: 0;
+                    }
+                  }                               
+                </code>
+              </pre>
+            </div>
+          </div>
+
+          <p class="form__description">
+            не забыть скачать иконку и подключить её <br />
+            <b> background: url(../../assets/icons/iconSlider.svg);</b>
+          </p>
+          <p class="form__description">
+            ps. Как сделать -
+            <a
+              target="_blank"
+              rel="noopener"
+              href="https://html5css.ru/howto/howto_js_rangeslider.php"
+              class="form__link"
+            >
+              пользовательские ползунки</a
+            >
+          </p>
+        </section>
+        <!-- Ползунок slider-icon -->
+
+        <!--   Переключатели info -->
+        <section class="form-radiobutton">
+          <h1 id="primary-radio" class="form__heading">
+            radio переключатели (radiobutton).
           </h1>
 
           <p class="form__description">
@@ -638,119 +1344,1187 @@
 
           <p class="form__description">
             С ними используются
-            <a. class="form__link" href="http://htmlbook.ru/html/input/checked"
-              >атрибуты checked</a.
+            <a
+              class="form__link"
+              target="_blank"
+              rel="noopener"
+              href="http://htmlbook.ru/html/input/checked"
+              >атрибуты checked</a
             >
             Этот атрибут определяет, помечен ли заранее такой элемент формы, как
             флажок или переключатель. В случае использования переключателей
             (radiobutton), может быть отмечен только один элемент группы, для
             флажков (checkbox) допустимо пометить хоть все элементы.
           </p>
-          <h2 class="form__subheading h2-font">Тройной переключатель</h2>
-          <!--  -->
+        </section>
+        <!--   Переключатели info -->
 
-          <!-- primary-radio Тройной переключатель -->
-          <div class="form__primary-radio primary-radio__container">
-            <p class="primary-radio__subheading">
+        <!-- multicolor-switch Тройной переключатель -->
+        <section class="form-radiobutton">
+          <h2 class="form__subheading">Тройной переключатель</h2>
+          <div class="form-radiobutton__multicolor-switch">
+            <p class="form__description">
               Каким браузером в основном пользуетесь?
             </p>
-            <form class="primary-radio">
-              <label class="primary-radio__item" for="">
+
+            <div class="multicolor-switch">
+              <label class="multicolor-switch__item">
                 <input
-                  class="primary-radio__field"
+                  class="multicolor-switch__field"
                   type="radio"
                   name="browser"
                   value="ie"
                 />
-                <div class="primary-radio__title sm-font">Explorer</div>
+                <p class="multicolor-switch__title">Explorer</p>
               </label>
 
-              <label class="primary-radio__item" for="">
+              <label class="multicolor-switch__item">
                 <input
-                  class="primary-radio__field"
+                  class="multicolor-switch__field"
                   type="radio"
                   name="browser"
                   value="ie"
                 />
-                <div class="primary-radio__title sm-font">Opera</div>
+                <p class="multicolor-switch__title">Opera</p>
               </label>
 
-              <label class="primary-radio__item" for="">
+              <label class="multicolor-switch__item">
                 <input
-                  class="primary-radio__field"
+                  class="multicolor-switch__field"
                   type="radio"
                   name="browser"
                   value="ie"
                 />
-                <div class="primary-radio__title sm-font">Firefox</div>
+                <p class="multicolor-switch__title">Firefox</p>
               </label>
-            </form>
+            </div>
           </div>
-          <!-- primary-radio Тройной переключатель -->
 
-          <!--  -->
-          <h2 class="form__subheading h2-font">
-            Двойной спаренный переключатель
-          </h2>
-          <!--  -->
-
-          <!-- secondary-radio Двойной спаренный переключатель -->
-          <div class="form__secondary-radio">
-            <p class="secondary-radio__subheading">Выберете окно просмотра</p>
-            <form class="secondary-radio">
-              <label
-                class="secondary-radio__item secondary-radio__item_left"
-                for=""
-              >
-                <input
-                  class="secondary-radio__field"
-                  type="radio"
-                  name="browser"
-                  value="ie"
-                />
-                <div
-                  class="secondary-radio__title secondary-radio__title_left sm-font"
-                >
-                  Список
-                </div>
-              </label>
-
-              <label
-                class="secondary-radio__item secondary-radio__item_right"
-                for=""
-              >
-                <input
-                  class="secondary-radio__field"
-                  type="radio"
-                  name="browser"
-                  value="ie"
-                />
-                <div
-                  class="secondary-radio__title secondary-radio__title_right sm-font"
-                >
-                  Карта
-                </div>
-              </label>
-            </form>
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                  <code class="encoding__code-font">                                   
+                    &lt;div class="form-radiobutton__multicolor-switch"&gt;
+                    &lt;p class="form__subheading"&gt;
+                        Каким браузером в основном пользуетесь?
+                        &lt;/p&gt;
+          
+                        &lt;div class="multicolor-switch"&gt;
+                        &lt;label class="multicolor-switch__item"&gt;
+                        &lt;input
+                            class="multicolor-switch__field"
+                            type="radio"
+                            name="browser"
+                            value="ie"
+                          /&gt;
+                          &lt;p class="multicolor-switch__title"&gt;Explorer&lt;/p&gt;
+                          &lt;/label&gt;
+          
+                          &lt;label class="multicolor-switch__item"&gt;
+                          &lt;input
+                            class="multicolor-switch__field"
+                            type="radio"
+                            name="browser"
+                            value="ie"
+                          /&gt;
+                          &lt;p class="multicolor-switch__title"&gt;Opera&lt;/p&gt;
+                          &lt;/label&gt;
+          
+                          &lt;label class="multicolor-switch__item"&gt;
+                          &lt;input
+                            class="multicolor-switch__field"
+                            type="radio"
+                            name="browser"
+                            value="ie"
+                          /&gt;
+                          &lt;p class="multicolor-switch__title">Firefox&lt;/p&gt;
+                          &lt;/label&gt;
+                      &lt;/div&gt;
+                      &lt;/div&gt;                                    
+                  </code>
+               </pre>
           </div>
-          <!-- secondary-radio Двойной спаренный переключатель -->
 
-          <!--  -->
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">general.scss</p>
+            <pre class="encoding__code-box">
+                  <code>                                   
+                    .multicolor-switch {
+                      width: 100%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    
+                      &__item {
+                        width: calc(33.333333% - 12px);
+                        cursor: pointer;
+                        border-radius: 24px;
+                        background-image: linear-gradient(blue, green, yellow);
+                        box-shadow: 0 -5px 10px -3px #3498db, 0 5px 10px -3px #2ecc71;
+                        margin-left: 6px;
+                        margin-right: 6px;
+                        text-align: center;
+                        flex: auto;
+                    
+                        &:hover {
+                          transform: scale(1.05);
+                          opacity: 0.8;
+                          transition: all 0.2s linear;
+                        }
+                    
+                        &:hover .multicolor-switch__title {
+                          transform: rotate(360deg);
+                          transition: all 0.2s linear;
+                        }
+                    
+                        &:first-child {
+                          margin-left: 0px;
+                        }
+                    
+                        &:last-child {
+                          margin-right: 0px;
+                        }
+                    
+                        &:active {
+                          border: 1px solid #3498db;
+                        }
+                      }
+                    
+                      &__field {
+                        display: none;
+                      }
+                    
+                      &__title {
+                        font-size: 13px;
+                        color: white;
+                        padding: 8px 0px;
+                      }
+                    }
+                  </code>
+               </pre>
+          </div>
         </section>
-        <!--   radio Переключатели (radiobutton)-->
+        <!-- multicolor-switch Тройной переключатель -->
+
+        <!-- triple-switch Тройной переключатель * -->
+        <section class="form-radiobutton">
+          <h2 class="form__subheading">
+            Тройной переключатель <br />
+            "triple-switch"
+          </h2>
+          <div class="form-radiobutton__triple-switch">
+            <div class="triple-switch">
+              <label class="triple-switch__item">
+                <input
+                  class="triple-switch__field"
+                  type="radio"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="triple-switch__title">Первый</p>
+              </label>
+
+              <label class="triple-switch__item">
+                <input
+                  class="triple-switch__field"
+                  type="radio"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="triple-switch__title">Второй</p>
+              </label>
+
+              <label class="triple-switch__item">
+                <input
+                  class="triple-switch__field"
+                  type="radio"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="triple-switch__title">Третий</p>
+              </label>
+            </div>
+          </div>
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                  <code class="encoding__code-font">                                   
+                    &lt;div class="form__triple-switch"&gt;
+                      &lt;div class="triple-switch"&gt;
+                        &lt;label class="triple-switch__item"&gt;
+                          &lt;input
+                            class="triple-switch__field"
+                            type="radio"
+                            name="browser"
+                            value="ie"
+                          /&gt;
+                          &lt;p class="triple-switch__title"&gt;Первый&lt;/p&gt;
+                        &lt;/label&gt;
+          
+                        &lt;label class="triple-switch__item"&gt;
+                          &lt;input
+                            class="triple-switch__field"
+                            type="radio"
+                            name="browser"
+                            value="ie"
+                          /&gt;
+                          &lt;p class="triple-switch__title">Второй&lt;/p&gt;
+                        &lt;/label&gt;
+          
+                        &lt;label class="triple-switch__item"&gt;
+                          &lt;input
+                            class="triple-switch__field"
+                            type="radio"
+                            name="browser"
+                            value="ie"
+                          /&gt;
+                          &lt;p class="triple-switch__title">Третий&lt;/p&gt;
+                        &lt;/label&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;                                   
+                  </code>
+               </pre>
+          </div>
+
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">general.scss</p>
+            <pre class="encoding__code-box">
+                  <code>                                   
+                    .triple-switch {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      background: #b6d3f0;
+                      box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
+                      border-radius: 36px;
+                    
+                      &__item {
+                        cursor: pointer;
+                        padding: 19px 27px;
+                        margin: 5px;
+                        color: #5a646e;
+                        background: #f3f5f7;
+                        box-sizing: border-box;
+                        border-radius: 31px;
+                    
+                        &:hover {
+                          box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
+                        }
+                    
+                        &:active {
+                          background: #ffffff;
+                          border: 2px solid #00d2ff;
+                        }
+                      }
+                    
+                      &__field {
+                        display: none;
+                      }
+                    
+                      &__title {
+                        font-size: 13px;
+                        color: #5a646e;
+                      }
+                    }                                    
+                  </code>
+               </pre>
+          </div>
+        </section>
+        <!-- triple-switch Тройной переключатель * -->
+
+        <!-- secondary-radio Двойной спаренный переключатель -->
+        <section class="form-radiobutton">
+          <h2 class="form__subheading">
+            Двойной спаренный переключатель <br />
+            "secondary-radio"
+          </h2>
+
+          <div class="form-radiobutton__container-secondary-radio">
+            <p class="form__description">Выберите окно просмотра</p>
+            <div class="form-radiobutton__secondary-radio secondary-radio">
+              <label class="secondary-radio__item">
+                <input
+                  class="secondary-radio__field"
+                  type="radio"
+                  checked="checked"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="secondary-radio__title">Список</p>
+              </label>
+
+              <label class="secondary-radio__item">
+                <input
+                  class="secondary-radio__field"
+                  type="radio"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="secondary-radio__title">Карта</p>
+              </label>
+            </div>
+          </div>
+
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                  <code class="encoding__code-font">                                   
+                    &lt;div class="form-radiobutton__secondary-radio"&gt;&gt;
+                      &lt;p class="form__subheading">Выберите окно просмотра&lt;/p&gt;
+                      &lt;div  class="secondary-radio"&gt;
+                        &lt;label class="secondary-radio__item"&gt;
+                          &lt;input
+                            class="secondary-radio__field"
+                            type="radio"
+                            checked="checked"
+                            name="browser"
+                            value="ie"
+                          />
+                          &lt;p class="secondary-radio__title"&gt;Список&lt;/p&gt;
+                        &lt;/label&gt;
+          
+                        &lt;label class="secondary-radio__item"&gt;
+                          &lt;input
+                            class="secondary-radio__field"
+                            type="radio"
+                            name="browser"
+                            value="ie"
+                          />
+                          &lt;p class="secondary-radio__title"&gt;Карта&lt;/p&gt;
+                        &lt;/label&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;                                   
+                  </code>
+               </pre>
+          </div>
+
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">general.scss</p>
+            <pre class="encoding__code-box">
+                  <code>                                   
+                    .secondary-radio {
+                      width: 100%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    
+                      &__item {
+                        width: 50%;
+                        cursor: pointer;
+                        padding: 7px 12px;
+                        box-sizing: border-box;
+                        background-color: white;
+                        border: 1px solid black;
+                    
+                        &:active,
+                        &:hover {
+                          background-color: #15499f;
+                          border: 1px solid #15499f;
+                        }
+                    
+                        &:active .secondary-radio__title,
+                        &:hover .secondary-radio__title {
+                          color: #ffffff;
+                        }
+                    
+                        &:first-child {
+                          // border-right: none;
+                          border-radius: 8px 0 0 8px;
+                        }
+                    
+                        &:last-child {
+                          // border-left: none;
+                          border-radius: 0 8px 8px 0;
+                        }
+                    
+                        &:hover {
+                          transform: scale(1.05);
+                          transition: 0.2s linear;
+                        }
+                      }
+                    
+                      &__field {
+                        display: none;
+                      }
+                    
+                      &__title {
+                        font-size: 13px;
+                      }
+                    }
+                  </code>
+               </pre>
+          </div>
+        </section>
+        <!-- secondary-radio Двойной спаренный переключатель -->
+
+        <!-- twin-switch  -->
+        <section class="form-radiobutton">
+          <h1 id="twin-switch" class="form__subheading">
+            Переключатель <br />
+            "twin-switch"
+          </h1>
+
+          <div class="form-radiobutton__twin-switch">
+            <div class="twin-switch">
+              <label class="twin-switch__item">
+                <input
+                  class="twin-switch__field"
+                  type="radio"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="twin-switch__title">Первый</p>
+              </label>
+
+              <label class="twin-switch__item">
+                <input
+                  class="twin-switch__field"
+                  type="radio"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="twin-switch__title">Второй</p>
+              </label>
+
+              <label class="twin-switch__item">
+                <input
+                  class="twin-switch__field"
+                  type="radio"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="twin-switch__title">Третий</p>
+              </label>
+
+              <label class="twin-switch__item">
+                <input
+                  class="twin-switch__field"
+                  type="radio"
+                  name="browser"
+                  value="ie"
+                />
+                <p class="twin-switch__title">Четвёртый</p>
+              </label>
+            </div>
+          </div>
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                  <code class="encoding__code-font">                                   
+                    &lt;div class="form-radiobutton__twin-switch"&gt;
+                      &lt;div class="twin-switch"&gt;
+                        &lt;label class="twin-switch__item"&gt;
+                          &lt;input
+                            class="twin-switch__field"
+                            type="radio"
+                            name="browser"
+                            value="ie"
+                          /&gt;
+                          &lt;p class="twin-switch__title"&gt;Первый&lt;/p&gt;
+                        &lt;/label&gt;
+          
+                        &lt;label class="twin-switch__item"&gt;
+                          &lt;input
+                            class="twin-switch__field"
+                            type="radio"
+                            name="browser"
+                            value="ie"
+                          /&gt;
+                          &lt;p class="twin-switch__title"&gt;Второй&lt;/p&gt;
+                        &lt;/label&gt;
+          
+                        &lt;label class="twin-switch__item"&gt;
+                          &lt;input
+                            class="twin-switch__field"
+                            type="radio"
+                            name="browser"
+                            value="ie"
+                          /&gt;
+                          &lt;p class="twin-switch__title"&gt;Третий&lt;/p>
+                        &lt;/label&gt;
+          
+                        &lt;label class="twin-switch__item"&gt;
+                          &lt;input
+                            class="twin-switch__field"
+                            type="radio"
+                            name="browser"
+                            value="ie"
+                          /&gt;
+                          &lt;p class="twin-switch__title"&gt;Четвёртый&lt;/p&gt;
+                        &lt;/label&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;                                  
+                  </code>
+               </pre>
+          </div>
+
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">general.scss</p>
+            <pre class="encoding__code-box">
+                  <code>                                   
+                    .twin-switch {
+                      width: 100%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    
+                      &__item {
+                        width: 50%;
+                        cursor: pointer;
+                        box-sizing: border-box;
+                        background-color: white;
+                        border: 1px solid #c4c4c4;
+                    
+                        &:first-child {
+                          border-radius: 8px 0px 0px 8px;
+                        }
+                    
+                        &:last-child {
+                          border-radius: 0px 8px 8px 0px;
+                        }
+                    
+                        &:active .twin-switch__title,
+                        &:hover .twin-switch__title {
+                          color: white;
+                        }
+                    
+                        &:hover {
+                          transform: scale(1.05);
+                          transition: 0.2s linear;
+                        }
+                    
+                        &:active,
+                        &:hover {
+                          background-color: #1998a7;
+                          border: 1px solid #1998a7;
+                        }
+                      }
+                    
+                      &__field {
+                        display: none;
+                      }
+                    
+                      &__title {
+                        font-size: 14px;
+                        text-align: center;
+                        padding: 16px 12px;
+                      }
+                    }                                   
+                  </code>
+               </pre>
+          </div>
+        </section>
+        <!-- twin-switch  -->
+
+        <!-- раскрывающийся и выпадающий списки-->
+        <section class="form-drop-down">
+          <h1 class="form__heading">Выпадающий или раскрывающийся список.</h1>
+          <div class="form__row">
+            <div class="form__column">
+              <div class="nav">
+                <h2 class="nav__heading">Скрытое меню</h2>
+                <p class="nav__description">
+                  Ширина блока названия меню и скрытого поля одинаковая. <br />
+                  У скрытого поля <b>{position: relative;} </b>. <br />
+                  Нижеследующий контент сдвигается вниз.
+                </p>
+                <p class="nav__direction">
+                  Наведите указатель мыши на название меню.
+                </p>
+                <ul class="nav__list">
+                  <a class="nav__link" href="#"> Формы form </a>
+                  <div class="nav__hidden">
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#"> Формы form</a>
+                    </li>
+
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#"> Типы форм</a>
+                    </li>
+
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#">Кнопки button </a>
+                    </li>
+
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#"> Поля input</a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#"
+                        >Самая простая кнопка button
+                      </a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#">Поле выбора даты </a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#">primary-checkbox </a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#"> Ползунок</a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#"
+                        >radio Переключатели (radiobutton).
+                      </a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#"
+                        >Раскрывающийся список, тег select
+                      </a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#">
+                        Переключатель "twin-switch"
+                      </a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__item_link" href="#">
+                        Меню - раскрывающийся список
+                      </a>
+                    </li>
+                  </div>
+                </ul>
+                <!-- forms_list -->
+              </div>
+            </div>
+            <div class="form__column">
+              <div class="guide">
+                <h2 class="guide__heading">Скрытое меню</h2>
+                <p class="guide__description">
+                  Ширина блока названия меню и скрытого поля одинаковая. <br />
+                  У скрытого поля <b> {position: absolute; z-index: 1;} </b>.
+                  <br />
+                  Нижеследующий контент остаётся на месте.
+                </p>
+                <p class="nav__direction">
+                  Наведите указатель мыши на название меню.
+                </p>
+                <ul class="guide__list">
+                  <a class="guide__link" href="#"> Формы form </a>
+                  <div class="guide__hidden">
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#"> Формы form</a>
+                    </li>
+
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#"> Типы форм</a>
+                    </li>
+
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#">Кнопки button </a>
+                    </li>
+
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#"> Поля input</a>
+                    </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#"
+                        >Самая простая кнопка button
+                      </a>
+                    </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#">Поле выбора даты </a>
+                    </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#">primary-checkbox </a>
+                    </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#"> Ползунок</a>
+                    </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#"
+                        >radio Переключатели (radiobutton).
+                      </a>
+                    </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#"
+                        >Раскрывающийся список, тег select
+                      </a>
+                    </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#">
+                        Переключатель "twin-switch"
+                      </a>
+                    </li>
+                    <li class="guide__item">
+                      <a class="guide__item_link" href="#">
+                        Меню - раскрывающийся список
+                      </a>
+                    </li>
+                  </div>
+                </ul>
+                <!-- forms_list -->
+              </div>
+            </div>
+          </div>
+
+          <!-- encoding-->
+          <section class="encoding-bloc">
+            <div class="encoding">
+              <!-- -->
+              <p class="encoding__prompt">HTML</p>
+              <pre class="encoding__code-box">
+                <code class="form__code-font">                                   
+                  &lt;div class="nav"&gt;
+                    &lt;h2 class="nav__heading"&gt;Скрытое меню&lt;/h2&gt;
+                    &lt;p class="nav__direction"&gt;
+                      Наведите указатель мыши, чтобы открыть меню.
+                    &lt;/p&gt;
+                    &lt;div class="nav__container"&gt;
+                      &lt;ul class="nav__list"&gt;
+                        &lt;a class="nav__link" href="#"&gt; Формы form &lt;/a&gt;
+                          &lt;div class="nav__hidden"&gt;
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"&gt; Формы form&lt;/a&gt;
+                            &lt;/li&gt;
+        
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"&gt; Типы форм&lt;a&gt;
+                            &lt;/li&gt;
+        
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"&gt; Кнопки button &lt;a&gt;
+                            &lt;/li&gt;
+        
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"&gt; Поля input&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"
+                              &gt;Самая простая кнопка button
+                              &lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"&gt; Поле выбора даты &lt;a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"&gt; primary-checkbox &lt;/a&gt;
+                            &lt;li&gt;
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"&gt; Ползунок &lt;/a&gt;
+                            &lt;li&gt;
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"
+                              &gt; radio Переключатели (radiobutton).
+                              &lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"
+                              &gt; Раскрывающийся список, тег select
+                              &lt;a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="nav__item"&gt;
+                            &lt;a class="nav__item_link" href="#"&gt;
+                                Переключатель "twin-switch"
+                              &lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="nav__item"&gt;
+                              &lt;a class="nav__item_link" href="#"&gt;
+                                Меню - раскрывающийся список
+                              &lt;/a&gt;
+                            &lt;/li&gt;
+                          &lt;/div&gt;  
+                      &lt;/ul&gt;
+                    
+                    &lt;/div&gt;
+                  &lt;/div&gt;                                   
+                </code>
+             </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_second">
+                SCSS relative
+              </p>
+              <pre class="encoding__code-box">
+                <code >                                   
+                  .nav {
+                    width: 100%;
+                    padding-bottom: 36px;
+                    background-color: #fff;
+                  
+                    &__heading {
+                      font-size: 18px;
+                      line-height: 24px;
+                      margin-bottom: 12px;
+                  
+                      @media screen and (min-width: 767px) {
+                        font-size: 24px;
+                        line-height: 36px;
+                      }
+                    }
+                  
+                    &__description {
+                      font-size: 11px;
+                      line-height: 24px;
+                      margin-bottom: 12px;
+                    }
+                  
+                    &__direction {
+                      display: block;
+                      font-size: 11px;
+                      line-height: 24px;
+                      margin-top: 24px;
+                    }
+                  
+                    &__list {
+                      max-width: 320px;
+                      margin-right: 10px;
+                      border-top: 1px solid #bfd1e4;
+                      background: rgba(230, 240, 250, 0.75);
+                      position: relative;
+                  
+                      &:hover .nav__hidden {
+                        display: block;
+                        width: 100%;
+                        background: rgba(230, 240, 250, 1);
+                        position: relative;
+                      }
+                  
+                      @media screen and (min-width: 375px) {
+                        max-width: 375px;
+                      }
+                  
+                      &:hover .nav__link {
+                        background-color: #ddd;
+                        color: black;
+                        transform: scaleY(1.05);
+                        transition: all 2ms linear;
+                      }
+                    }
+                    &__hidden {
+                      display: none;
+                    }
+                  
+                    &__link {
+                      display: block;
+                      text-decoration: none;
+                      font-size: 15px;
+                      line-height: 20px;
+                      color: #333333;
+                      padding: 6px 24px;
+                    }
+                  
+                    &__item {
+                      padding-left: 48px;
+                      position: relative;
+                      border-top: 1px solid #bfd1e4;
+                  
+                      &_link {
+                        display: block;
+                        width: 100%;
+                        font-size: 14px;
+                        line-height: 14px;
+                        text-decoration: none;
+                        color: #333333;
+                        padding: 6px 0;
+                        margin-right: 10px;
+                  
+                        &:hover {
+                          background-color: #ddd;
+                          color: black;
+                          transform: scaleY(1.05);
+                          transition: all 2ms linear;
+                        }
+                      }
+                    }
+                  }
+                </code>
+             </pre>
+            </div>
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_third">
+                SCSS absolute
+              </p>
+              <pre class="encoding__code-box">
+                <code >                                   
+                  .nav {
+                    width: 100%;
+                    padding-bottom: 36px;
+                    background-color: #fff;
+                  
+                    &__heading {
+                      font-size: 18px;
+                      line-height: 24px;
+                      margin-bottom: 12px;
+                  
+                      @media screen and (min-width: 767px) {
+                        font-size: 24px;
+                        line-height: 36px;
+                      }
+                    }
+                  
+                    &__description {
+                      font-size: 11px;
+                      line-height: 24px;
+                      margin-bottom: 12px;
+                    }
+                  
+                    &__direction {
+                      display: block;
+                      font-size: 11px;
+                      line-height: 24px;
+                      margin-top: 24px;
+                    }
+                  
+                    &__list {
+                      max-width: 320px;
+                      margin-right: 10px;
+                      border-top: 1px solid #bfd1e4;
+                      background: rgba(230, 240, 250, 0.75);
+                      position: relative;
+                  
+                      &:hover .nav__hidden {
+                        display: block;
+                        width: 100%;
+                        background: rgba(230, 240, 250, 1);
+                        position: absolute;
+                        z-index: 1;
+                      }
+                  
+                      @media screen and (min-width: 375px) {
+                        max-width: 375px;
+                      }
+                  
+                      &:hover .nav__link {
+                        background-color: #ddd;
+                        color: black;
+                        transform: scaleY(1.05);
+                        transition: all 2ms linear;
+                      }
+                    }
+                    &__hidden {
+                      display: none;
+                    }
+                  
+                    &__link {
+                      display: block;
+                      text-decoration: none;
+                      font-size: 15px;
+                      line-height: 20px;
+                      color: #333333;
+                      padding: 6px 24px;
+                    }
+                  
+                    &__item {
+                      padding-left: 48px;
+                      position: relative;
+                      border-top: 1px solid #bfd1e4;
+                  
+                      &_link {
+                        display: block;
+                        width: 100%;
+                        font-size: 14px;
+                        line-height: 14px;
+                        text-decoration: none;
+                        color: #333333;
+                        padding: 6px 0;
+                        margin-right: 10px;
+                  
+                        &:hover {
+                          background-color: #ddd;
+                          color: black;
+                          transform: scaleY(1.05);
+                          transition: all 2ms linear;
+                        }
+                      }
+                    }
+                  }
+                </code>
+             </pre>
+            </div>
+            <p class="form__description">HTML одинаковый для обоих списков</p>
+            <p class="form__description">
+              Стилизация отличается позиционированием
+              <b>position: absolute;</b> и <b>z-index: 1;</b> для него.
+            </p>
+          </section>
+          <!-- encoding-->
+          <!-- nav menu рыскрывающийся список-->
+        </section>
+        <!-- раскрывающийся и выпадающий списки-->
+
+        <!-- Выпадающее меню -->
+        <section class="form-menu">
+          <h2 class="form__subheading">Выпадающее меню</h2>
+          <p class="form-menu__direction">
+            Наведите указатель мыши на название, чтобы открыть выпадающее меню.
+          </p>
+          <div class="form-menu__header">
+            <div class="form-menu__header-item">
+              <button class="form-menu__button">название</button>
+              <div class="form-menu__content">
+                <a class="form-menu__link" href="#">первый</a>
+                <a class="form-menu__link" href="#">второй</a>
+                <a class="form-menu__link" href="#">третий</a>
+                <a class="form-menu__link" href="#">четвёртый</a>
+                <a class="form-menu__link" href="#">пятый</a>
+              </div>
+            </div>
+            <div class="form-menu__header-item">
+              <button class="form-menu__button">название</button>
+              <div class="form-menu__content">
+                <a class="form-menu__link" href="#">первый</a>
+                <a class="form-menu__link" href="#">второй</a>
+                <a class="form-menu__link" href="#">третий</a>
+                <a class="form-menu__link" href="#">четвёртый</a>
+                <a class="form-menu__link" href="#">пятый</a>
+              </div>
+            </div>
+            <div class="form-menu__header-item">
+              <button class="form-menu__button">название</button>
+              <div class="form-menu__content">
+                <a class="form-menu__link" href="#">первый</a>
+                <a class="form-menu__link" href="#">второй</a>
+                <a class="form-menu__link" href="#">третий</a>
+                <a class="form-menu__link" href="#">четвёртый</a>
+                <a class="form-menu__link" href="#">пятый</a>
+              </div>
+            </div>
+            <div class="form-menu__header-item">
+              <button class="form-menu__button">название</button>
+              <div class="form-menu__content">
+                <a class="form-menu__link" href="#">первый</a>
+                <a class="form-menu__link" href="#">второй</a>
+                <a class="form-menu__link" href="#">третий</a>
+                <a class="form-menu__link" href="#">четвёртый</a>
+                <a class="form-menu__link" href="#">пятый</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                <code class="encoding__code-font">                                   
+                  &lt;div class="form-menu__header"&gt;&gt;
+                    &lt;div class="form-menu__header-item"&gt;
+                     &lt;button class="form-menu__button">название&lt;button&gt;
+                     &lt;div class="form-menu__content"&gt;
+                        &lt;a class="form-menu__link" href="#">первый&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">второй&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">третий&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">четвёртый&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">пятый&lt;/a&gt;
+                     &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="form-menu__header-item"&gt;
+                     &lt;button class="form-menu__button">название&lt;button&gt;
+                     &lt;div class="form-menu__content"&gt;
+                        &lt;a class="form-menu__link" href="#">первый&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">второй&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">третий&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">четвёртый&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">пятый&lt;/a&gt;
+                     &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="form-menu__header-item"&gt;
+                     &lt;button class="form-menu__button">название&lt;button&gt;
+                     &lt;div class="form-menu__content"&gt;
+                        &lt;a class="form-menu__link" href="#">первый&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">второй&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">третий&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">четвёртый&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">пятый&lt;/a&gt;
+                     &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="form-menu__header-item"&gt;
+                     &lt;button class="form-menu__button">название&lt;button&gt;
+                     &lt;div class="form-menu__content"&gt;
+                        &lt;a class="form-menu__link" href="#">первый&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">второй&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">третий&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">четвёртый&lt;/a&gt;
+                        &lt;a class="form-menu__link" href="#">пятый&lt;/a&gt;
+                     &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;                                   
+                </code>
+             </pre>
+          </div>
+
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">SCSS</p>
+            <pre class="encoding__code-box">
+                <code>                                   
+                  .form-menu {
+                    width: 100%;
+                    padding: 48px 0 600px;
+                  
+                    &__header {
+                      width: 100%;
+                      display: flex;
+                      flex-wrap: wrap;
+                      justify-content: space-around;
+                      align-items: center;
+                      background-image: linear-gradient(white, rgb(224, 16, 214), white);
+                    }                                                
+                                    
+                    &__header-item {
+                      position: relative;
+                  
+                      &:hover .form-menu__content {
+                        display: block;
+                      }
+                    }
+                  
+                    &__button {
+                      min-width: 150px;
+                      padding: 24px 12px;
+                      font-weight: normal;
+                      color: #ffffff;
+                  
+                      &:hover {
+                        font-weight: bold;
+                      }
+                    }
+                  
+                    &__content {
+                      display: none;
+                      position: absolute;
+                      background-color: #f1f1f1;
+                      min-width: 160px;
+                      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                      z-index: 1;
+                    }
+                  
+                    &__link {
+                      font-size: 14px;
+                      padding: 6px 24px;
+                      text-decoration: none;
+                      display: block;
+                      border-top: 1px solid rgb(149, 202, 223);
+                  
+                      &:hover {
+                        background-color: #ddd;
+                      }
+                    }
+                  }                                   
+                </code>
+             </pre>
+          </div>
+        </section>
+        <!-- Выпадающее меню -->
 
         <!-- Раскрывающийся список, тег select , а также поле с одним или...  -->
-        <section class="form">
-          <h1 id="teg-select" class="form__heading h1-font">
+        <section class="form-select">
+          <h1 id="teg-select" class="form__heading">
             Раскрывающийся список,
-            <a class="form__link" href="http://htmlbook.ru/html/select"
+            <a
+              class="form__link"
+              target="_blank"
+              rel="noopener"
+              href="http://htmlbook.ru/html/select"
               >тег select</a
             >
             , а также
             <a
               class="form__link"
+              target="_blank"
+              rel="noopener"
               href="http://htmlbook.ru/samhtml5/formy/pole-so-spiskom"
-              >поле выбора с одним или множественным списком .</a
+              >поле выбора с одним или множественным списком.</a
             >
           </h1>
           <div>
@@ -784,328 +2558,71 @@
               списка идет обращение через скрипты.
             </p>
           </div>
-          <h2 class="form__subheading h2-font">Поле выбора</h2>
+          <h2 class="form__subheading">Поле выбора</h2>
 
-          <!-- поле выбора_header  -->
-          <form
-            class="form__select select select_header"
-            action=""
-            method="post"
-          >
-            <label class="select__title-header sm-font" for="">
-              <select class="select__list-header sm-font" name="">
-                <option class="select__item-header sm-font" value="">
-                  Частным лицам
-                </option>
-                <option class="select__item-header sm-font" value="">
-                  Кредиты
-                </option>
-                <option class="select__item-header sm-font" value="">
-                  Ипотека
-                </option>
-                <option class="select__item-header sm-font" value="">
+          <!-- поле выбора  -->
+          <div class="form-select__select">
+            <label class="select">
+              <select class="select__list" name="">
+                <option class="select__item" value="">Частным лицам</option>
+                <option class="select__item" value="">Кредиты</option>
+                <option class="select__item" value="">Ипотека</option>
+                <option class="select__item" value="">
                   Кассовое обслуживание
                 </option>
-                <option class="select__item-header sm-font" value="">
-                  Вклады
-                </option>
-                <option class="select__item-header sm-font" value="">
-                  Денежные переводы
-                </option>
+                <option class="select__item" value="">Вклады</option>
+                <option class="select__item" value="">Денежные переводы</option>
               </select>
             </label>
-          </form>
-          <!-- поле выбора_header  -->
-
-          <!--  Два поля выбора и переключатель secondary-radio в один ряд -->
-          <div class="form">
-            <h2 class="form__subheading h2-font">
-              Два поля выбора и переключатель "twin-switch" в один ряд
-            </h2>
-
-            <div class="form__list">
-              <div class="form__sector-select">
-                <!-- поле выбора_city  -->
-                <form class="select select_city" action="" method="post">
-                  <label class="select__title x-sm-font" for="">
-                    <select class="select__list" name="city">
-                      <option class="select__item" value="">Москва</option>
-                      <option class="select__item" value="">
-                        Санкт Петербург
-                      </option>
-                      <option class="select__item" value="">Казань</option>
-                      <option class="select__item" value="">
-                        Нижний Новгород
-                      </option>
-                      <option class="select__item" value="">Волгоград</option>
-                      <option class="select__item" value="">Камышин</option>
-                    </select>
-                  </label>
-                </form>
-                <!-- поле выбора_city  -->
-
-                <!-- поле выбора_area  -->
-                <form class="select select_area" action="" method="post">
-                  <label class="select__title x-sm-font" for="">
-                    <select class="select__list" name="area">
-                      <option class="select__item" value="">Кузминки</option>
-                      <option class="select__item" value="">Некрасовка</option>
-                      <option class="select__item" value="">Люберцы</option>
-                      <option class="select__item" value="">Лефортово</option>
-                      <option class="select__item" value="">Дубровка</option>
-                      <option class="select__item" value="">
-                        Волгоградский проспект
-                      </option>
-                    </select>
-                  </label>
-                </form>
-                <!-- поле выбора_area  -->
-
-                <!-- switch-viewport twin-switch -->
-                <div class="form__switch-viewport">
-                  <form class="twin-switch">
-                    <label class="twin-switch__item">
-                      <input
-                        class="twin-switch__field"
-                        type="radio"
-                        name="browser"
-                        value="ie"
-                      />
-                      <div class="twin-switch__title">Список</div>
-                    </label>
-
-                    <label class="form__item-color twin-switch__item">
-                      <input
-                        class="twin-switch__field"
-                        type="radio"
-                        name="browser"
-                        value="ie"
-                      />
-                      <div class="twin-switch__title">Карта</div>
-                    </label>
-                  </form>
-                </div>
-                <!-- switch-viewport twin-switch -->
-              </div>
-            </div>
           </div>
-          <!-- Два поля выбора и переключатель secondary-radio в один ряд -->
+          <!-- поле выбора  -->
+
+          <!-- encoding -->
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                <code class="encoding__code-font">                                   
+                  &lt;div class="form__select select"&gt;
+                    &lt;label class="select__title"&gt;
+                      &lt;select class="select__list" name=""&gt;
+                        &lt;option class="select__item" value=""&gt;Частным лицам&lt;/option&gt;
+                        &lt;option class="select__item" value=""&gt;Кредиты&lt;/option&gt;
+                        &lt;option class="select__item" value=""&gt;Ипотека&lt;/option&gt;
+                        &lt;option class="select__item" value=""&gt;
+                            Кассовое обслуживание
+                            &lt;/option&gt;
+                        &lt;option class="select__item" value="">Вклады&lt;/option&gt;
+                        &lt;option class="select__item" value="">Денежные переводы&lt;/option&gt;
+                      &lt;select&gt;
+                    &lt;/label&gt;
+                  &lt;/div&gt;                                   
+                </code>
+             </pre>
+          </div>
+
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">SCSS</p>
+            <pre class="encoding__code-box">
+                <code>                                   
+                  .select {
+                    width: 100%;
+                  
+                    &__list {
+                      font-size: 13px;
+                      width: 100%;
+                    }
+                  
+                    &__item {
+                      font-size: 13px;
+                      width: 100%;
+                    }
+                  }                                    
+                </code>
+             </pre>
+          </div>
+          <!-- encoding -->
         </section>
         <!-- Раскрывающийся список, тег select , а также поле с одним или... -->
-
-        <!-- twin-switch -->
-        <section class="form">
-          <p class="form__description"></p>
-          <h1 id="twin-switch" class="form__heading h1-font">
-            Переключатель <br />
-            "twin-switch"
-          </h1>
-          <p class="form__description">
-            form__switch-currency <br />
-            form__switch-capitalization <br />
-            form__switch-package
-          </p>
-
-          <div class="form__block-switch">
-            <!-- switch-currency twin-switch -->
-            <div class="form__switch-currency">
-              <form class="twin-switch">
-                <label class="twin-switch__item">
-                  <input
-                    class="twin-switch__field"
-                    type="radio"
-                    name="browser"
-                    value="ie"
-                  />
-                  <div class="twin-switch__title">₽</div>
-                </label>
-
-                <label class="twin-switch__item">
-                  <input
-                    class="twin-switch__field"
-                    type="radio"
-                    name="browser"
-                    value="ie"
-                  />
-                  <div class="twin-switch__title">$</div>
-                </label>
-              </form>
-            </div>
-            <!-- switch-currency twin-switch -->
-
-            <!-- switch-capitalization twin-switch -->
-            <div class="form__switch-capitalization">
-              <form class="twin-switch">
-                <label class="twin-switch__item">
-                  <input
-                    class="twin-switch__field"
-                    type="radio"
-                    name="browser"
-                    value="ie"
-                  />
-                  <div class="twin-switch__title">С капитализацией %</div>
-                </label>
-
-                <label class="twin-switch__item">
-                  <input
-                    class="twin-switch__field"
-                    type="radio"
-                    name="browser"
-                    value="ie"
-                  />
-                  <div class="twin-switch__title">Без капитализации %</div>
-                </label>
-              </form>
-            </div>
-            <!-- switch-capitalization twin-switch -->
-          </div>
-
-          <!-- switch-package twin-switch -->
-          <div class="form__switch-package">
-            <form class="twin-switch">
-              <label class="twin-switch__item">
-                <input
-                  class="twin-switch__field"
-                  type="radio"
-                  name="browser"
-                  value="ie"
-                />
-                <div class="twin-switch__title">Без пакета услуг</div>
-              </label>
-
-              <label class="twin-switch__item">
-                <input
-                  class="twin-switch__field"
-                  type="radio"
-                  name="browser"
-                  value="ie"
-                />
-                <div class="twin-switch__title">Эконом</div>
-              </label>
-
-              <label class="twin-switch__item">
-                <input
-                  class="twin-switch__field"
-                  type="radio"
-                  name="browser"
-                  value="ie"
-                />
-                <div class="twin-switch__title">Оптимум</div>
-              </label>
-
-              <label class="twin-switch__item">
-                <input
-                  class="twin-switch__field"
-                  type="radio"
-                  name="browser"
-                  value="ie"
-                />
-                <div class="twin-switch__title">Максимум +</div>
-              </label>
-            </form>
-          </div>
-          <!-- switch-package twin-switch -->
-        </section>
-        <!-- twin-switch -->
-
-        <!-- nav menu рыскрывающийся список-->
-        <section class="nav">
-          <h2 id="drop-down-list" class="nav__heading">
-            Подвижный раскрывающийся список
-          </h2>
-          <p class="nav__description">
-            Наведите указатель мыши на кнопку, чтобы открыть раскрывающееся
-            меню.
-          </p>
-          <aside class="nav__container">
-            <!-- forms_list -->
-            <ul class="nav__list">
-              <a class="nav__link" href="../templates/forms.html">
-                Формы form
-              </a>
-
-              <li class="nav__item">
-                <a class="nav__item_link" href="#forms"> Формы form</a>
-              </li>
-
-              <li class="nav__item">
-                <a class="nav__item_link" href="#type-input"> Типы форм</a>
-              </li>
-
-              <li class="nav__item">
-                <a class="nav__item_link" href="#button">Кнопки button </a>
-              </li>
-
-              <li class="nav__item">
-                <a class="nav__item_link" href="#inputs"> Поля input</a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__item_link" href="#primary-button"
-                  >Самая простая кнопка button
-                </a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__item_link" href="#form__subhe"
-                  >Поле выбора даты
-                </a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__item_link" href="#primary-checkbox"
-                  >primary-checkbox
-                </a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__item_link" href="#image_ranges"> Ползунок</a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__item_link" href="#primary-radio"
-                  >radio Переключатели (radiobutton).
-                </a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__item_link" href="#teg-select"
-                  >Раскрывающийся список, тег select
-                </a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__item_link" href="#twin-switch">
-                  Переключатель "twin-switch"
-                </a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__item_link" href="#drop-down-list">
-                  Меню - раскрывающийся список
-                </a>
-              </li>
-            </ul>
-            <!-- forms_list -->
-          </aside>
-        </section>
-        <!-- nav menu рыскрывающийся список-->
-
-        <!-- drop-down выпадающий список -->
-        <section class="form-down">
-          <h1 id="form-down__dropdown" class="form-down__heading">
-            drop-down Выпадающее меню.
-          </h1>
-          <p class="form-down__description">
-            Наведите указатель мыши на кнопку, чтобы открыть выпадающее меню.
-          </p>
-          <!-- drop-down Выпадающее меню. -->
-          <div class="form-down__dropdown drop-down">
-            <button class="drop-down__button">Dropdown</button>
-            <div class="drop-down__content">
-              <a class="drop-down__link" href="#">Link 1</a>
-              <a class="drop-down__link" href="#">Link 2</a>
-              <a class="drop-down__link" href="#">Link 3</a>
-            </div>
-          </div>
-          <!-- drop-down Выпадающее меню. -->
-          <p>
-            Наведите указатель мыши на кнопку, чтобы открыть выпадающее меню.
-          </p>
-        </section>
-        <!-- drop-down выпадающий список -->
       </article>
 
       <!-- menu-mobile -->

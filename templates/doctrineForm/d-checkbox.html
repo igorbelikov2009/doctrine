@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../../styles/css/reset.css" />
     <link rel="stylesheet" href="../../styles/css/grids.css" />
-    <link
-      rel="stylesheet"
-      href="../../styles/css/doctrineGeneral/d-general.css"
-    />
+    <link rel="stylesheet" href="../../styles/css/general.css" />
     <link
       rel="stylesheet"
       href="../../styles/css/doctrineGeneral/d-formMenu.css"
@@ -25,13 +22,11 @@
     <main class="main">
       <article class="article">
         <!-- checkbox -->
-        <section class="form">
+        <section class="form-checkbox">
           <h1 class="form__heading">checkbox</h1>
-          <p class="form__description">Флажок.</p>
-          <p class="form__syntax">&lt;input type="checkbox" /&gt;</p>
 
           <!-- r-checkbox -->
-          <div class="form__checkbox">
+          <div class="form-checkbox__checkbox">
             <label tabindex="0" role="checkbox" id="" class="r-checkbox">
               <span class="r-checkbox__checker"></span>
 
@@ -51,10 +46,10 @@
           </div>
           <!-- r-checkbox -->
 
-          <div class="form__code-body">
-            <p class="form__subtitle">HTML посмотреть код</p>
-            <pre class="form__code-box">
-                <code class="form__code-font">                                   
+          <div class="encoding">
+            <p class="encoding__prompt">HTML</p>
+            <pre class="encoding__code-box">
+                <code class="encoding__code-font">                                   
                     &lt;label tabindex="0" role="checkbox" id=" " class="r-checkbox"&gt;
                           &lt;span class="r-checkbox__checker">&lt;/span&gt;
                           &lt;input id="Checkbox" type="checkbox" class="r-checkbox__input" /&gt;
@@ -73,9 +68,9 @@
               </pre>
           </div>
 
-          <div class="form__code-body">
-            <p class="form__subtitle">SCSS посмотреть код</p>
-            <pre class="form__code-box">
+          <div class="encoding">
+            <p class="encoding__prompt encoding__prompt_second">general.scss</p>
+            <pre class="encoding__code-box">
             <code>
               .r-checkbox {
                 user-select: none;
@@ -144,15 +139,29 @@
             ps. Что такое
             <a
               target="_blank"
+              rel="noopener"
               href="https://yandex.ru/turbo/internet-technologies.ru/s/articles/target-blank-i-drugie-znacheniya-atributa-target.html"
               class="form__link"
-              >Target = «_blank» и другие значения атрибута target</a
+              >target = «_blank» и другие значения атрибута target</a
             >
           </p>
           <p class="form__description">
             ps. Что такое
             <a
               target="_blank"
+              rel="noopener"
+              href="https://habr.com/ru/post/282880/"
+              class="form__link"
+              >Опасный target="_blank" и решения проблемы: <br />
+              1. Добавить в ссылки: rel="noopener" <br />
+              2. Это так же может быть rel="nofollow noopener"
+            </a>
+          </p>
+          <p class="form__description">
+            ps. Что такое
+            <a
+              target="_blank"
+              rel="noopener"
               href="https://webref.ru/css/user-select"
               class="form__link"
             >
@@ -163,6 +172,7 @@
             ps. Что такое
             <a
               target="_blank"
+              rel="noopener"
               href="https://webref.ru/layout/after-before/pseudo-class"
               class="form__link"
             >
@@ -175,6 +185,7 @@
             ps. Другая
             <a
               target="_blank"
+              rel="noopener"
               href="https://itchief.ru/html-and-css/styling-checkbox-and-radio"
               class="form__link"
             >
