@@ -1,127 +1,9 @@
-body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 24px;
-  color: #28323c;
-}
-
-.main {
-  position: relative;
-  min-height: calc(100vh);
-  background-color: #ffffff;
-
-  @media screen and(min-width: 1024px) {
-    margin-left: 355px;
-  }
-}
-
-.article {
-  width: 100%;
-  padding-top: 96px;
-  max-width: 944px;
-  background-color: #fff;
-  box-sizing: border-box;
-  padding-left: 24px;
-  padding-right: 24px;
-
-  @media screen and (min-width: 576px) {
-    padding-left: 28px;
-    padding-right: 28px;
-  }
-}
-em {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: normal;
-  font-style: oblique;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-//  <b>  и <i> выделяют цветом синтаксис
-b {
-  font-family: inherit;
-  font-weight: inherit;
-  font-style: oblique;
-  font-size: inherit;
-  line-height: inherit;
-  color: green;
-}
-
-i {
-  font-family: inherit;
-  font-weight: bold;
-  font-size: 100%;
-  color: green;
-}
-
-.h1-font,
-.h2-font {
-  color: black;
-}
-.display-block {
-  display: block;
-}
-
-.compression {
-  box-sizing: border-box;
-  padding-right: 12px;
-  padding-left: 12px;
-}
-
-// general
-
-//   <!-- Linear-gradient Информация  -->
+// Linear-gradient Информация
 .linear-gradient {
-  box-sizing: border-box;
-  margin-right: -12px;
-  margin-left: -12px;
+  width: 100%;
   margin-bottom: 48px;
 
-  &__heading {
-    margin-bottom: 24px;
-    text-align: center;
-  }
-
-  &__subheading {
-    margin-bottom: 24px;
-  }
-
-  &__syntax-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 24px;
-  }
-
-  &__syntax-picture {
-    width: 100%;
-    max-width: 552px;
-    height: 46.38px;
-
-    @media screen and (min-width: 375px) {
-      height: 54.35px;
-    }
-
-    @media screen and (min-width: 411px) {
-      height: 59.56px;
-    }
-
-    @media screen and (min-width: 540px) {
-      height: 78px;
-    }
-
-    @media screen and (min-width: 552px) {
-      height: 80px;
-    }
-  }
-
-  &__text {
-    margin-bottom: 24px;
-  }
-
-  &__sample {
+  &__box-sample {
     width: 100%;
     padding: 12px 24px;
     border-color: yellow;
@@ -129,53 +11,21 @@ i {
     margin-bottom: 24px;
   }
 
-  &__syntax {
+  &__image-syntax {
     width: 100%;
-    margin-bottom: 24px;
-
-    &_span {
-      font-family: inherit;
-      font-style: inherit;
-      font-weight: normal;
-      font-size: 13px;
-      line-height: 24px;
-      color: black;
-    }
-  }
-
-  &__description {
-    margin-bottom: 24px;
-  }
-
-  &__link {
-    text-decoration: none;
-    color: blueviolet;
+    max-width: 552px;
+    aspect-ratio: 552 / 80;
   }
 }
-//   <!-- Linear-gradient Информация  -->
+// Linear-gradient Информация
 
-// <!-- examples  Примеры прямых переходов цветов из чёрного в белое -->
+// Примеры прямых переходов цветов
 .examples {
-  box-sizing: border-box;
-  margin-right: -12px;
-  margin-left: -12px;
+  width: 100%;
   margin-bottom: 48px;
-
-  &__heading {
-    width: 100%;
-    margin-bottom: 24px;
-
-    @media screen and (min-width: 576px) {
-      text-align: start;
-    }
-  }
-
-  &__subheading {
-    margin-bottom: 24px;
-  }
 }
 
-.table-examples {
+.table {
   width: 100%;
 
   display: flex;
@@ -184,108 +34,92 @@ i {
 
   overflow-x: scroll;
 
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: 1299px) {
     overflow-x: hidden;
   }
 
   &__item {
-    min-width: 198px;
-    max-width: 198px;
-    box-sizing: border-box;
-
-    margin-left: 12px;
-    margin-right: 12px;
+    min-width: 204px;
+    margin: 0 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid gray;
-  }
+    box-sizing: border-box;
 
-  &__description {
-    width: 100%;
-    padding: 12px;
-    text-align: center;
-  }
+    &:first-child {
+      margin-left: 0;
+    }
 
-  &__black-position {
-    width: 100%;
-    height: 72px;
+    &:last-child {
+      margin-right: 0;
+    }
 
-    &_01 {
+    &:nth-child(1) .table__black {
       background-image: linear-gradient(to top, black, white);
     }
 
-    &_02 {
+    &:nth-child(2) .table__black {
       background-image: linear-gradient(to left, black, white);
     }
 
-    &_03 {
+    &:nth-child(3) .table__black {
       background-image: linear-gradient(to bottom, black, white);
     }
 
-    &_04 {
+    &:nth-child(4) .table__black {
       background-image: linear-gradient(to right, black, white);
     }
 
-    &_05 {
+    &:nth-child(5) .table__black {
       background-image: linear-gradient(to top left, black, white);
     }
 
-    &_06 {
+    &:nth-child(6) .table__black {
       background-image: linear-gradient(to top right, black, white);
     }
 
-    &_07 {
+    &:nth-child(7) .table__black {
       background-image: linear-gradient(to bottom left, black, white);
     }
 
-    &_08 {
+    &:nth-child(8) .table__black {
       background-image: linear-gradient(to bottom right, black, white);
     }
-  }
 
-  &__yellow-position {
-    width: 100%;
-    height: 72px;
-
-    &_01 {
+    &:nth-child(1) .table__yellow {
       background-image: linear-gradient(to top, yellow, green);
     }
 
-    &_02 {
+    &:nth-child(2) .table__yellow {
       background-image: linear-gradient(to left, yellow, green);
     }
 
-    &_03 {
+    &:nth-child(3) .table__yellow {
       background-image: linear-gradient(to bottom, yellow, green);
     }
 
-    &_04 {
+    &:nth-child(4) .table__yellow {
       background-image: linear-gradient(to right, yellow, green);
     }
 
-    &_05 {
+    &:nth-child(5) .table__yellow {
       background-image: linear-gradient(to top left, yellow, green);
     }
 
-    &_06 {
+    &:nth-child(6) .table__yellow {
       background-image: linear-gradient(to top right, yellow, green);
     }
 
-    &_07 {
+    &:nth-child(7) .table__yellow {
       background-image: linear-gradient(to bottom left, yellow, green);
     }
 
-    &_08 {
+    &:nth-child(8) .table__yellow {
       background-image: linear-gradient(to bottom right, yellow, green);
     }
-  }
 
-  &__rainbow-position {
-    width: 100%;
-    height: 84px;
-
-    &_01 {
+    &:nth-child(1) .table__rainbow {
       background-image: linear-gradient(
         to top,
         red,
@@ -298,7 +132,7 @@ i {
       );
     }
 
-    &_02 {
+    &:nth-child(2) .table__rainbow {
       background-image: linear-gradient(
         to left,
         red,
@@ -311,7 +145,7 @@ i {
       );
     }
 
-    &_03 {
+    &:nth-child(3) .table__rainbow {
       background-image: linear-gradient(
         to bottom,
         red,
@@ -324,7 +158,7 @@ i {
       );
     }
 
-    &_04 {
+    &:nth-child(4) .table__rainbow {
       background-image: linear-gradient(
         to right,
         red,
@@ -337,7 +171,7 @@ i {
       );
     }
 
-    &_05 {
+    &:nth-child(5) .table__rainbow {
       background-image: linear-gradient(
         to top left,
         red,
@@ -350,7 +184,7 @@ i {
       );
     }
 
-    &_06 {
+    &:nth-child(6) .table__rainbow {
       background-image: linear-gradient(
         to top right,
         red,
@@ -363,7 +197,7 @@ i {
       );
     }
 
-    &_07 {
+    &:nth-child(7) .table__rainbow {
       background-image: linear-gradient(
         to bottom left,
         red,
@@ -376,7 +210,7 @@ i {
       );
     }
 
-    &_08 {
+    &:nth-child(8) .table__rainbow {
       background-image: linear-gradient(
         to bottom right,
         red,
@@ -393,91 +227,78 @@ i {
   &__title {
     width: 100%;
     padding: 12px;
+    font-size: 14px;
     text-align: center;
   }
+
+  &__black {
+    width: 100%;
+    height: 72px;
+  }
+
+  &__yellow {
+    width: 100%;
+    height: 72px;
+  }
+
+  &__rainbow {
+    width: 100%;
+    height: 84px;
+  }
+
+  &__subtitle {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+    color: magenta;
+  }
 }
-// <!-- table-examples Примеры прямых переходов цветов из чёрного в белое -->
+// Примеры прямых переходов цветов
 
-// <!-- angled-gradients Градиенты под углом -->
+// angled-gradients Градиенты под углом
 .angled-gradients {
-  box-sizing: border-box;
-  margin-right: -12px;
-  margin-left: -12px;
   margin-bottom: 48px;
-
-  &__compression {
-    box-sizing: border-box;
-    padding-right: 12px;
-    padding-left: 12px;
-  }
-
-  &__heading {
-    margin-bottom: 24px;
-  }
-
-  &__text {
-    margin-bottom: 24px;
-  }
 
   &__image {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 24px;
-  }
-
-  &__picture {
-    width: 100%;
     max-width: 381px;
+    aspect-ratio: 381 / 205;
     height: 204.93px;
-
-    @media screen and (min-width: 375px) {
-      height: 240.16px;
-    }
-
-    @media screen and (min-width: 381px) {
-      height: 244px;
-    }
   }
 }
-// <!-- angled-gradients Градиенты под углом -->
+// angled-gradients Градиенты под углом
 
-// <!-- sample пример Градиенты под углом flower-->
-
+// sample пример Градиенты под углом flower
 .sample-flower {
+  width: 100%;
   margin-bottom: 24px;
 
-  &__subheading {
-    margin-bottom: 24px;
-  }
-
-  &__body {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  &__left {
+  &__column {
     width: 100%;
     margin-bottom: 24px;
+    display: flex;
 
     @media screen and (min-width: 767px) {
       width: calc(50% - 12px);
-      margin-right: 12px;
     }
-  }
-  &__description {
-    margin-top: 48px;
-  }
 
-  &__right {
-    width: 100%;
-    display: flex;
-    margin-bottom: 24px;
+    &:first-child {
+      flex-direction: column;
+      justify-content: space-around;
+      margin-right: 0;
 
-    @media screen and (min-width: 767px) {
-      width: calc(50% - 12px);
-      margin-left: 12px;
+      @media screen and (min-width: 767px) {
+        margin-right: 12px;
+      }
+    }
+
+    &:last-child {
+      margin-left: 0;
+
+      @media screen and (min-width: 767px) {
+        margin-left: 12px;
+      }
     }
   }
 }
@@ -501,191 +322,130 @@ i {
   }
 
   &__leaf-top-right {
-    /*градиент от #00ff00 к #000000*/
     background-image: linear-gradient(225deg, #00ff00, #000000);
     border-radius: 50% 0;
   }
 
   &__leaf-bottom-left {
-    /*градиент от #ff00ff к #000000*/
     background-image: linear-gradient(45deg, #ff00ff, #000000);
     border-radius: 50% 0;
   }
 
   &__leaf-bottom-right {
-    /*градиент от #ffff00 к #000000*/
     background-image: linear-gradient(315deg, #ffff00, #000000);
     border-radius: 0 50%;
   }
 }
-// <!-- sample пример Градиенты под углом flower-->
+// sample пример Градиенты под углом flower
 
-// <!-- sample примеры -->
+// sample примеры
 .sample {
   margin-bottom: 24px;
 
-  &__subheading {
-    margin-bottom: 24px;
-  }
-
-  &__body {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  &__left {
+  &__column {
     width: 100%;
     margin-bottom: 24px;
+    border: 1px solid gray;
 
     @media screen and (min-width: 767px) {
       width: calc(50% - 12px);
-      margin-right: 12px;
+    }
+
+    &:first-child {
+      margin-right: 0;
+
+      @media screen and (min-width: 767px) {
+        margin-right: 12px;
+      }
+    }
+
+    &:last-child {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 0px;
+
+      @media screen and (min-width: 767px) {
+        margin-left: 12px;
+      }
     }
   }
 
-  &__right {
+  &__many-gradients {
     width: 100%;
-    display: flex;
-    margin-bottom: 24px;
-
-    @media screen and (min-width: 767px) {
-      width: calc(50% - 12px);
-      margin-left: 12px;
-    }
+    max-width: 356px;
+    padding: 24px 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(
+      to top,
+      rgba(30, 87, 153, 0),
+      rgba(30, 87, 153, 0.8),
+      rgba(30, 87, 153, 1),
+      rgba(30, 87, 153, 1),
+      rgba(41, 137, 216, 1),
+      rgba(30, 87, 153, 1),
+      rgba(30, 87, 153, 1),
+      rgba(30, 87, 153, 0.8),
+      rgba(30, 87, 153, 0)
+    );
   }
 
-  &__item {
-    // Множество градиентов
-    &_many-gradients {
-      width: 100%;
-      max-width: 356px;
-      margin: auto;
-      flex: none;
-      padding: 24px 20px;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      font-size: 16px;
-      line-height: 24px;
-      color: #fff;
-      background: #b5bdc8;
-      background: linear-gradient(
-        to top,
-        rgba(30, 87, 153, 0),
-        rgba(30, 87, 153, 0.8),
-        rgba(30, 87, 153, 1),
-        rgba(30, 87, 153, 1),
-        rgba(41, 137, 216, 1),
-        rgba(30, 87, 153, 1),
-        rgba(30, 87, 153, 1),
-        rgba(30, 87, 153, 0.8),
-        rgba(30, 87, 153, 0)
-      );
-      border-radius: 20px;
-      text-align: center;
-    }
-    // Множество градиентов
-
-    // <!-- sample Градиенты под углом -->
-
-    &_color-proportions {
-      width: 100%;
-      max-width: 356px;
-      margin: auto;
-      flex: none;
-      padding: 24px 20px;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      font-size: 16px;
-      line-height: 24px;
-      color: #fff;
-      background: #b5bdc8;
-      background: linear-gradient(
-        to top,
-        #b5bdc8 0%,
-        #828c95 36%,
-        #28343b 100%
-      );
-      border: 1px solid #333;
-      border-radius: 20px;
-      text-align: center;
-    }
+  &__color-proportions {
+    width: 100%;
+    max-width: 356px;
+    padding: 24px 20px;
+    border-radius: 20px;
+    border: 1px solid #333;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+    text-align: center;
+    background: #b5bdc8;
+    background: linear-gradient(to top, #b5bdc8 0%, #828c95 36%, #28343b 100%);
   }
 }
-// <!-- sample примеры -->
+// sample примеры
 
-//    <!-- color-stop Примеры колор стопов -->
+// Примеры колор стопов
 .color-stop {
   margin-bottom: 48px;
-
-  &__subheading {
-    margin-bottom: 24px;
-  }
 
   &__row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-  }
 
-  &__left {
-    width: 100%;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    @media screen and (min-width: 767px) {
-      width: calc(50% - 12px);
-      margin-right: 12px;
-      justify-content: flex-start;
-    }
-  }
-
-  &__description {
-    display: block;
-  }
-
-  &__right {
-    width: 100%;
-    display: flex;
-    align-items: center;
-
-    @media screen and (min-width: 767px) {
-      width: calc(50% - 12px);
-      margin-left: 12px;
-    }
-  }
-
-  &__appearance {
-    width: 100%;
-    max-width: 356px;
-    margin: 0 auto;
-    height: 24px;
-
-    &_01 {
+    &:nth-of-type(1) .color-stop__appearance {
       background-image: linear-gradient(to right, yellow, green);
     }
 
-    &_02 {
+    &:nth-of-type(2) .color-stop__appearance {
       background-image: linear-gradient(to right, yellow 0%, green 100%);
     }
 
-    &_03 {
+    &:nth-of-type(3) .color-stop__appearance {
       background-image: linear-gradient(to right, yellow 0%, green 50%);
     }
 
-    &_04 {
+    &:nth-of-type(4) .color-stop__appearance {
       background-image: linear-gradient(to right, yellow 50%, green 100%);
     }
 
-    &_05 {
+    &:nth-of-type(5) .color-stop__appearance {
       background-image: linear-gradient(to right, yellow 25%, green 75%);
     }
 
-    &_06 {
+    &:nth-of-type(6) .color-stop__appearance {
       background-image: linear-gradient(to right, red, yellow, green);
     }
 
-    &_07 {
+    &:nth-of-type(7) .color-stop__appearance {
       background-image: linear-gradient(
         to right,
         red 0%,
@@ -694,7 +454,7 @@ i {
       );
     }
 
-    &_08 {
+    &:nth-of-type(8) .color-stop__appearance {
       background-image: linear-gradient(
         to right,
         red 33%,
@@ -702,29 +462,83 @@ i {
         green 100%
       );
     }
+
+    & p:only-of-type {
+      // cursor: pointer;
+      margin-top: 24px;
+      display: block;
+      position: relative;
+
+      &:hover .color-stop__code-hidden {
+        display: block;
+      }
+    }
+  }
+
+  &__column {
+    width: 100%;
+
+    @media screen and (min-width: 767px) {
+      width: calc(50% - 12px);
+    }
+
+    &:first-child {
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media screen and (min-width: 767px) {
+        margin-right: 12px;
+        justify-content: flex-start;
+      }
+    }
+
+    &:last-child {
+      display: flex;
+      align-items: center;
+
+      @media screen and (min-width: 767px) {
+        margin-left: 12px;
+      }
+    }
+  }
+
+  &__appearance {
+    width: 100%;
+    max-width: 356px;
+    margin: 0 auto;
+    height: 24px;
+  }
+
+  &__code-visual {
+    font-size: 11px;
+    color: rgb(26, 204, 106);
+    position: absolute;
+    top: 16px;
+    left: 0;
+  }
+
+  &__code-hidden {
+    display: none;
+    color: rgb(44, 187, 44);
+    background-color: #fff;
+    position: absolute;
+    padding: 24px;
+    top: 20px;
+    left: 0;
+    z-index: 1;
   }
 }
-//    <!-- color-stop Примеры колор стопов -->
+// Примеры колор стопов
 
-// <!-- repeating-gradient Повторяющийся линейный градиент -->
-.repeating-gradient {
+// repeating Повторяющийся линейный градиент
+.repeating {
   margin-bottom: 48px;
-
-  &__heading {
-    margin-bottom: 24px;
-  }
-
-  &__text {
-    margin-bottom: 24px;
-  }
 
   &__list {
     margin-bottom: 24px;
     margin-left: 24px;
-  }
-
-  &__subheading {
-    margin-bottom: 24px;
   }
 
   &__row {
@@ -734,40 +548,34 @@ i {
     justify-content: space-between;
     overflow-x: scroll;
 
-    @media screen and (min-width: 767px) {
+    @media screen and (min-width: 1299px) {
       overflow-x: hidden;
     }
   }
 
   &__column {
-    width: 198px;
-    min-width: 198px;
-    // margin-left: 12px;
-    // margin-right: 12px;
+    min-width: 204px;
     margin: 0 12px 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid gray;
+    box-sizing: border-box;
     box-shadow: 3px 3px 5px 5px rgb(179, 170, 170);
-  }
 
-  &__description {
-    margin: 12px 0;
-    text-align: center;
-  }
+    &:first-child {
+      margin-left: 0;
+    }
 
-  &__normal {
-    width: 196px;
-    height: 196px;
-    background-color: blue;
-    background-image: linear-gradient(none);
+    &:last-child {
+      margin-right: 0;
+    }
 
-    &_01 {
+    &:nth-of-type(1) .repeating__normal {
       background-image: linear-gradient(black 0, green 25px, yellow 50px);
     }
 
-    &_02 {
+    &:nth-of-type(2) .repeating__normal {
       background-image: linear-gradient(
         black 0,
         black 17px,
@@ -778,7 +586,7 @@ i {
       );
     }
 
-    &_03 {
+    &:nth-of-type(3) .repeating__normal {
       background-image: linear-gradient(
         black 0,
         green 25px,
@@ -787,18 +595,11 @@ i {
       );
     }
 
-    &_04 {
+    &:nth-of-type(4) .repeating__normal {
       background-image: linear-gradient(black 0, green 25%, yellow 50%);
     }
-  }
 
-  &__converted {
-    width: 196px;
-    height: 196px;
-    background-color: blue;
-    background-image: linear-gradient(none);
-
-    &_01 {
+    &:nth-of-type(1) .repeating__converted {
       background-image: repeating-linear-gradient(
         black 0,
         green 25px,
@@ -806,7 +607,7 @@ i {
       );
     }
 
-    &_02 {
+    &:nth-of-type(2) .repeating__converted {
       background-image: repeating-linear-gradient(
         black 0,
         black 17px,
@@ -817,7 +618,7 @@ i {
       );
     }
 
-    &_03 {
+    &:nth-of-type(3) .repeating__converted {
       background-image: repeating-linear-gradient(
         black 0,
         green 25px,
@@ -826,7 +627,7 @@ i {
       );
     }
 
-    &_04 {
+    &:nth-of-type(4) .repeating__converted {
       background-image: repeating-linear-gradient(
         black 0,
         green 25%,
@@ -834,81 +635,74 @@ i {
       );
     }
   }
-}
-// <!-- repeating-gradient Повторяющийся линейный градиент -->
 
-// <!-- stylish-buttons Стильные кнопки -->
-.stylish-buttons {
-  margin-bottom: 48px;
-
-  &__heading {
-    margin-bottom: 24px;
+  &__title {
+    margin: 12px 0;
+    text-align: center;
   }
+
+  &__normal {
+    width: 204px;
+    height: 196px;
+    background-color: blue;
+    background-image: linear-gradient(none);
+  }
+
+  &__converted {
+    width: 204px;
+    height: 196px;
+    background-color: blue;
+    background-image: linear-gradient(none);
+  }
+}
+// repeating Повторяющийся линейный градиент
+
+// buttons Стильные кнопки
+.buttons {
+  margin-bottom: 48px;
 
   &__row {
     width: 100%;
-    margin-bottom: 24px;
+    margin-bottom: 48px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     overflow-x: scroll;
 
-    @media screen and (min-width: 767px) {
+    @media screen and (min-width: 1299px) {
       overflow-x: hidden;
     }
   }
 
   &__column {
-    width: 284px;
-    min-width: 284px;
-    margin: 0 6px 6px;
+    min-width: 272px;
+    margin: 0 12px 6px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid gray;
     box-shadow: 3px 3px 3px 3px rgb(238, 196, 196);
     box-sizing: border-box;
-  }
 
-  &__wrapper {
-    padding: 12px 24px;
-    height: 168px;
-  }
+    &:first-of-type {
+      margin-left: 0;
+    }
 
-  &__description {
-    display: block;
-  }
+    &:last-of-type {
+      margin-right: 0;
+    }
 
-  &__block {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &__button {
-    width: 100%;
-    max-width: 264px;
-    padding: 12px 8px;
-    // margin-bottom: 24px;
-    text-align: center;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 3px #aaaaaa;
-    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
-    border-radius: 24px;
-    background-color: rgba(41, 137, 216, 1);
-    box-sizing: border-box;
-
-    &_01 {
+    &:nth-of-type(1) .buttons__button {
       background-image: linear-gradient(#ffffff, #dddddd);
       color: #333333;
     }
 
-    &_02 {
+    &:nth-of-type(2) .buttons__button {
       background-image: linear-gradient(#cc0630 0%, #8f0222 75%, #6d0019 100%);
       color: #ffffff;
     }
 
-    &_03 {
+    &:nth-of-type(3) .buttons__button {
       background-image: linear-gradient(
         #b8e1fc 0%,
         #90bcea 35%,
@@ -919,15 +713,67 @@ i {
       color: #ffffff;
     }
   }
+
+  &__wrapper {
+    padding: 12px 24px;
+    height: 168px;
+
+    & p:only-of-type {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__bloc {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__button {
+    width: 100%;
+    max-width: 264px;
+    padding: 12px 8px;
+    text-align: center;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 3px #aaaaaa;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
+    border-radius: 24px;
+    background-color: rgba(41, 137, 216, 1);
+    box-sizing: border-box;
+  }
 }
-// <!-- stylish-buttons Стильные кнопки -->
+// buttons Стильные кнопки
+
+// encoding
+.encoding {
+  &__prompt {
+    font-size: 11px;
+    line-height: 14px;
+    max-width: 272px;
+    padding-bottom: 24px;
+    color: rgb(26, 204, 106);
+    position: absolute;
+    top: -36px;
+    left: 0;
+
+    &_second {
+      left: 80px;
+    }
+
+    &_third {
+      left: 160px;
+    }
+
+    &_fourth {
+      left: 240px;
+    }
+  }
+}
+// encoding
 
 // footer
 .footer {
   margin-bottom: 48px;
-
-  &__text {
-  }
 
   &__link {
     font-family: inherit;
@@ -940,125 +786,7 @@ i {
 }
 // footer
 
-// menu
-.menu {
-  background: rgba(230, 240, 250, 0.75);
-  display: none;
-
-  @media screen and (min-width: 1024px) {
-    position: fixed;
-    top: 72px;
-    left: 0;
-    display: block;
-    height: 100vh;
-    width: 355px;
-    padding: 24px 28px;
-  }
-
-  &__list {
-    border-top: 1px solid #bfd1e4;
-    // margin-right: 10px;
-
-    &:hover .menu__item {
-      display: block;
-      background-color: #fff;
-    }
-
-    &:hover .menu__link {
-      background-color: #ddd;
-      color: black;
-      font-size: 16px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    }
-  }
-
-  &__link {
-    display: block;
-    text-decoration: none;
-    font-size: 15px;
-    line-height: 20px;
-    color: #333333;
-    padding: 6px 0;
-  }
-
-  &__item {
-    display: none;
-    margin-left: 24px;
-    position: relative;
-    border-top: 1px solid #bfd1e4;
-
-    &_link {
-      display: block;
-      width: 100%;
-      font-size: 14px;
-      line-height: 16px;
-      text-decoration: none;
-      color: #333333;
-      padding: 4px 0;
-      margin-right: 10px;
-
-      &:hover {
-        background-color: #ddd;
-        color: black;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        transform: scaleX(1.05);
-      }
-    }
-  }
-}
-// menu
-
-// menu-mobile
-.menu-mobile {
-  width: 100%;
-  height: 72px;
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px;
-  background-color: #e6f0fa;
-
-  @media screen and (min-width: 1024px) {
-    display: none;
-  }
-
-  &__logo-small {
-    width: 24px;
-    height: 24px;
-  }
-
-  &__dots {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: #ffffff;
-
-    &_item {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-
-      &:nth-child(1) {
-        background-color: #506478;
-      }
-      &:nth-child(2) {
-        margin: 0 2px;
-        background-color: rgba(80, 100, 120, 0.6);
-      }
-      &:nth-child(3) {
-        background-color: rgba(80, 100, 120, 0.3);
-      }
-    }
-  }
-}
-// menu-mobile
-
-//   <!-- header  -->
+// header
 .header {
   opacity: 0.5;
   width: 100%;
@@ -1069,4 +797,4 @@ i {
   background-image: linear-gradient(rgba(164, 74, 182, 0.8), yellow, white);
   box-shadow: 5px 5px 10px 3px white;
 }
-//   <!-- header  -->
+// header

@@ -554,3 +554,14 @@
   }
 }
 // поле выбора
+
+// header
+.header {
+  width: 100%;
+  height: 72px;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  background-image: linear-gradient(rgb(224, 16, 214), white);
+}
+// header
