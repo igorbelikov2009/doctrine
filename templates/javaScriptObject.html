@@ -1,0 +1,2499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../styles/css/reset.css" />
+    <link rel="stylesheet" href="../styles/css/grids.css" />
+    <link rel="stylesheet" href="../styles/css/general.css" />
+    <link rel="stylesheet" href="../styles/css/generalMenu.css" />
+    <link rel="stylesheet" href="../styles/css/javaScriptModel.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- main -->
+    <main class="main">
+      <article class="article">
+        <!-- "Объекты: основы" -->
+        <section id="object" class="form">
+          <div class="form__bloc-info">
+            <h1 class="form__heading">
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://learn.javascript.ru/object"
+                class="form__link"
+              >
+                Объекты</a
+              >
+            </h1>
+            <div class="form__bloc-hidden">
+              <p class="form__description">
+                Объект может быть создан с помощью фигурных скобок {…} с
+                необязательным списком свойств. Свойство – это пара «ключ:
+                значение», где ключ – это строка (также называемая «именем
+                свойства»), а значение может быть чем угодно.
+              </p>
+
+              <p class="form__description">
+                Пустой объект («пустой ящик») можно создать, используя один из
+                двух вариантов синтаксиса:
+              </p>
+
+              <p class="form__syntax">
+                1. let user = new Object(); // синтаксис "конструктор объекта"
+              </p>
+
+              <p class="form__syntax">
+                2. let user = {}; // синтаксис "литерал объекта"
+              </p>
+
+              <p class="form__description">
+                Обычно используют вариант с фигурными скобками {...}. Такое
+                объявление называют литералом объекта или литеральной нотацией.
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/object#literaly-i-svoystva"
+                  class="form__link"
+                >
+                  Литералы и свойства</a
+                >
+              </p>
+
+              <p class="form__description">
+                При использовании литерального синтаксиса {...} мы сразу можем
+                поместить в объект несколько свойств в виде пар «ключ:
+                значение»:
+              </p>
+
+              <p class="form__subdescription">
+                let user = { // объект <br />
+                name: "John", // под ключом "name" хранится значение "John"
+                <br />
+                age: 30 // под ключом "age" хранится значение 30 <br />
+                };
+              </p>
+
+              <p class="form__description">
+                В объекте user сейчас находятся два свойства:
+              </p>
+
+              <p class="form__subdescription">
+                1. Первое свойство с именем "name" и значением "John".
+              </p>
+
+              <p class="form__subdescription">
+                2. Второе свойство с именем "age" и значением 30.
+              </p>
+
+              <p class="form__description">
+                Мы можем в любой момент добавить в него новые свойства, удалить
+                свойство или прочитать содержимое любого свойства. Для обращения
+                к свойствам используется запись «через точку»:
+              </p>
+
+              <p class="form__subdescription">
+                // получаем свойства объекта: <br />
+                alert( user.name ); // John <br />
+                alert( user.age ); // 30
+              </p>
+
+              <p class="form__description">
+                Значение может быть любого типа. Давайте добавим свойство с
+                логическим значением:
+              </p>
+
+              <p class="form__subdescription">user.isAdmin = true;</p>
+
+              <p class="form__description">
+                Для удаления свойства мы можем использовать оператор delete:
+              </p>
+
+              <p class="form__subdescription">delete user.age;</p>
+
+              <p class="form__description">
+                Имя свойства может состоять из нескольких слов, но тогда оно
+                должно быть заключено в кавычки:
+              </p>
+
+              <p class="form__subdescription">
+                let user = { <br />
+                name: "John", <br />
+                age: 30, <br />
+                "likes birds": true // имя свойства из нескольких слов должно
+                быть в кавычках <br />
+                };
+              </p>
+
+              <p class="form__description">
+                Последнее свойство объекта может заканчиваться запятой:
+              </p>
+
+              <p class="form__subdescription">
+                let user = { <br />
+                name: "John", <br />
+                age: 30, <br />
+                }
+              </p>
+
+              <p class="form__description">
+                Это называется «висячая запятая». Такой подход упрощает
+                добавление, удаление и перемещение свойств, так как все строки
+                объекта становятся одинаковыми.
+              </p>
+
+              <p class="form__attention">
+                Объект, объявленный как константа, может быть изменён
+              </p>
+
+              <p class="form__description">
+                Объект, объявленный через const, может быть изменён. Например:
+              </p>
+
+              <p class="form__subdescription">
+                const user = { <br />
+                name: "John" <br />
+                }; <br />
+                <br />
+                user.name = "Pete"; // (*) <br />
+                <br />
+                alert(user.name); // Pete
+              </p>
+
+              <p class="form__description">
+                Может показаться, что строка (*) должна вызвать ошибку, но нет,
+                здесь всё в порядке. Дело в том, что объявление const защищает
+                от изменений только саму переменную user, а не её содержимое.
+                Определение const выдаст ошибку только если мы присвоим
+                переменной другое значение: user=....
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/object#kvadratnye-skobki"
+                  class="form__link"
+                >
+                  Квадратные скобки</a
+                >
+              </p>
+
+              <p class="form__description">
+                Для свойств, имена которых состоят из нескольких слов, доступ к
+                значению «через точку» не работает:
+              </p>
+
+              <p class="form__subdescription">
+                // это вызовет синтаксическую ошибку <br />
+                user.likes birds = true
+              </p>
+
+              <p class="form__description">
+                JavaScript видит, что мы обращаемся к свойству user.likes, а
+                затем идёт непонятное слово birds. В итоге синтаксическая
+                ошибка.
+              </p>
+
+              <p class="form__description">
+                Точка требует, чтобы ключ был именован по правилам именования
+                переменных. То есть не имел пробелов, не начинался с цифры и не
+                содержал специальные символы, кроме $ и _.
+              </p>
+
+              <p class="form__description">
+                Для таких случаев существует альтернативный способ доступа к
+                свойствам через квадратные скобки. Такой способ сработает с
+                любым именем свойства:
+              </p>
+
+              <p class="form__subdescription">
+                let user = {}; <br />
+                <br />
+                // присваивание значения свойству <br />
+                user["likes birds"] = true; <br />
+                <br />
+                // получение значения свойства <br />
+                alert(user["likes birds"]); // true <br />
+                <br />
+                // удаление свойства <br />
+                delete user["likes birds"];
+              </p>
+
+              <p class="form__description">
+                Сейчас всё в порядке. Обратите внимание, что строка в квадратных
+                скобках заключена в кавычки (подойдёт любой тип кавычек).
+                Квадратные скобки также позволяют обратиться к свойству, имя
+                которого может быть результатом выражения. Например, имя
+                свойства может храниться в переменной:
+              </p>
+
+              <p class="form__subdescription">
+                let key = "likes birds"; <br />
+                <br />
+                // то же самое, что и user["likes birds"] = true; <br />
+                user[key] = true;
+              </p>
+
+              <p class="form__description">
+                Здесь переменная key может быть вычислена во время выполнения
+                кода или зависеть от пользовательского ввода. После этого мы
+                используем её для доступа к свойству. Это даёт нам большую
+                гибкость. Пример:
+              </p>
+
+              <p class="form__subdescription">
+                let user = { <br />
+                name: "John", <br />
+                age: 30 <br />
+                }; <br />
+                <br />
+                let key = prompt("Что вы хотите узнать о пользователе?",
+                "name"); <br />
+                <br />
+                // доступ к свойству через переменную <br />
+                alert( user[key] ); // John (если ввели "name")
+              </p>
+
+              <p class="form__description">
+                Запись «через точку» такого не позволяет:
+              </p>
+
+              <p class="form__subdescription">
+                let user = { <br />
+                name: "John", <br />
+                age: 30 <br />
+                }; <br />
+
+                let key = "name"; <br />
+                alert( user.key ); // undefined
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/object#vychislyaemye-svoystva"
+                  class="form__link"
+                >
+                  Вычисляемые свойства</a
+                >
+              </p>
+
+              <p class="form__description">
+                Мы можем использовать квадратные скобки в литеральной нотации
+                для создания вычисляемого свойства. Пример:
+              </p>
+
+              <p class="form__subdescription">
+                let fruit = prompt("Какой фрукт купить?", "apple"); <br />
+                <br />
+                let bag = { <br />
+                [fruit]: 5, // имя свойства будет взято из переменной fruit
+                <br />
+                }; <br />
+                <br />
+                alert( bag.apple ); // 5, если fruit="apple"
+              </p>
+
+              <p class="form__description">
+                Смысл вычисляемого свойства прост: запись [fruit] означает, что
+                имя свойства необходимо взять из переменной fruit. И если
+                посетитель введёт слово "apple", то в объекте bag теперь будет
+                лежать свойство {apple: 5}.
+              </p>
+
+              <p class="form__description">
+                По сути, пример выше работает так же, как и следующий пример:
+              </p>
+
+              <p class="form__subdescription">
+                let fruit = prompt("Какой фрукт купить?", "apple"); <br />
+                let bag = {}; <br />
+                <br />
+                // имя свойства будет взято из переменной fruit <br />
+                bag[fruit] = 5;
+              </p>
+
+              <p class="form__description">
+                Смысл вычисляемого свойства прост: запись [fruit] означает, что
+                имя свойства необходимо взять из переменной fruit. И если
+                посетитель введёт слово "apple", то в объекте bag теперь будет
+                лежать свойство {apple: 5}.
+              </p>
+
+              <p class="form__description">
+                По сути, пример выше работает так же, как и следующий пример:
+              </p>
+
+              <p class="form__subdescription">
+                let fruit = prompt("Какой фрукт купить?", "apple"); <br />
+                let bag = {}; <br />
+                <br />
+                // имя свойства будет взято из переменной fruit <br />
+                bag[fruit] = 5;
+              </p>
+
+              <p class="form__description">
+                …Но первый пример выглядит лаконичнее.
+              </p>
+
+              <p class="form__description">
+                Мы можем использовать и более сложные выражения в квадратных
+                скобках:
+              </p>
+
+              <p class="form__subdescription">
+                let fruit = 'apple'; <br />
+                let bag = { <br />
+                [fruit + 'Computers']: 5 // bag.appleComputers = 5 <br />
+                };
+              </p>
+
+              <p class="form__description">
+                Квадратные скобки дают намного больше возможностей, чем запись
+                через точку. Они позволяют использовать любые имена свойств и
+                переменные, хотя и требуют более громоздких конструкций кода.
+              </p>
+
+              <p class="form__description">
+                Подведём итог: в большинстве случаев, когда имена свойств
+                известны и просты, используется запись через точку. Если же нам
+                нужно что-то более сложное, то мы используем квадратные скобки.
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/object#svoystvo-iz-peremennoy"
+                  class="form__link"
+                >
+                  Свойство из переменной</a
+                >
+              </p>
+
+              <p class="form__description">
+                В реальном коде часто нам необходимо использовать существующие
+                переменные как значения для свойств с тем же именем. Например:
+              </p>
+
+              <p class="form__subdescription">
+                function makeUser(name, age) { <br />
+                return { <br />
+                name: name, <br />
+                age: age <br />
+                // ...другие свойства <br />
+                }; <br />
+                } <br />
+                <br />
+                let user = makeUser("John", 30); <br />
+                alert(user.name); // John
+              </p>
+
+              <p class="form__description">
+                В примере выше название свойств name и age совпадают с
+                названиями переменных, которые мы подставляем в качестве
+                значений этих свойств. Такой подход настолько распространён, что
+                существуют специальные короткие свойства для упрощения этой
+                записи. Вместо name:name мы можем написать просто name:
+              </p>
+
+              <p class="form__subdescription">
+                function makeUser(name, age) { <br />
+                return { <br />
+                name, // то же самое, что и name: name <br />
+                age // то же самое, что и age: age <br />
+                // ... <br />
+                }; <br />
+                }
+              </p>
+
+              <p class="form__description">
+                Мы можем использовать как обычные свойства, так и короткие в
+                одном и том же объекте:
+              </p>
+
+              <p class="form__subdescription">
+                let user = { <br />
+                name, // тоже самое, что и name:name <br />
+                age: 30 <br />
+                };
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/object#ogranicheniya-na-imena-svoystv"
+                  class="form__link"
+                >
+                  Ограничения на имена свойств</a
+                >
+              </p>
+
+              <p class="form__description">
+                Как мы уже знаем, имя переменной не может совпадать с
+                зарезервированными словами, такими как «for», «let», «return» и
+                т.д. Но для свойств объекта такого ограничения нет:
+              </p>
+
+              <p class="form__subdescription">
+                // эти имена свойств допустимы <br />
+                let obj = { <br />
+                for: 1, <br />
+                let: 2, <br />
+                return: 3 <br />
+                }; <br />
+                <br />
+                alert( obj.for + obj.let + obj.return ); // 6
+              </p>
+
+              <p class="form__description">
+                Иными словами, нет никаких ограничений к именам свойств. Они
+                могут быть в виде строк или символов (специальный тип для
+                идентификаторов, который будет рассмотрен позже). Все другие
+                типы данных будут автоматически преобразованы к строке.
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/object#proverka-suschestvovaniya-svoystva-operator-in"
+                  class="form__link"
+                >
+                  Проверка существования свойства, оператор «in»</a
+                >
+              </p>
+
+              <p class="form__description">
+                В отличие от многих других языков, особенность
+                JavaScript-объектов в том, что можно получить доступ к любому
+                свойству. Даже если свойства не существует – ошибки не будет!
+                При обращении к свойству, которого нет, возвращается undefined.
+                Это позволяет просто проверить существование свойства:
+              </p>
+
+              <p class="form__subdescription">
+                let user = {}; alert( user.noSuchProperty === undefined ); //
+                true означает "свойства нет"
+              </p>
+
+              <p class="form__description">
+                Также существует специальный оператор "in" для проверки
+                существования свойства в объекте. Синтаксис оператора:
+              </p>
+
+              <p class="form__subdescription">"key" in object</p>
+
+              <p class="form__description">Пример:</p>
+
+              <p class="form__subdescription">
+                let user = { name: "John", age: 30 }; <br />
+                <br />
+                alert( "age" in user ); // true, user.age существует <br />
+                alert( "blabla" in user ); // false, user.blabla не существует
+              </p>
+
+              <p class="form__description">
+                Обратите внимание, что слева от оператора in должно быть имя
+                свойства. Обычно это строка в кавычках. Если мы опускаем
+                кавычки, это значит, что мы указываем переменную, в которой
+                находится имя свойства. Например:
+              </p>
+
+              <p class="form__subdescription">
+                let user = { age: 30 }; <br />
+                <br />
+                let key = "age"; <br />
+                alert( key in user ); // true, имя свойства было взято из
+                переменной key
+              </p>
+
+              <p class="form__description">
+                Для чего вообще нужен оператор in? Разве недостаточно сравнения
+                с undefined? В большинстве случаев прекрасно сработает сравнение
+                с undefined. Но есть особый случай, когда оно не подходит, и
+                нужно использовать "in". Это когда свойство существует, но
+                содержит значение undefined:
+              </p>
+
+              <p class="form__subdescription">
+                let obj = { <br />
+                test: undefined <br />
+                }; <br />
+                <br />
+                alert( obj.test ); // выведет undefined, значит свойство не
+                существует? <br />
+                alert( "test" in obj ); // true, свойство существует!
+              </p>
+
+              <p class="form__description">
+                В примере выше свойство obj.test технически существует в
+                объекте. Оператор in сработал правильно. Подобные ситуации
+                случаются очень редко, так как undefined обычно явно не
+                присваивается. Для «неизвестных» или «пустых» свойств мы
+                используем значение null. Таким образом, оператор in является
+                экзотическим гостем в коде.
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/object#tsikl-for-in"
+                  class="form__link"
+                >
+                  Цикл «for…in»
+                </a>
+              </p>
+
+              <p class="form__description">
+                Для перебора всех свойств объекта используется цикл for..in.
+                Этот цикл отличается от изученного ранее цикла for(;;).
+                Синтаксис:
+              </p>
+
+              <p class="form__subdescription">
+                for (key in object) { <br />
+                // тело цикла выполняется для каждого свойства объекта <br />
+                }
+              </p>
+
+              <p class="form__description">
+                К примеру, давайте выведем все свойства объекта user:
+              </p>
+
+              <p class="form__subdescription">
+                let user = { <br />
+                name: "John", <br />
+                age: 30, <br />
+                isAdmin: true <br />
+                }; <br />
+                <br />
+                for (let key in user) { <br />
+                // ключи <br />
+                alert( key ); // name, age, isAdmin <br />
+                // значения ключей <br />
+                alert( user[key] ); // John, 30, true <br />
+                }
+              </p>
+
+              <p class="form__description">
+                Обратите внимание, что все конструкции «for» позволяют нам
+                объявлять переменную внутри цикла, как, например, let key здесь.
+                Кроме того, мы могли бы использовать другое имя переменной.
+                Например, часто используется вариант "for (let prop in obj)".
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/object#uporyadochenie-svoystv-obekta"
+                  class="form__link"
+                >
+                  Упорядочение свойств объекта</a
+                >
+              </p>
+
+              <p class="form__description">
+                Если ключи не целочисленные, то они перебираются в порядке
+                создания, например:
+              </p>
+
+              <p class="form__subdescription">
+                let user = { <br />
+                name: "John", <br />
+                surname: "Smith" <br />
+                }; <br />
+                user.age = 25; // добавим ещё одно свойство <br />
+                <br />
+                // не целочисленные свойства перечислены в порядке создания
+                <br />
+                for (let prop in user) { <br />
+                alert( prop ); // name, surname, age <br />
+                }
+              </p>
+
+              <p class="form__description">
+                Целочисленные свойства перебираются в порядке возрастания. Если
+                требуется изменить порядок, необходимо целочисленные свойства
+                обратить в не целочисленные. Добавления знака "+" перед каждым
+                кодом будет достаточно.
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/object#itogo"
+                  class="form__link"
+                >
+                  Итого</a
+                >
+              </p>
+
+              <p class="form__description">
+                Объекты – это ассоциативные массивы с рядом дополнительных
+                возможностей. Они хранят свойства (пары ключ-значение), где:
+              </p>
+
+              <p class="form__subdescription">
+                Ключи свойств должны быть строками или символами (обычно
+                строками).
+              </p>
+
+              <p class="form__subdescription">
+                Значения могут быть любого типа.
+              </p>
+
+              <p class="form__description">
+                Чтобы получить доступ к свойству, мы можем использовать:
+              </p>
+
+              <p class="form__subdescription">
+                Запись через точку: obj.property.
+              </p>
+
+              <p class="form__subdescription">
+                Квадратные скобки obj["property"]. Квадратные скобки позволяют
+                взять ключ из переменной, например, obj[varWithKey].
+              </p>
+
+              <p class="form__description">Дополнительные операторы:</p>
+
+              <p class="form__subdescription">
+                Удаление свойства: delete obj.prop.
+              </p>
+
+              <p class="form__subdescription">
+                Проверка существования свойства: "key" in obj.
+              </p>
+
+              <p class="form__subdescription">
+                Перебор свойств объекта: цикл for for (let key in obj).
+              </p>
+
+              <p class="form__description">
+                То, что мы изучали в этой главе, называется «простым объектом»
+                («plain object») или просто Object.
+              </p>
+
+              <p class="form__description">
+                В JavaScript есть много других типов объектов:
+              </p>
+
+              <p class="form__subdescription">
+                <b> Array</b> для хранения упорядоченных коллекций данных,
+              </p>
+
+              <p class="form__subdescription">
+                <b> Date</b> для хранения информации о дате и времени,
+              </p>
+
+              <p class="form__subdescription">
+                <b> Error</b> для хранения информации об ошибке.
+              </p>
+
+              <p class="form__subdescription">… и так далее.</p>
+            </div>
+          </div>
+          <p class="form__subheading">
+            <a
+              target="_blank"
+              rel="noopener"
+              href="https://learn.javascript.ru/object#tasks"
+              class="form__link"
+            >
+              Задачи "Объекты: основы"</a
+            >
+          </p>
+        </section>
+        <!-- "Объекты: основы" -->
+
+        <!-- Копирование объектов и ссылки -->
+        <section id="object-copy" class="form">
+          <div class="form__bloc-info">
+            <h1 class="form__heading">
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://learn.javascript.ru/object-copy"
+                class="form__link"
+              >
+                Копирование объектов и ссылки</a
+              >
+            </h1>
+            <div class="form__bloc-hidden">
+              <p class="form__description">
+                Переменная хранит не сам объект, а его «адрес в памяти», другими
+                словами «ссылку» на него.
+              </p>
+
+              <p class="form__description">
+                Когда переменная объекта копируется – копируется ссылка, сам же
+                объект не дублируется.
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/object-copy#sravnenie-po-ssylke"
+                  class="form__link"
+                >
+                  Сравнение по ссылке</a
+                >
+              </p>
+
+              <p class="form__description">
+                Операторы равенства == и строгого равенства === для объектов
+                работают одинаково. Два объекта равны только в том случае, если
+                это один и тот же объект.
+              </p>
+
+              <p class="form__description">
+                В примере ниже две переменные ссылаются на один и тот же объект,
+                поэтому они равны друг другу:
+              </p>
+
+              <p class="form__subdescription">
+                let a = {}; <br />
+                let b = a; // копирование по ссылке <br />
+                <br />
+                alert( a == b ); // true, т.к. обе переменные ссылаются на один
+                и тот же объект <br />
+                alert( a === b ); // true
+              </p>
+
+              <p class="form__description">
+                В другом примере два разных объекта не равны, хотя оба пусты:
+              </p>
+
+              <p class="form__subdescription">
+                let a = {}; <br />
+                let b = {}; // два независимых объекта <br />
+                <br />
+                alert( a == b ); // false
+              </p>
+
+              <p class="form__description">
+                Для сравнений типа obj1 > obj2 или для сравнения с примитивом
+                obj == 5 объекты преобразуются в примитивы.
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/object-copy#klonirovanie-i-obedinenie-obektov-object-assign"
+                  class="form__link"
+                >
+                  Клонирование и объединение объектов, Object.assign</a
+                >
+              </p>
+
+              <p class="form__description">
+                Таким образом, при копировании переменной с объектом создаётся
+                ещё одна ссылка на тот же самый объект. Но что, если нам всё же
+                нужно дублировать объект? Создать независимую копию, клон? Это
+                выполнимо, но немного сложно, так как в JavaScript нет
+                встроенного метода для этого. На самом деле, такая нужда
+                возникает редко. В большинстве случаев нам достаточно
+                копирования по ссылке. Но если мы действительно этого хотим, то
+                нам нужно создавать новый объект и повторять структуру
+                дублируемого объекта, перебирая его свойства и копируя их.
+                Например так:
+              </p>
+
+              <p class="form__subdescription">
+                let user = { <br />
+                name: "Иван", <br />
+                age: 30 <br />
+                }; <br />
+                <br />
+                let clone = {}; // новый пустой объект <br />
+                <br />
+                // скопируем все свойства user в него <br />
+                for (let key in user) { <br />
+                clone[key] = user[key]; <br />
+                } <br />
+                <br />
+                // теперь в переменной clone находится абсолютно независимый
+                клон объекта <br />
+                clone.name = "Пётр"; // изменим в нём данные <br />
+                <br />
+                alert( user.name ); // в оригинальном объекте значение свойства
+                `name` осталось прежним – Иван.
+              </p>
+
+              <p class="form__description">
+                Кроме того, для этих целей мы можем использовать метод
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/assign"
+                  class="form__link"
+                >
+                  Object.assign.</a
+                >
+
+                Синтаксис:
+              </p>
+
+              <p class="form__syntax">
+                Object.assign(dest, [src1, src2, src3...])
+              </p>
+
+              <p class="form__subdescription">
+                Первый аргумент dest — целевой объект.
+              </p>
+
+              <p class="form__subdescription">
+                Остальные аргументы src1, ..., srcN (может быть столько, сколько
+                нужно)) являются исходными объектами
+              </p>
+
+              <p class="form__subdescription">
+                Метод копирует свойства всех исходных объектов src1, ..., srcN в
+                целевой объект dest. То есть, свойства всех перечисленных
+                объектов, начиная со второго, копируются в первый объект.
+              </p>
+
+              <p class="form__subdescription">Возвращает объект dest.</p>
+
+              <p class="form__description">
+                Например, объединим несколько объектов в один:
+              </p>
+
+              <p class="form__subdescription">
+                let user = { name: "Иван" }; <br />
+                <br />
+                let permissions1 = { canView: true }; <br />
+                let permissions2 = { canEdit: true }; <br />
+                <br />
+                // копируем все свойства из permissions1 и permissions2 в user
+                <br />
+                <b> Object.assign(user, permissions1, permissions2);</b> <br />
+                <br />
+                // теперь user = { name: "Иван", canView: true, canEdit: true }
+              </p>
+
+              <p class="form__description">
+                Если принимающий объект (user) уже имеет свойство с таким
+                именем, оно будет перезаписано:
+              </p>
+
+              <p class="form__subdescription">
+                let user = { name: "Иван" }; <br />
+                <br />
+                Object.assign(user, { name: "Пётр" }); <br />
+                <br />
+                alert(user.name); // теперь user = { name: "Пётр" }
+              </p>
+
+              <p class="form__description">
+                Мы также можем использовать Object.assign для замены for..in на
+                простое клонирование:
+              </p>
+
+              <p class="form__subdescription">
+                let user = { <br />
+                name: "Иван", <br />
+                age: 30 <br />
+                }; <br />
+                <br />
+                let clone = Object.assign({}, user);
+              </p>
+
+              <p class="form__description">
+                Этот метод скопирует все свойства объекта user в пустой объект и
+                возвратит его.
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/object-copy#vlozhennoe-klonirovanie"
+                  class="form__link"
+                >
+                  Вложенное клонирование</a
+                >
+              </p>
+
+              <p class="form__description">
+                До сих пор мы предполагали, что все свойства объекта user хранят
+                примитивные значения. Но свойства могут быть ссылками на другие
+                объекты. Что с ними делать? Например, есть объект:
+              </p>
+
+              <p class="form__subdescription">
+                let user = { <br />
+                name: "Иван", <br />
+                sizes: { <br />
+                height: 182, <br />
+                width: 50 <br />
+                } <br />
+                }; <br />
+                <br />
+                alert( user.sizes.height ); // 182
+              </p>
+
+              <p class="form__description">
+                Теперь при клонировании недостаточно просто скопировать
+                clone.sizes = user.sizes, поскольку user.sizes – это объект, он
+                будет скопирован по ссылке. А значит объекты clone и user в
+                своих свойствах sizes будут ссылаться на один и тот же объект:
+              </p>
+
+              <p class="form__subdescription">
+                let user = { <br />
+                name: "Иван", <br />
+                sizes: { <br />
+                height: 182, <br />
+                width: 50 <br />
+                } <br />
+                }; <br />
+                <br />
+                let clone = Object.assign({}, user); <br />
+                <br />
+                alert( user.sizes === clone.sizes ); // true, один и тот же
+                объект <br />
+                <br />
+                // user и clone обращаются к одному sizes <br />
+                user.sizes.width++; // меняем свойство в одном объекте <br />
+                alert(clone.sizes.width); // 51, видим результат в другом
+                объекте
+              </p>
+
+              <p class="form__description">
+                Чтобы исправить это, мы должны в цикле клонирования делать
+                проверку, не является ли значение user[key] объектом, и если это
+                так – скопировать и его структуру тоже. Это называется «глубокое
+                клонирование». Мы можем реализовать глубокое клонирование,
+                используя рекурсию. Или, чтобы не изобретать велосипед,
+                использовать готовую реализацию — метод _.cloneDeep(obj) из
+                JavaScript-библиотеки lodash.
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/object-copy#itogo"
+                  class="form__link"
+                >
+                  Итого</a
+                >
+              </p>
+              <p class="form__description">
+                Объекты присваиваются и копируются по ссылке. Другими словами,
+                переменная хранит не «значение объекта», а «ссылку» (адрес в
+                памяти) на это значение. Поэтому копирование такой переменной
+                или передача её в качестве аргумента функции приводит к
+                копированию этой ссылки, а не самого объекта.
+              </p>
+
+              <p class="form__description">
+                Все операции с использованием скопированных ссылок (например,
+                добавление или удаление свойств) выполняются с одним и тем же
+                объектом.
+              </p>
+
+              <p class="form__description">
+                Для «простого клонирования» объекта можно использовать
+                Object.assign. Необходимо помнить, что Object.assign не делает
+                глубокое клонирования объекта. Если внутри копируемого объекта
+                есть свойство, значение которого не является примитивом, оно
+                будет передано по ссылке. Для создания «настоящей копии»
+                (полного клона объекта) можно воспользоваться методом из
+                сторонней JavaScript-библиотеки
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://lodash.com/docs#cloneDeep"
+                  class="form__link"
+                >
+                  _.cloneDeep(obj).</a
+                >
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- Копирование объектов и ссылки -->
+
+        <!--  -->
+        <section class="form">
+          <div class="form__bloc-info">
+            <h1 class="form__heading">
+              xxx
+              <a target="_blank" rel="noopener" href="#" class="form__link">
+                xxx</a
+              >
+            </h1>
+            <div class="form__bloc-hidden">
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__attention">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__attention">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__attention">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subheading">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <a target="_blank" rel="noopener" href="" class="form__link">
+                xxx</a
+              >
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subheading">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <a target="_blank" rel="noopener" href="" class="form__link">
+                xxx</a
+              >
+            </div>
+          </div>
+        </section>
+        <!--  -->
+
+        <!--  -->
+        <section class="form">
+          <div class="form__bloc-info">
+            <h1 class="form__heading">
+              xxx
+              <a target="_blank" rel="noopener" href="#" class="form__link">
+                xxx</a
+              >
+            </h1>
+            <div class="form__bloc-hidden">
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__attention">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__attention">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__attention">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subheading">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <a target="_blank" rel="noopener" href="" class="form__link">
+                xxx</a
+              >
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subheading">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <a target="_blank" rel="noopener" href="" class="form__link">
+                xxx</a
+              >
+            </div>
+          </div>
+        </section>
+        <!--  -->
+
+        <!--  -->
+        <section class="form">
+          <div class="form__bloc-info">
+            <h1 class="form__heading">
+              xxx
+              <a target="_blank" rel="noopener" href="#" class="form__link">
+                xxx</a
+              >
+            </h1>
+            <div class="form__bloc-hidden">
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__attention">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__attention">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__attention">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subheading">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <a target="_blank" rel="noopener" href="" class="form__link">
+                xxx</a
+              >
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subheading">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <a target="_blank" rel="noopener" href="" class="form__link">
+                xxx</a
+              >
+            </div>
+          </div>
+        </section>
+        <!--  -->
+
+        <!--  -->
+        <section class="form">
+          <div class="form__bloc-info">
+            <h1 class="form__heading">
+              xxx
+              <a target="_blank" rel="noopener" href="#" class="form__link">
+                xxx</a
+              >
+            </h1>
+            <div class="form__bloc-hidden">
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__attention">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subheading">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <a target="_blank" rel="noopener" href="" class="form__link">
+                xxx</a
+              >
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subheading">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <a target="_blank" rel="noopener" href="" class="form__link">
+                xxx</a
+              >
+
+              <p class="form__syntax">xxx</p>
+              <p class="form__description">xxx</p>
+              <p class="form__description">xxx</p>
+              <p class="form__description">xxx</p>
+              <p class="form__syntax">xxx</p>
+              <p class="form__syntax">xxx</p>
+            </div>
+          </div>
+        </section>
+        <!--  -->
+
+        <!--  -->
+        <section class="form">
+          <div class="form__bloc-info">
+            <h1 class="form__heading">
+              xxx
+              <a target="_blank" rel="noopener" href="#" class="form__link">
+                xxx</a
+              >
+            </h1>
+            <div class="form__bloc-hidden">
+              <p class="form__description">xxx</p>
+              <p class="form__description">xxx</p>
+              <p class="form__description">xxx</p>
+              <p class="form__syntax">xxx</p>
+              <p class="form__syntax">xxx</p>
+            </div>
+          </div>
+        </section>
+        <!--  -->
+        <!-- encoding -->
+
+        <section class="form">
+          <div>
+            <div class="encoding">
+              <p class="encoding__prompt">HTML посмотреть код</p>
+              <pre class="encoding__code-box">
+                  <code class="encoding__code-font">                                   
+                     xxx                                    
+                  </code>
+               </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_second">
+                SCSS посмотреть код
+              </p>
+              <pre class="encoding__code-box">
+                  <code>                                   
+                     xxx                                    
+                  </code>
+               </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_third">
+                SCSS посмотреть код
+              </p>
+              <pre class="encoding__code-box">
+                  <code>                                   
+                     xxx                                    
+                  </code>
+               </pre>
+            </div>
+          </div>
+          <!-- encoding -->
+
+          <!--  -->
+          <p class="form__description">
+            ps. Что такое
+            <a target="_blank" rel="noopener" href="#" class="form__link"
+              >xxxx</a
+            >
+          </p>
+          <p class="form__description">
+            ps. Что такое
+            <a target="_blank" rel="noopener" href="#" class="form__link">
+              xxxx</a
+            >
+          </p>
+          <p class="form__description">
+            ps. Что такое
+            <a target="_blank" rel="noopener" href="#" class="form__link">
+              xxxx</a
+            >
+          </p>
+          <p class="form__description">
+            ps. Другая
+            <a target="_blank" rel="noopener" href="#" class="form__link">
+              xxxxx</a
+            >
+          </p>
+
+          <!-- rh-checkbox -->
+        </section>
+        <!--  -->
+      </article>
+
+      <!-- menu-mobile -->
+      <div class="menu-mobile">
+        <img
+          src="../../assets/logotype/smallLogo.svg"
+          class="menu-mobile__logo-small"
+        />
+        <div class="menu-mobile__dots">
+          <div class="menu-mobile__dots_item"></div>
+          <div class="menu-mobile__dots_item"></div>
+          <div class="menu-mobile__dots_item"></div>
+        </div>
+      </div>
+      <!-- menu-mobile -->
+    </main>
+    <!-- main -->
+    <!-- menu -->
+    <nav class="menu">
+      <!-- transform-list -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/transformations.html">
+          Двумерные трансформации</a
+        >
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#transformations"
+              >Трансформация элемента</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#translate-x"
+              >Сдвиг по горизонтали</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#translate-y"
+              >Сдвиг по вертикали</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#translate"
+              >Сдвиг по горизонтали и вертикали</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#scale"
+              >Изменение масштаба элемента</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#scale-x"
+              >Изменение масштаба по горизонтали</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#scale-y"
+              >Изменение масштаба по вертикали</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#rotate"
+              >Поворот элемента</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#skew-x"
+              >Наклон элемента по горизонтали</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#skew-y"
+              >Наклон элемента по вертикали</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#transform-origin"
+              >Координаты трансформации элемента.</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- transform-list -->
+
+      <!-- transitions_list -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/transitions.html">
+          Плавные переходы
+        </a>
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transitions.html#transition"
+              >Универсальное свойство</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transitions.html#transition-duration"
+              >Длительность перехода</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transitions.html#transition-property"
+              >Какие свойства плавно изменять</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transitions.html#transition-delay"
+              >Задержка перехода
+            </a>
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transitions.html#transition-timing-function"
+              >Скорость и ускорение переходов
+            </a>
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transitions.html#example"
+              >примеры timing-function переходов</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transitions.html#graphics-transition"
+              >Графики переходов</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- transitions_list -->
+
+      <!-- gradient_list -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/linearGradient.html">
+          Линейный градиент</a
+        >
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#linear-gradient"
+              >Линейный градиент</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#examples"
+              >Примеры прямых и диогональных переходов</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#angled-gradients"
+              >Градиенты под углом</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#sample-flower"
+              >Градиенты под углом, пример:</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#sample"
+              >Множество градиентов</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#color-stop"
+            >
+              Пропорции цветов и колорстопы</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#color-stop-sample"
+              >Примеры колор стопов</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#repeating-gradient"
+            >
+              Повторяющийся линейный градиент</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#stylish-buttons"
+              >Стильные кнопки</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#footer"
+              >Рекомендации</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- gradient_list -->
+
+      <!-- stuff_list -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/coolStuff.html">Крутые вещи</a>
+
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/coolStuff.html#custom-shadows"
+              >Нестандартные тени</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/coolStuff.html#hover-active"
+            >
+              Эффекты при наведении на кнопки</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/coolStuff.html#active-gallery"
+            >
+              Эффекты при наведении на галерею</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/coolStuff.html#stack-cards"
+              >Стопка" карт</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- stuff_list -->
+
+      <!-- forms_list -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/forms.html"> Формы form </a>
+        <div class="menu__content">
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/forms.html#inputs">
+              Ввод "input"</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/forms.html#type-text">
+              Поля inputs
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/forms.html#button"
+              >Кнопки button
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/forms.html#checkbox">
+              checkbox</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/forms.html#slider"
+              >Ползунки slider</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/forms.html#radiobutton"
+              >Переключатели radiobutton</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/forms.html#multicolor-switch"
+              >multicolor-switch Тройной переключатель
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/forms.html#triple-switch"
+              >triple-switch Тройной переключатель</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/forms.html#secondary-radio"
+              >secondary-radio Двойной переключатель</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/forms.html#twin-switch "
+              >twin-switch Универсальный переключатель</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/forms.html#drop-down">
+              Выпадающий или раскрывающийся список</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/forms.html#teg-select"
+              >Тег select, поле выбора
+            </a>
+          </li>
+        </div>
+      </ul>
+      <!-- forms_list -->
+
+      <!-- position-ratio_list -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/positionAspectRatio.html">
+          Работа с изображениями</a
+        >
+
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/positionAspectRatio.html#centering"
+            >
+              Центрирование centering</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/positionAspectRatio.html#aspect-ratio"
+            >
+              Свойство CSS aspect-ratio: X / Y
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/positionAspectRatio.html#factoring-width"
+            >
+              Факторинг в min-*и max-*</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/positionAspectRatio.html#aspect-ratio-example"
+            >
+              Примеры работы свойства aspect-ratio:</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/positionAspectRatio.html#position"
+            >
+              Позиционирование элемента</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/positionAspectRatio.html#position__absolute"
+            >
+              Позиционирование absolute подробнее.</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/positionAspectRatio.html#height-absolute"
+            >
+              Высота для position: absolute;</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/positionAspectRatio.html#relative-absolute"
+            >
+              Позиционирование и aspect-ratio: X / Y;</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- position-ratio_list -->
+
+      <!-- utility_list -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/utility.html">
+          Полезная информация</a
+        >
+
+        <div class="menu__content">
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/utility.html#my-tabs">
+              Мои вкладки</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#html5book.ru"
+            >
+              HTML5BOOK.ru теория html, css, js</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#HTML5CSS.ru"
+            >
+              HTML5CSS.ru Как сделать?</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#WebReference"
+            >
+              Мощный учебник WebReference</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#css-tricks "
+            >
+              Учебник css-tricks и Aspect Ratio
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/utility.html#Git">
+              Ресурсы для изучения Git</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/utility.html#ru.bem">
+              Методология БЭМ
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#first-child"
+            >
+              Структурные псевдоклассы</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/utility.html#after">
+              ::after и ::before</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#form__link"
+            >
+              Как сделать гиперссылки на сайте</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#svoystva-teksta"
+            >
+              Свойства шрифта, текста</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#Select-Option"
+            >
+              Стилизация Select-Option</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#user-select"
+            >
+              user-select</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#webfanat"
+            >
+              Блог веб разработки webfanat</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/utility.html#">
+              xxx</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/utility.html#">
+              xxx</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/utility.html#">
+              xxx</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- utility_list -->
+
+      <!-- shadow_list -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/boxShadow.html">
+          Тени box-shadow
+        </a>
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/boxShadow.html#box-shadow"
+            >
+              Тени box-shadow</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- shadow_list -->
+
+      <!-- java Script Основы Java Script -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/javaScriptBasics.html">
+          Основы JavaScript
+        </a>
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#teg-script"
+            >
+              Подключение JavaScript, тег: &lt;script&gt;</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#peremennay"
+            >
+              Переменная</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#tip-dannih"
+            >
+              Типы данных</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#alert-prompt-confirm"
+            >
+              Взаимодействие: alert, prompt, confirm</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#preobrazovanie-tipov"
+            >
+              Преобразование типов</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#operatori-bazic"
+            >
+              Базовые операторы, математика</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#operatori-sravneniy"
+            >
+              Операторы сравнения</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#uslovnoe-vetvlenie-if-?"
+            >
+              Условное ветвление: if, '?'</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#logical-operators"
+            >
+              Логические операторы</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#tsikl-while-for"
+            >
+              Циклы while и for</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#switch"
+            >
+              Конструкция "switch"</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#function"
+            >
+              Функции</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#Function-Expression-call-back"
+            >
+              Функции Expression и «call back»</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#strelochnye-funktsii"
+            >
+              Функции-стрелки, основы
+            </a>
+          </li>
+        </div>
+      </ul>
+      <!-- java Script Основы Java Script -->
+
+      <!-- java Script Объекты: основы -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/javaScriptObject.html">
+          Объекты
+        </a>
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptObject.html#object"
+            >
+              Объекты: основы</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptObject.html#object-copy"
+            >
+              Копирование объектов и ссылки</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptObject.html#"
+            >
+              xxx</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptObject.html#"
+            >
+              xxx</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptObject.html#"
+            >
+              xxx</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptObject.html#"
+            >
+              xxx</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptObject.html#"
+            >
+              xxx</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- java Script Объекты: основы -->
+    </nav>
+    <!-- menu -->
+
+    <!-- header  -->
+    <header class="header"></header>
+    <!-- header  -->
+  </body>
+</html>

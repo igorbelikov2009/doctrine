@@ -1,0 +1,2718 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../styles/css/reset.css" />
+    <link rel="stylesheet" href="../styles/css/grids.css" />
+    <link rel="stylesheet" href="../styles/css/general.css" />
+    <link rel="stylesheet" href="../styles/css/generalMenu.css" />
+    <link rel="stylesheet" href="../styles/css/javaScriptModel.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- main -->
+    <main class="main">
+      <article class="article">
+        <!-- Числа -->
+        <section id="number" class="form">
+          <div class="form__bloc-info">
+            <h1 class="form__heading">
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://learn.javascript.ru/number"
+                class="form__link"
+              >
+                Числа
+              </a>
+            </h1>
+            <div class="form__bloc-hidden">
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/number#tostring-base"
+                  class="form__link"
+                >
+                  toString(base)
+                </a>
+              </p>
+
+              <p class="form__description">
+                <b> Метод num.toString(base)</b> <br />
+                возвращает строковое представление числа num в системе счисления
+                base. Например:
+              </p>
+
+              <p class="form__subdescription">
+                let num = 255; <br />
+                <br />
+                alert( num.toString(16) ); // ff <br />
+                alert( num.toString(2) ); // 11111111
+              </p>
+
+              <p class="form__description">
+                base может варьироваться от 2 до 36 (по умолчанию 10). Часто
+                используемые:
+              </p>
+
+              <p class="form__subdescription">
+                <b> base=16</b> — для шестнадцатеричного представления цвета,
+                кодировки символов и т.д., цифры могут быть 0..9 или A..F.
+              </p>
+
+              <p class="form__subdescription">
+                <b> base=2</b> — обычно используется для отладки побитовых
+                операций, цифры 0 или 1.
+              </p>
+
+              <p class="form__subdescription">
+                <b> base=36</b> — максимальное основание, цифры могут быть 0..9
+                или A..Z. То есть, используется весь латинский алфавит для
+                представления числа. Забавно, но можно использовать 36-разрядную
+                систему счисления для получения короткого представления большого
+                числового идентификатора. К примеру, для создания короткой
+                ссылки. Для этого просто преобразуем его в 36-разрядную систему
+                счисления:
+              </p>
+
+              <p class="form__subdescription">
+                alert( 123456..toString(36) ); // 2n9c
+              </p>
+
+              <p class="form__attention">Две точки для вызова метода</p>
+
+              <p class="form__description">
+                Внимание! Две точки в 123456..toString(36) это не опечатка. Если
+                нам надо вызвать метод непосредственно на числе, как toString в
+                примере выше, то нам надо поставить две точки .. после числа.
+              </p>
+
+              <p class="form__description">
+                Если мы поставим одну точку: 123456.toString(36), тогда это
+                будет ошибкой, поскольку синтаксис JavaScript предполагает, что
+                после первой точки начинается десятичная часть. А если поставить
+                две точки, то JavaScript понимает, что десятичная часть
+                отсутствует, и начинается метод.
+              </p>
+
+              <p class="form__description">
+                Также можно записать как (123456).toString(36).
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/number#okruglenie"
+                  class="form__link"
+                >
+                  Округление</a
+                >
+              </p>
+
+              <p class="form__description">
+                Одна из часто используемых операций при работе с числами – это
+                округление. В JavaScript есть несколько встроенных функций для
+                работы с округлением:
+              </p>
+
+              <p class="form__subdescription">
+                <b> Math.floor</b> <br />
+                Округление в меньшую сторону: <br />
+                3.1 становится 3, <br />
+                -1.1 становится -2.
+              </p>
+
+              <p class="form__subdescription">
+                <b> Math.ceil</b> <br />
+                Округление в большую сторону: <br />
+                3.1 становится 4, <br />
+                -1.1 становится -1.
+              </p>
+
+              <p class="form__subdescription">
+                <b> Math.round</b> <br />
+                Округление до ближайшего целого: <br />
+                3.1 становится 3, <br />
+                3.6 становится 4, <br />
+                -1.1 становится -1.
+              </p>
+
+              <p class="form__subdescription">
+                <b> Math.trunc</b> (не поддерживается в Internet Explorer)
+                <br />
+                Производит удаление дробной части без округления: <br />
+                3.1 становится 3, <br />
+                -1.1 становится -1.
+              </p>
+
+              <p class="form__description">
+                Ниже представлена таблица с различиями между функциями
+                округления:
+              </p>
+
+              <div class="form__table">
+                <div class="form__colonka">
+                  <p class="form__syntax">value</p>
+
+                  <p class="form__description">3.1</p>
+
+                  <p class="form__description">3.6</p>
+
+                  <p class="form__description">-1.1</p>
+
+                  <p class="form__description">-1.6</p>
+                </div>
+
+                <div class="form__colonka">
+                  <p class="form__syntax">Math.floor</p>
+
+                  <p class="form__description">3</p>
+
+                  <p class="form__description">3</p>
+
+                  <p class="form__description">-2</p>
+
+                  <p class="form__description">-2</p>
+                </div>
+
+                <div class="form__colonka">
+                  <p class="form__syntax">Math.ceil</p>
+
+                  <p class="form__description">4</p>
+
+                  <p class="form__description">4</p>
+
+                  <p class="form__description">-1</p>
+
+                  <p class="form__description">-1</p>
+                </div>
+
+                <div class="form__colonka">
+                  <p class="form__syntax">Math.round</p>
+
+                  <p class="form__description">3</p>
+
+                  <p class="form__description">4</p>
+
+                  <p class="form__description">-1</p>
+
+                  <p class="form__description">-2</p>
+                </div>
+
+                <div class="form__colonka">
+                  <p class="form__syntax">Math.trunc</p>
+
+                  <p class="form__description">3</p>
+
+                  <p class="form__description">3</p>
+
+                  <p class="form__description">-1</p>
+
+                  <p class="form__description">-1</p>
+                </div>
+              </div>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed"
+                  class="form__link"
+                >
+                  Метод toFixed(n)</a
+                >
+              </p>
+
+              <p class="form__description">
+                Метод toFixed(n) округляет число до n знаков после запятой и
+                возвращает строковое представление результата.
+              </p>
+
+              <p class="form__subdescription">
+                let num = 12.34; <br />
+                alert( num.toFixed(1) ); // "12.3"
+              </p>
+
+              <p class="form__description">
+                Округляет значение до ближайшего числа, как в большую, так и в
+                меньшую сторону, аналогично методу Math.round:
+              </p>
+
+              <p class="form__subdescription">
+                let num = 12.36; <br />
+                alert( num.toFixed(1) ); // "12.4"
+              </p>
+
+              <p class="form__attention">
+                Обратите внимание, что результатом toFixed является строка. Если
+                десятичная часть короче, чем необходима, будут добавлены нули в
+                конец строки:
+              </p>
+
+              <p class="form__subdescription">
+                let num = 12.34; <br />
+                alert( num.toFixed(5) ); // "12.34000", добавлены нули, чтобы
+                получить 5 знаков после запятой
+              </p>
+
+              <p class="form__description">
+                Мы можем преобразовать полученное значение в число, используя
+                унарный оператор + или Number(), пример с унарным оператором:
+                +num.toFixed(5).
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/number#proverka-isfinite-i-isnan"
+                  class="form__link"
+                >
+                  Проверка: isFinite и isNaN</a
+                >
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/number#parseint-i-parsefloat"
+                  class="form__link"
+                >
+                  parseInt и parseFloat</a
+                >
+              </p>
+
+              <p class="form__description">
+                Для явного преобразования к числу можно использовать
+                <b> + или Number()</b>. Если строка не является в точности
+                числом, то результат будет <b> NaN</b>:
+              </p>
+
+              <p class="form__subdescription">alert( +"100px" ); // NaN</p>
+
+              <p class="form__description">
+                Единственное исключение — это пробелы в начале строки и в конце,
+                они игнорируются.
+              </p>
+
+              <p class="form__description">
+                В реальной жизни мы часто сталкиваемся со значениями у которых
+                есть единица измерения, например "100px" или "12pt" в CSS. Также
+                во множестве стран символ валюты записывается после номинала
+                "19€". Так как нам получить числовое значение из таких строк?
+              </p>
+
+              <p class="form__description">
+                Для этого есть <b> parseInt</b> и <b> parseFloat</b>.
+              </p>
+
+              <p class="form__description">
+                Они «читают» число из строки. Если в процессе чтения возникает
+                ошибка, они возвращают полученное до ошибки число. Функция
+                parseInt возвращает целое число, а parseFloat возвращает число с
+                плавающей точкой:/p>
+              </p>
+
+              <p class="form__subdescription">
+                alert( parseInt('100px') ); // 100 <br />
+                alert( parseFloat('12.5em') ); // 12.5 <br />
+                <br />
+                alert( parseInt('12.3') ); // 12, вернётся только целая часть
+                <br />
+                alert( parseFloat('12.3.4') ); // 12.3, произойдёт остановка
+                чтения на второй точке
+              </p>
+
+              <p class="form__description">
+                Функции parseInt/parseFloat вернут NaN, если не смогли прочитать
+                ни одну цифру:
+              </p>
+
+              <p class="form__subdescription">
+                alert( parseInt('a123') ); // NaN, на первом символе происходит
+                остановка чтения
+              </p>
+
+              <p class="form__attention">
+                Второй аргумент parseInt(str, radix)
+              </p>
+
+              <p class="form__description">
+                Функция parseInt() имеет необязательный второй параметр. Он
+                определяет систему счисления, таким образом parseInt может также
+                читать строки с шестнадцатеричными числами, двоичными числами и
+                т.д.:
+              </p>
+
+              <p class="form__subdescription">
+                alert( parseInt('0xff', 16) ); // 255 <br />
+                alert( parseInt('ff', 16) ); // 255, без 0x тоже работает <br />
+                <br />
+                alert( parseInt('2n9c', 36) ); // 123456
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/number#drugie-matematicheskie-funktsii"
+                  class="form__link"
+                >
+                  Другие математические функции</a
+                >
+              </p>
+
+              <p class="form__description">
+                В JavaScript встроен объект
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math"
+                  class="form__link"
+                >
+                  Math.</a
+                >, который содержит различные математические функции и
+                константы. Несколько примеров:
+              </p>
+
+              <p class="form__syntax">Math.random()</p>
+
+              <p class="form__description">
+                Возвращает псевдослучайное число в диапазоне от 0 (включительно)
+                до 1 (но не включая 1)
+              </p>
+
+              <p class="form__subdescription">
+                alert( Math.random() ); // 0.1234567894322 <br />
+                alert( Math.random() ); // 0.5435252343232 <br />
+                alert( Math.random() ); // ... (любое количество псевдослучайных
+                чисел)
+              </p>
+
+              <p class="form__syntax">
+                Math.max(a, b, c...) / Math.min(a, b, c...)
+              </p>
+
+              <p class="form__description">
+                Возвращает наибольшее/наименьшее число из перечисленных
+                аргументов.
+              </p>
+
+              <p class="form__subdescription">
+                alert( Math.max(3, 5, -10, 0, 1) ); // 5 <br />
+                alert( Math.min(1, 2) ); // 1
+              </p>
+
+              <p class="form__syntax">Math.pow(n, power)</p>
+
+              <p class="form__description">
+                Возвращает число n, возведённое в степень power
+              </p>
+
+              <p class="form__subdescription">
+                alert( Math.pow(2, 10) ); // 2 в степени 10 = 1024
+              </p>
+
+              <p class="form__description">
+                В объекте Math есть множество функций и констант, включая
+                тригонометрические функции, подробнее можно ознакомиться в
+                документации по объекту
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math#methods"
+                  class="form__link"
+                >
+                  Методы Math.</a
+                >
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/number#drugie-matematicheskie-funktsii"
+                  class="form__link"
+                >
+                  Итого</a
+                >
+              </p>
+
+              <p class="form__description">
+                Чтобы писать числа с большим количеством нулей:
+              </p>
+
+              <p class="form__subdescription">
+                Используйте краткую форму записи чисел – "e", с указанным
+                количеством нулей. Например: 123e6 это 123 с 6-ю нулями
+                123000000.
+              </p>
+
+              <p class="form__subdescription">
+                Отрицательное число после "e" приводит к делению числа на 1 с
+                указанным количеством нулей. Например: 123e-6 это 0.000123 (123
+                миллионных).
+              </p>
+
+              <p class="form__description">Для других систем счисления:</p>
+
+              <p class="form__subdescription">
+                Можно записывать числа сразу в шестнадцатеричной (0x),
+                восьмеричной (0o) и бинарной (0b) системах счисления
+              </p>
+
+              <p class="form__subdescription">
+                parseInt(str, base) преобразует строку в целое число в
+                соответствии с указанной системой счисления: 2 ≤ base ≤ 36.
+              </p>
+
+              <p class="form__subdescription">
+                num.toString(base) представляет число в строковом виде в
+                указанной системе счисления base.
+              </p>
+
+              <p class="form__description">
+                Для преобразования значений типа 12pt и 100px в число:
+              </p>
+
+              <p class="form__subdescription">
+                Используйте parseInt/parseFloat для «мягкого» преобразования
+                строки в число, данные функции по порядку считывают число из
+                строки до тех пор пока не возникнет ошибка.
+              </p>
+
+              <p class="form__description">Для дробей:</p>
+
+              <p class="form__subdescription">
+                Используйте округления Math.floor, Math.ceil, Math.trunc,
+                Math.round или num.toFixed(precision).
+              </p>
+
+              <p class="form__subdescription">
+                Помните, что при работе с дробями происходит потеря точности.
+              </p>
+
+              <p class="form__description">
+                Ещё больше математических функций:
+              </p>
+
+              <p class="form__subdescription">
+                Документация по объекту Math. Библиотека маленькая, но содержит
+                всё самое важное.
+              </p>
+            </div>
+          </div>
+          <p class="form__subheading">
+            <a
+              target="_blank"
+              rel="noopener"
+              href="https://learn.javascript.ru/number#tasks"
+              class="form__link"
+            >
+              Задачи "Числа"</a
+            >
+          </p>
+        </section>
+        <!-- Числа -->
+
+        <!-- Строки -->
+        <section id="string" class="form">
+          <div class="form__bloc-info">
+            <h1 class="form__heading">
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://learn.javascript.ru/string"
+                class="form__link"
+              >
+                Строки</a
+              >
+            </h1>
+            <div class="form__bloc-hidden">
+              <p class="form__description">
+                В JavaScript любые текстовые данные являются строками. Не
+                существует отдельного типа «символ», который есть в ряде других
+                языков.
+              </p>
+
+              <p class="form__description">
+                Внутренний формат для строк — всегда
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://ru.wikipedia.org/wiki/UTF-16"
+                  class="form__link"
+                >
+                  UTF-16</a
+                >
+                , вне зависимости от кодировки страницы.
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/string#kavychki"
+                  class="form__link"
+                >
+                  Кавычки</a
+                >
+              </p>
+
+              <p class="form__description">
+                В JavaScript есть разные типы кавычек.
+              </p>
+
+              <p class="form__description">
+                Строку можно создать с помощью одинарных, двойных либо обратных
+                кавычек:
+              </p>
+
+              <p class="form__subdescription">
+                let single = 'single-quoted'; <br />
+                let double = "double-quoted"; <br />
+                <br />
+                let backticks = `backticks`;
+              </p>
+
+              <p class="form__description">
+                Одинарные и двойные кавычки работают, по сути, одинаково, а если
+                использовать обратные кавычки, то в такую строку мы сможем
+                вставлять произвольные выражения, обернув их в ${…}:
+              </p>
+
+              <p class="form__subdescription">
+                function sum(a, b) { <br />
+                return a + b; <br />
+                } <br />
+                <br />
+                alert(`1 + 2 = ${sum(1, 2)}.`); // 1 + 2 = 3.
+              </p>
+
+              <p class="form__attention">
+                Ещё одно преимущество обратных кавычек — они могут занимать
+                более одной строки, вот так:
+              </p>
+
+              <p class="form__subdescription">
+                let guestList = `Guests: <br />
+                * John <br />
+                * Pete <br />
+                * Mary `; <br />
+                alert(guestList); // список гостей, состоящий из нескольких
+                строк
+              </p>
+
+              <p class="form__description">
+                Обратные кавычки также позволяют задавать «шаблонную функцию»
+                перед первой обратной кавычкой. Используемый синтаксис:
+                func`string`. Автоматически вызываемая функция func получает
+                строку и встроенные в неё выражения и может их обработать.
+                Подробнее об этом можно прочитать в документации. Если перед
+                строкой есть выражение, то шаблонная строка называется «теговым
+                шаблоном». Это позволяет использовать свою шаблонизацию для
+                строк, но на практике теговые шаблоны применяются редко.
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/string#spetssimvoly"
+                  class="form__link"
+                >
+                  Спецсимволы</a
+                >
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/string#dlina-stroki"
+                  class="form__link"
+                >
+                  Длина строки length</a
+                >
+              </p>
+
+              <p class="form__description">
+                Свойство
+
+                <b> length</b> содержит длину строки:
+              </p>
+
+              <p class="form__subdescription">alert( `Hello`.length ); // 5</p>
+
+              <p class="form__attention">
+                length — это свойство, а не функция, добавлять скобки не нужно.
+              </p>
+
+              <p class="form__description">
+                Бывает так, что люди с практикой в других языках случайно
+                пытаются вызвать его, добавляя круглые скобки: они пишут
+                str.length() вместо str.length. Это не работает. Так как
+                str.length — это числовое свойство, а не функция, добавлять
+                скобки не нужно.
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/string#dostup-k-simvolam"
+                  class="form__link"
+                >
+                  Доступ к символам</a
+                >
+              </p>
+
+              <p class="form__description">
+                Получить символ, который занимает позицию pos, можно с помощью
+                квадратных скобок: <br />
+                <b> [pos]</b>.
+              </p>
+
+              <p class="form__subdescription">
+                let str = `Hello`; <br />
+                <br />
+                // получаем первый символ <br />
+                alert( str[0] ); // H <br />
+                <br />
+
+                // получаем последний символ <br />
+                alert( str[str.length - 1] ); // o
+              </p>
+
+              <p class="form__description">
+                Также можно использовать <br />
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charAt"
+                  class="form__link"
+                >
+                  метод charAt: str.charAt(pos)</a
+                >
+                . <br />
+                <br />
+                Первый символ занимает нулевую позицию:
+              </p>
+
+              <p class="form__subdescription">
+                let str = `Hello`; <br />
+                <br />
+                // получаем первый символ <br />
+                <br />
+                alert( str.charAt(0) ); // H
+              </p>
+
+              <p class="form__description">
+                Квадратные скобки — современный способ получить символ, в то
+                время как charAt существует в основном по историческим причинам.
+              </p>
+
+              <p class="form__attention">
+                Разница только в том, что если символ с такой позицией
+                отсутствует, тогда [] вернёт undefined, а charAt — пустую
+                строку:
+              </p>
+
+              <p class="form__subdescription">
+                let str = `Hello`; <br />
+                <br />
+                alert( str[1000] ); // undefined <br />
+                alert( str.charAt(1000) ); // '' (пустая строка)
+              </p>
+
+              <p class="form__description">
+                Также можно перебрать строку посимвольно, используя <br />
+                <b> for..of:</b>
+              </p>
+
+              <p class="form__subdescription">
+                for (let char of "Hello") { <br />
+                alert(char); // H,e,l,l,o (char — сначала "H", потом "e", потом
+                "l" и т. д.) <br />
+                }
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/string#stroki-neizmenyaemy"
+                  class="form__link"
+                >
+                  Строки неизменяемы</a
+                >
+              </p>
+
+              <p class="form__description">
+                Содержимое строки в JavaScript нельзя изменить. Нельзя взять
+                символ посередине и заменить его. Как только строка создана —
+                она такая навсегда.
+              </p>
+
+              <p class="form__description">
+                Можно создать новую строку и записать её в ту же самую
+                переменную вместо старой. Например:
+              </p>
+
+              <p class="form__subdescription">
+                let str = 'Hi'; <br />
+                <br />
+                str = 'h' + str[1]; // заменяем строку <br />
+                <br />
+                alert( str ); // hi
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/string#izmenenie-registra"
+                  class="form__link"
+                >
+                  Изменение регистра</a
+                >
+              </p>
+
+              <p class="form__description">
+                Методы <br />
+                <br />
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase"
+                  class="form__link"
+                  >toLowerCase()
+                </a>
+                <br />
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase"
+                  class="form__link"
+                  >toUpperCase()
+                </a>
+                <br />
+                <br />
+                меняют регистр символов:
+              </p>
+
+              <p class="form__subdescription">
+                alert( 'Interface'.toUpperCase() ); // INTERFACE <br />
+                alert( 'Interface'.toLowerCase() ); // interface
+              </p>
+
+              <p class="form__description">
+                Если мы захотим перевести в нижний регистр какой-то конкретный
+                символ:
+              </p>
+
+              <p class="form__subdescription">
+                alert( 'Interface'[0].toLowerCase() ); // 'i'
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/string#poisk-podstroki"
+                  class="form__link"
+                >
+                  Поиск подстроки</a
+                >
+              </p>
+
+              <p class="form__description">
+                Существует несколько способов поиска подстроки.
+              </p>
+
+              <p class="form__syntax">str.indexOf</p>
+
+              <p class="form__description">
+                Первый метод —
+
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf"
+                  class="form__link"
+                >
+                  str.indexOf(substr, pos).</a
+                >
+              </p>
+
+              <p class="form__description">
+                Он ищет подстроку substr в строке str, начиная с позиции pos, и
+                возвращает позицию, на которой располагается совпадение, либо -1
+                при отсутствии совпадений. Например:
+              </p>
+
+              <p class="form__subdescription">
+                let str = 'Widget with id'; <br />
+                <br />
+                alert( str.indexOf('Widget') ); // 0, потому что подстрока
+                'Widget' найдена в начале <br />
+                alert( str.indexOf('widget') ); // -1, совпадений нет, поиск
+                чувствителен к регистру <br />
+                <br />
+                alert( str.indexOf("id") ); // 1, подстрока "id" найдена на
+                позиции 1 (..idget with id)
+              </p>
+
+              <p class="form__description">
+                Необязательный второй аргумент позволяет начать поиск с
+                определённой позиции. Например, первое вхождение "id" — на
+                позиции 1. Для того, чтобы найти следующее, начнём поиск с
+                позиции 2:
+              </p>
+
+              <p class="form__subdescription">
+                let str = 'Widget with id'; <br />
+                <br />
+                alert( str.indexOf('id', 2) ) // 12
+              </p>
+
+              <p class="form__description">
+                Чтобы найти все вхождения подстроки, нужно запустить indexOf в
+                цикле. Каждый раз, получив очередную позицию, начинаем новый
+                поиск со следующей:
+              </p>
+
+              <p class="form__subdescription">
+                let str = 'Ослик Иа-Иа посмотрел на виадук'; <br />
+                <br />
+                let target = 'Иа'; // цель поиска <br />
+                <br />
+                let pos = 0; <br />
+                while (true) { <br />
+                let foundPos = str.indexOf(target, pos); <br />
+                if (foundPos == -1) break; <br />
+                <br />
+                alert( `Найдено тут: ${foundPos}` ); <br />
+                pos = foundPos + 1; // продолжаем со следующей позиции <br />
+                }
+              </p>
+
+              <p class="form__description">
+                Тот же алгоритм можно записать и короче:
+              </p>
+
+              <p class="form__subdescription">
+                let str = "Ослик Иа-Иа посмотрел на виадук"; <br />
+                let target = "Иа"; <br />
+                <br />
+                let pos = -1; <br />
+                while ((pos = str.indexOf(target, pos + 1)) != -1) { <br />
+
+                alert( pos ); <br />
+                }
+              </p>
+
+              <p class="form__syntax">str.lastIndexOf(substr, position)</p>
+
+              <p class="form__description">
+                Также есть похожий метод
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf"
+                  class="form__link"
+                >
+                  str.lastIndexOf(substr, position)</a
+                >
+                , который ищет с конца строки к её началу. Он используется
+                тогда, когда нужно получить самое последнее вхождение: перед
+                концом строки или начинающееся до (включительно) определённой
+                позиции.
+              </p>
+
+              <p class="form__attention">
+                При проверке indexOf в условии if есть небольшое неудобство.
+                Такое условие не будет работать:
+              </p>
+
+              <p class="form__subdescription">
+                let str = "Widget with id"; <br />
+                <br />
+                if (str.indexOf("Widget")) { <br />
+                alert("Совпадение есть"); // не работает <br />
+                }
+              </p>
+
+              <p class="form__description">
+                Мы ищем подстроку "Widget", и она здесь есть, прямо на позиции
+                0. Но alert не показывается, т. к. str.indexOf("Widget")
+                возвращает 0, и if решает, что тест не пройден. Поэтому надо
+                делать проверку на -1:
+              </p>
+
+              <p class="form__subdescription">
+                let str = "Widget with id"; if (str.indexOf("Widget") != -1) {
+                alert("Совпадение есть"); // теперь работает }
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/string#includes-startswith-endswith"
+                  class="form__link"
+                >
+                  Более современный метод поиска подстроки: includes,
+                  startsWith, endsWith</a
+                >
+              </p>
+
+              <p class="form__description">
+                Метод
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/includes"
+                  class="form__link"
+                >
+                  str.includes(substr, pos)</a
+                >
+                возвращает true, если в строке str есть подстрока substr, либо
+                false, если нет.
+              </p>
+              <p class="form__attention">
+                Это — правильный выбор, если нам необходимо проверить, есть ли
+                совпадение, но позиция не нужна:
+              </p>
+
+              <p class="form__subdescription">
+                alert( "Widget with id".includes("Widget") ); // true <br />
+                <br />
+                alert( "Hello".includes("Bye") ); // false
+              </p>
+
+              <p class="form__description">
+                Необязательный второй аргумент str.includes позволяет начать
+                поиск с определённой позиции:
+              </p>
+
+              <p class="form__subdescription">
+                alert( "Midget".includes("id") ); // true <br />
+                alert( "Midget".includes("id", 3) ); // false, поиск начат с
+                позиции 3
+              </p>
+
+              <p class="form__description">
+                Методы <br />
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith"
+                  class="form__link"
+                >
+                  str.startsWith</a
+                >
+                <br />
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith"
+                  class="form__link"
+                >
+                  str.endsWith</a
+                >
+                <br />
+                проверяют, соответственно, начинается ли и заканчивается ли
+                строка определённой строкой:
+              </p>
+
+              <p class="form__subdescription">
+                alert( "Widget".startsWith("Wid") ); // true, "Wid" — начало
+                "Widget" <br />
+                alert( "Widget".endsWith("get") ); // true, "get" — окончание
+                "Widget"
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/string#poisk-podstroki"
+                  class="form__link"
+                >
+                  Получение подстроки</a
+                >
+              </p>
+
+              <p class="form__description">
+                В JavaScript есть 3 метода для получения подстроки:
+              </p>
+
+              <p class="form__subdescription">
+                <b>str.slice(start [, end])</b>
+              </p>
+
+              <p class="form__subdescription">
+                <b>str.substring(start [, end])</b>
+              </p>
+
+              <p class="form__subdescription">
+                <b>str.substr(start [, length])</b>
+              </p>
+
+              <p class="form__description">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/slice"
+                  class="form__link"
+                >
+                  str.slice(start [, end])</a
+                >
+              </p>
+
+              <p class="form__description">
+                Возвращает часть строки от start до (не включая) end.
+              </p>
+
+              <p class="form__subdescription">
+                let str = "stringify"; <br />
+                // 'strin', символы от 0 до 5 (не включая 5) <br />
+                alert( str.slice(0, 5) ); <br />
+                // 's', от 0 до 1, не включая 1, т. е. только один символ на
+                позиции 0 <br />
+                alert( str.slice(0, 1) );
+              </p>
+
+              <p class="form__description">
+                Если аргумент end отсутствует, slice возвращает символы до конца
+                строки:
+              </p>
+
+              <p class="form__subdescription">
+                let str = "stringify"; alert( str.slice(2) ); // ringify, с
+                позиции 2 и до конца
+              </p>
+
+              <p class="form__description">
+                Также для start/end можно задавать отрицательные значения. Это
+                означает, что позиция определена как заданное количество
+                символов с конца строки:
+              </p>
+
+              <p class="form__subdescription">
+                let str = "stringify"; <br />
+                <br />
+                // начинаем с позиции 4 справа, а заканчиваем на позиции 1
+                справа <br />
+                alert( str.slice(-4, -1) ); // gif
+              </p>
+
+              <p class="form__description">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/substring"
+                  class="form__link"
+                >
+                  str.substring(start [, end])</a
+                >
+              </p>
+
+              <p class="form__description">
+                Возвращает часть строки между start и end.
+              </p>
+
+              <p class="form__description">
+                Это — почти то же, что и slice, но можно задавать start больше
+                end. Например:
+              </p>
+
+              <p class="form__subdescription">
+                let str = "stringify"; <br />
+                <br />
+                // для substring эти два примера — одинаковы <br />
+                alert( str.substring(2, 6) ); // "ring" <br />
+                alert( str.substring(6, 2) ); // "ring" <br />
+                <br />
+                // …но не для slice: <br />
+                alert( str.slice(2, 6) ); // "ring" (то же самое) <br />
+                alert( str.slice(6, 2) ); // "" (пустая строка)
+              </p>
+
+              <p class="form__description">
+                Отрицательные значения substring, в отличие от slice, не
+                поддерживает, они интерпретируются как 0.
+              </p>
+
+              <p class="form__description">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/substr"
+                  class="form__link"
+                >
+                  str.substr(start [, length])</a
+                >
+              </p>
+
+              <p class="form__attention">
+                Внимание: так как String.prototype.substr(…) не полностью
+                упразднена (а лишь "удалена из стандартов по вебу"), она
+                считается унаследованной функцией, использование которой лучше
+                избегать там, где это возможно. Она не является частью ядра
+                языка JavaScript и может быть удалена в будущем. Если есть
+                возможность, используйте метод substring().
+              </p>
+
+              <p class="form__description">
+                Возвращает часть строки от start длины length. В
+                противоположность предыдущим методам, этот позволяет указать
+                длину вместо конечной позиции:
+              </p>
+
+              <p class="form__description">
+                В противоположность предыдущим методам, этот позволяет указать
+                длину вместо конечной позиции:
+              </p>
+
+              <p class="form__subdescription">
+                let str = "stringify"; <br />
+                // ring, получаем 4 символа, начиная с позиции 2 <br />
+                alert( str.substr(2, 4) );
+              </p>
+
+              <p class="form__description">
+                Значение первого аргумента может быть отрицательным, тогда
+                позиция определяется с конца:
+              </p>
+
+              <p class="form__subdescription">
+                let str = "stringify"; <br />
+                // gi, получаем 2 символа, начиная с позиции 4 с конца строки
+                <br />
+                alert( str.substr(-4, 2) );
+              </p>
+
+              <p class="form__description">
+                Давайте подытожим, как работают эти методы, чтобы не запутаться:
+              </p>
+              <div class="form__table">
+                <div class="form__colonka">
+                  <p class="form__syntax">метод</p>
+
+                  <p class="form__description">slice(start, end)</p>
+
+                  <p class="form__description">substring(start, end)</p>
+
+                  <p class="form__description">substr(start, length)</p>
+                </div>
+
+                <div class="form__colonka">
+                  <p class="form__syntax">выбирает…</p>
+
+                  <p class="form__description">
+                    от start до end (не включая end)
+                  </p>
+
+                  <p class="form__description">между start и end</p>
+
+                  <p class="form__description">
+                    length символов, начиная от start
+                  </p>
+                </div>
+
+                <div class="form__colonka">
+                  <p class="form__syntax">отрицательные значения</p>
+
+                  <p class="form__description">
+                    можно передавать отрицательные значения
+                  </p>
+
+                  <p class="form__description">
+                    отрицательные значения равнозначны 0
+                  </p>
+
+                  <p class="form__description">
+                    значение start может быть отрицательным
+                  </p>
+                </div>
+              </div>
+
+              <p class="form__attention">Какой метод выбрать?</p>
+
+              <p class="form__description">
+                Все эти методы эффективно выполняют задачу. Формально у метода
+                substr есть небольшой недостаток: он описан не в собственно
+                спецификации JavaScript, а в приложении к ней — Annex B. Это
+                приложение описывает возможности языка для использования в
+                браузерах, существующие в основном по историческим причинам.
+                Таким образом, в другом окружении, отличном от браузера, он
+                может не поддерживаться. Однако на практике он работает везде.
+              </p>
+
+              <p class="form__description">
+                Из двух других вариантов, slice более гибок, он поддерживает
+                отрицательные аргументы, и его короче писать. Так что, в
+                принципе, можно запомнить только его.
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/string#sravnenie-strok"
+                  class="form__link"
+                >
+                  Сравнение строк</a
+                >
+              </p>
+
+              <p class="form__description">
+                Как мы знаем из главы Операторы сравнения, строки сравниваются
+                посимвольно в алфавитном порядке. Тем не менее, есть некоторые
+                нюансы.
+              </p>
+
+              <p class="form__subdescription">
+                1. Строчные буквы больше заглавных:
+              </p>
+
+              <p class="form__subdescription">alert( 'a' > 'Z' ); // true</p>
+
+              <p class="form__subdescription">
+                2. Буквы, имеющие диакритические знаки, идут «не по порядку»:
+              </p>
+
+              <p class="form__subdescription">
+                alert( 'Österreich' > 'Zealand' ); // true
+              </p>
+
+              <p class="form__description">
+                Это может привести к своеобразным результатам при сортировке
+                названий стран: нормально было бы ожидать, что Zealand будет
+                после Österreich в списке.
+              </p>
+
+              <p class="form__description">
+                Чтобы разобраться, что происходит, давайте ознакомимся с
+                внутренним представлением строк в JavaScript.
+              </p>
+
+              <p class="form__description">
+                Строки кодируются в UTF-16. Таким образом, у любого символа есть
+                соответствующий код. Есть специальные методы, позволяющие
+                получить символ по его коду и наоборот.
+              </p>
+
+              <p class="form__description">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt"
+                  class="form__link"
+                >
+                  str.codePointAt(pos)</a
+                >
+              </p>
+
+              <p class="form__description">
+                Возвращает код для символа, находящегося на позиции pos:
+              </p>
+
+              <p class="form__subdescription">
+                // одна и та же буква в нижнем и верхнем регистре <br />
+                // будет иметь разные коды <br />
+                alert( "z".codePointAt(0) ); // 122 <br />
+                alert( "Z".codePointAt(0) ); // 90
+              </p>
+
+              <p class="form__description">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint"
+                  class="form__link"
+                >
+                  String.fromCodePoint(code)</a
+                >
+              </p>
+
+              <p class="form__description">Создаёт символ по его коду code</p>
+
+              <p class="form__subdescription">
+                alert( String.fromCodePoint(90) ); // Z
+              </p>
+
+              <p class="form__description">
+                Также можно добавлять юникодные символы по их кодам, используя
+                \u с шестнадцатеричным кодом символа:
+              </p>
+
+              <p class="form__subdescription">
+                // 90 — 5a в шестнадцатеричной системе счисления <br />
+                alert( '\u005a' ); // Z
+              </p>
+
+              <p class="form__description">
+                Давайте сделаем строку, содержащую символы с кодами от 65 до 220
+                — это латиница и ещё некоторые распространённые символы:
+              </p>
+
+              <p class="form__subdescription">
+                let str = ''; <br />
+                <br />
+                for (let i = 65; i &lt;= 220; i++) { <br />
+                str += String.fromCodePoint(i); <br />
+                } <br />
+                alert( str ); <br />
+                //
+                ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+                <br />
+                // ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜ
+              </p>
+
+              <p class="form__description">
+                Как видите, сначала идут заглавные буквы, затем несколько
+                спецсимволов, затем строчные и Ö ближе к концу вывода. Теперь
+                очевидно, почему a > Z.
+              </p>
+
+              <p class="form__description">
+                Символы сравниваются по их кодам. Больший код — больший символ.
+                Код a (97) больше кода Z (90).
+              </p>
+
+              <p class="form__subdescription">
+                Все строчные буквы идут после заглавных, так как их коды больше.
+              </p>
+
+              <p class="form__subdescription">
+                Некоторые буквы, такие как Ö, вообще находятся вне основного
+                алфавита. У этой буквы код больше, чем у любой буквы от a до z.
+              </p>
+
+              <p class="form__subheading">
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://learn.javascript.ru/string#itogo"
+                  class="form__link"
+                >
+                  Итого</a
+                >
+              </p>
+
+              <p class="form__subdescription">
+                Есть три типа кавычек. Строки, использующие обратные кавычки,
+                могут занимать более одной строки в коде и включать выражения
+                ${…}.
+              </p>
+
+              <p class="form__subdescription">
+                Строки в JavaScript кодируются в UTF-16.
+              </p>
+
+              <p class="form__subdescription">
+                Есть специальные символы, такие как \n, и можно добавить символ
+                по его юникодному коду, используя \u….
+              </p>
+
+              <p class="form__subdescription">
+                Для получения символа используйте [].
+              </p>
+
+              <p class="form__subdescription">
+                Для получения подстроки используйте slice или substring.
+              </p>
+
+              <p class="form__subdescription">
+                Для того, чтобы перевести строку в нижний или верхний регистр,
+                используйте toLowerCase/toUpperCase.
+              </p>
+
+              <p class="form__subdescription">
+                Для поиска подстроки используйте indexOf или
+                includes/startsWith/endsWith, когда надо только проверить, есть
+                ли вхождение.
+              </p>
+
+              <p class="form__subdescription">
+                Чтобы сравнить строки с учётом правил языка, используйте
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare"
+                  class="form__link"
+                >
+                  localeCompare.</a
+                >
+              </p>
+
+              <p class="form__subdescription">
+                <b> str.trim()</b> — убирает пробелы в начале и конце строки.
+              </p>
+
+              <p class="form__subdescription">
+                <b> str.repeat(n)</b> — повторяет строку n раз.
+              </p>
+
+              <p class="form__subdescription">
+                …и другие, которые вы можете найти в
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String"
+                  class="form__link"
+                >
+                  справочнике</a
+                >
+                .
+              </p>
+            </div>
+          </div>
+
+          <p class="form__subheading">
+            <a
+              target="_blank"
+              rel="noopener"
+              href="https://learn.javascript.ru/string#tasks"
+              class="form__link"
+            >
+              Задачи "Строки"</a
+            >
+          </p>
+        </section>
+        <!-- Строки -->
+
+        <!--  -->
+        <section class="form">
+          <div class="form__bloc-info">
+            <h1 class="form__heading">
+              xxx
+              <a target="_blank" rel="noopener" href="#" class="form__link">
+                xxx</a
+              >
+            </h1>
+            <div class="form__bloc-hidden">
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__attention">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__attention">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__attention">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subheading">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <a target="_blank" rel="noopener" href="" class="form__link">
+                xxx</a
+              >
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subheading">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <a target="_blank" rel="noopener" href="" class="form__link">
+                xxx</a
+              >
+            </div>
+          </div>
+        </section>
+        <!--  -->
+
+        <!--  -->
+        <section class="form">
+          <div class="form__bloc-info">
+            <h1 class="form__heading">
+              xxx
+              <a target="_blank" rel="noopener" href="#" class="form__link">
+                xxx</a
+              >
+            </h1>
+            <div class="form__bloc-hidden">
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__attention">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subdescription">xxx</p>
+
+              <p class="form__subheading">
+                <a target="_blank" rel="noopener" href="" class="form__link">
+                  xxx</a
+                >
+              </p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subheading">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <a target="_blank" rel="noopener" href="" class="form__link">
+                xxx</a
+              >
+
+              <p class="form__syntax">xxx</p>
+
+              <p class="form__description">xxx</p>
+
+              <p class="form__subheading">xxx</p>
+
+              <p class="form__syntax">xxx</p>
+
+              <a target="_blank" rel="noopener" href="" class="form__link">
+                xxx</a
+              >
+
+              <p class="form__syntax">xxx</p>
+              <p class="form__description">xxx</p>
+              <p class="form__description">xxx</p>
+              <p class="form__description">xxx</p>
+              <p class="form__syntax">xxx</p>
+              <p class="form__syntax">xxx</p>
+            </div>
+          </div>
+        </section>
+        <!--  -->
+
+        <!--  -->
+        <section class="form">
+          <div class="form__bloc-info">
+            <h1 class="form__heading">
+              xxx
+              <a target="_blank" rel="noopener" href="#" class="form__link">
+                xxx</a
+              >
+            </h1>
+            <div class="form__bloc-hidden">
+              <p class="form__description">xxx</p>
+              <p class="form__description">xxx</p>
+              <p class="form__description">xxx</p>
+              <p class="form__syntax">xxx</p>
+              <p class="form__syntax">xxx</p>
+            </div>
+          </div>
+        </section>
+        <!--  -->
+        <!-- encoding -->
+
+        <section class="form">
+          <div>
+            <div class="encoding">
+              <p class="encoding__prompt">HTML посмотреть код</p>
+              <pre class="encoding__code-box">
+                  <code class="encoding__code-font">                                   
+                     xxx                                    
+                  </code>
+               </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_second">
+                SCSS посмотреть код
+              </p>
+              <pre class="encoding__code-box">
+                  <code>                                   
+                     xxx                                    
+                  </code>
+               </pre>
+            </div>
+
+            <div class="encoding">
+              <p class="encoding__prompt encoding__prompt_third">
+                SCSS посмотреть код
+              </p>
+              <pre class="encoding__code-box">
+                  <code>                                   
+                     xxx                                    
+                  </code>
+               </pre>
+            </div>
+          </div>
+          <!-- encoding -->
+
+          <!--  -->
+          <p class="form__description">
+            ps. Что такое
+            <a target="_blank" rel="noopener" href="#" class="form__link"
+              >xxxx</a
+            >
+          </p>
+          <p class="form__description">
+            ps. Что такое
+            <a target="_blank" rel="noopener" href="#" class="form__link">
+              xxxx</a
+            >
+          </p>
+          <p class="form__description">
+            ps. Что такое
+            <a target="_blank" rel="noopener" href="#" class="form__link">
+              xxxx</a
+            >
+          </p>
+          <p class="form__description">
+            ps. Другая
+            <a target="_blank" rel="noopener" href="#" class="form__link">
+              xxxxx</a
+            >
+          </p>
+
+          <!-- rh-checkbox -->
+        </section>
+        <!--  -->
+      </article>
+
+      <!-- menu-mobile -->
+      <div class="menu-mobile">
+        <img
+          src="../../assets/logotype/smallLogo.svg"
+          class="menu-mobile__logo-small"
+        />
+        <div class="menu-mobile__dots">
+          <div class="menu-mobile__dots_item"></div>
+          <div class="menu-mobile__dots_item"></div>
+          <div class="menu-mobile__dots_item"></div>
+        </div>
+      </div>
+      <!-- menu-mobile -->
+    </main>
+    <!-- main -->
+    <!-- menu -->
+    <nav class="menu">
+      <!-- transform-list -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/transformations.html">
+          Двумерные трансформации</a
+        >
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#transformations"
+              >Трансформация элемента</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#translate-x"
+              >Сдвиг по горизонтали</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#translate-y"
+              >Сдвиг по вертикали</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#translate"
+              >Сдвиг по горизонтали и вертикали</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#scale"
+              >Изменение масштаба элемента</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#scale-x"
+              >Изменение масштаба по горизонтали</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#scale-y"
+              >Изменение масштаба по вертикали</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#rotate"
+              >Поворот элемента</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#skew-x"
+              >Наклон элемента по горизонтали</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#skew-y"
+              >Наклон элемента по вертикали</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transformations.html#transform-origin"
+              >Координаты трансформации элемента.</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- transform-list -->
+
+      <!-- transitions_list -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/transitions.html">
+          Плавные переходы
+        </a>
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transitions.html#transition"
+              >Универсальное свойство</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transitions.html#transition-duration"
+              >Длительность перехода</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transitions.html#transition-property"
+              >Какие свойства плавно изменять</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transitions.html#transition-delay"
+              >Задержка перехода
+            </a>
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transitions.html#transition-timing-function"
+              >Скорость и ускорение переходов
+            </a>
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transitions.html#example"
+              >примеры timing-function переходов</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/transitions.html#graphics-transition"
+              >Графики переходов</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- transitions_list -->
+
+      <!-- gradient_list -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/linearGradient.html">
+          Линейный градиент</a
+        >
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#linear-gradient"
+              >Линейный градиент</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#examples"
+              >Примеры прямых и диогональных переходов</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#angled-gradients"
+              >Градиенты под углом</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#sample-flower"
+              >Градиенты под углом, пример:</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#sample"
+              >Множество градиентов</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#color-stop"
+            >
+              Пропорции цветов и колорстопы</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#color-stop-sample"
+              >Примеры колор стопов</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#repeating-gradient"
+            >
+              Повторяющийся линейный градиент</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#stylish-buttons"
+              >Стильные кнопки</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/linearGradient.html#footer"
+              >Рекомендации</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- gradient_list -->
+
+      <!-- stuff_list -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/coolStuff.html">Крутые вещи</a>
+
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/coolStuff.html#custom-shadows"
+              >Нестандартные тени</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/coolStuff.html#hover-active"
+            >
+              Эффекты при наведении на кнопки</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/coolStuff.html#active-gallery"
+            >
+              Эффекты при наведении на галерею</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/coolStuff.html#stack-cards"
+              >Стопка" карт</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- stuff_list -->
+
+      <!-- forms_list -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/forms.html"> Формы form </a>
+        <div class="menu__content">
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/forms.html#inputs">
+              Ввод "input"</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/forms.html#type-text">
+              Поля inputs
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/forms.html#button"
+              >Кнопки button
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/forms.html#checkbox">
+              checkbox</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/forms.html#slider"
+              >Ползунки slider</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/forms.html#radiobutton"
+              >Переключатели radiobutton</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/forms.html#multicolor-switch"
+              >multicolor-switch Тройной переключатель
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/forms.html#triple-switch"
+              >triple-switch Тройной переключатель</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/forms.html#secondary-radio"
+              >secondary-radio Двойной переключатель</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/forms.html#twin-switch "
+              >twin-switch Универсальный переключатель</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/forms.html#drop-down">
+              Выпадающий или раскрывающийся список</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/forms.html#teg-select"
+              >Тег select, поле выбора
+            </a>
+          </li>
+        </div>
+      </ul>
+      <!-- forms_list -->
+
+      <!-- position-ratio_list -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/positionAspectRatio.html">
+          Работа с изображениями</a
+        >
+
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/positionAspectRatio.html#centering"
+            >
+              Центрирование centering</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/positionAspectRatio.html#aspect-ratio"
+            >
+              Свойство CSS aspect-ratio: X / Y
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/positionAspectRatio.html#factoring-width"
+            >
+              Факторинг в min-*и max-*</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/positionAspectRatio.html#aspect-ratio-example"
+            >
+              Примеры работы свойства aspect-ratio:</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/positionAspectRatio.html#position"
+            >
+              Позиционирование элемента</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/positionAspectRatio.html#position__absolute"
+            >
+              Позиционирование absolute подробнее.</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/positionAspectRatio.html#height-absolute"
+            >
+              Высота для position: absolute;</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/positionAspectRatio.html#relative-absolute"
+            >
+              Позиционирование и aspect-ratio: X / Y;</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- position-ratio_list -->
+
+      <!-- utility_list -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/utility.html">
+          Полезная информация</a
+        >
+
+        <div class="menu__content">
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/utility.html#my-tabs">
+              Мои вкладки</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#html5book.ru"
+            >
+              HTML5BOOK.ru теория html, css, js</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#HTML5CSS.ru"
+            >
+              HTML5CSS.ru Как сделать?</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#WebReference"
+            >
+              Мощный учебник WebReference</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#css-tricks "
+            >
+              Учебник css-tricks и Aspect Ratio
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/utility.html#Git">
+              Ресурсы для изучения Git</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/utility.html#ru.bem">
+              Методология БЭМ
+            </a>
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#first-child"
+            >
+              Структурные псевдоклассы</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/utility.html#after">
+              ::after и ::before</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#form__link"
+            >
+              Как сделать гиперссылки на сайте</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#svoystva-teksta"
+            >
+              Свойства шрифта, текста</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#Select-Option"
+            >
+              Стилизация Select-Option</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#user-select"
+            >
+              user-select</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/utility.html#webfanat"
+            >
+              Блог веб разработки webfanat</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/utility.html#">
+              xxx</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/utility.html#">
+              xxx</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a class="menu__item_link" href="../templates/utility.html#">
+              xxx</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- utility_list -->
+
+      <!-- shadow_list -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/boxShadow.html">
+          Тени box-shadow
+        </a>
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/boxShadow.html#box-shadow"
+            >
+              Тени box-shadow</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- shadow_list -->
+
+      <!-- java Script Основы Java Script -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/javaScriptBasics.html">
+          JS Основы JavaScript
+        </a>
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#teg-script"
+            >
+              Подключение JavaScript, тег: &lt;script&gt;</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#peremennay"
+            >
+              Переменная</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#tip-dannih"
+            >
+              Типы данных</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#alert-prompt-confirm"
+            >
+              Взаимодействие: alert, prompt, confirm</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#preobrazovanie-tipov"
+            >
+              Преобразование типов</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#operatori-bazic"
+            >
+              Базовые операторы, математика</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#operatori-sravneniy"
+            >
+              Операторы сравнения</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#uslovnoe-vetvlenie-if-?"
+            >
+              Условное ветвление: if, '?'</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#logical-operators"
+            >
+              Логические операторы</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#tsikl-while-for"
+            >
+              Циклы while и for</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#switch"
+            >
+              Конструкция "switch"</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#function"
+            >
+              Функции</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#Function-Expression-call-back"
+            >
+              Функции Expression и «call back»</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptBasics.html#strelochnye-funktsii"
+            >
+              Функции-стрелки, основы
+            </a>
+          </li>
+        </div>
+      </ul>
+      <!-- java Script Основы Java Script -->
+
+      <!-- java Script Объекты: основы -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/javaScriptObject.html">
+          JS Объекты
+        </a>
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptObject.html#object"
+            >
+              Объекты: основы</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptObject.html#object-copy"
+            >
+              Копирование объектов и ссылки</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptObject.html#"
+            >
+              xxx</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptObject.html#"
+            >
+              xxx</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptObject.html#"
+            >
+              xxx</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptObject.html#"
+            >
+              xxx</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptObject.html#"
+            >
+              xxx</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- java Script Объекты: основы -->
+
+      <!-- java Script Типы данных -->
+      <ul class="menu__list">
+        <a class="menu__link" href="../templates/javaScriptTypeDate.html">
+          JS Типы данных
+        </a>
+        <div class="menu__content">
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptTypeDate.html#number"
+            >
+              Числа</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptTypeDate.html#string"
+            >
+              Строки</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptTypeDate.html#"
+            >
+              xxx</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptTypeDate.html#"
+            >
+              xxx</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptTypeDate.html#"
+            >
+              xxx</a
+            >
+          </li>
+
+          <li class="menu__item">
+            <a
+              class="menu__item_link"
+              href="../templates/javaScriptTypeDate.html#"
+            >
+              xxx</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- java Script Типы данных -->
+    </nav>
+    <!-- menu -->
+
+    <!-- header  -->
+    <header class="header"></header>
+    <!-- header  -->
+  </body>
+</html>

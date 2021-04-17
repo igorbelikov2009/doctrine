@@ -41,7 +41,6 @@ em {
 b {
   font-family: inherit;
   font-weight: inherit;
-  font-style: oblique;
   font-size: inherit;
   line-height: inherit;
   color: green; }
@@ -51,6 +50,7 @@ b {
   width: 100%;
   padding-top: 72px;
   padding-bottom: 72px;
+  background-color: #fff;
   position: relative; }
   .form:hover .form__info,
   .form:active .form__info {
@@ -67,11 +67,15 @@ b {
     display: none; }
   .form__bloc-info {
     width: 100%;
-    margin-bottom: 72px; }
+    padding-bottom: 12px;
+    position: relative; }
+    .form__bloc-info:hover .form__bloc-hidden {
+      display: block; }
   .form__heading {
     font-size: 24px;
     line-height: 36px;
-    margin-bottom: 36px;
+    padding-bottom: 12px;
+    margin-bottom: 24px;
     color: #000;
     text-align: center; }
     @media screen and (min-width: 767px) {
@@ -85,6 +89,14 @@ b {
       font-size: inherit;
       font-weight: inherit;
       line-height: inherit; }
+  .form__bloc-hidden {
+    width: 100%;
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    top: 96px;
+    left: 0;
+    z-index: 1; }
   .form__subheading {
     font-size: 18px;
     line-height: 24px;
